@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <h2>Project</h2>
-  </body>
-</html>
+@extends('layouts.master')
+
+@section('sidebar')
+    @parent
+    <p>Contenido adicional del sidebar</p>
+@stop
+
+@section('content')
+    <p>Contenido principal</p>
+@stop

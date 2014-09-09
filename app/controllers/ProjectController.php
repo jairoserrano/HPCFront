@@ -9,7 +9,7 @@ class ProjectController extends \BaseController {
 	 */
 	public function index()
 	{
-			return View::make('project/index');
+			return View::make('project.index');
 	}
 
 
