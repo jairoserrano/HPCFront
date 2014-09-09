@@ -8,15 +8,15 @@
 
 ### Contributing To HPCFront
 
-Clonar el repositorio:
+Clone the repository:
   
     git clone git@github.com:jairoserrano/HPCFront.git
 
-Ingresar a la carpeta y ejecutar Composer:
+Change to the project folder and execute composer:
 
     composer install
 
-Como recomendación, limpiar la cache del proyecto para iniciar frescos.
+In addition, clear the cache files:
 
     php artisan cache:clear
 
