@@ -5,8 +5,20 @@
 ## Official Documentation
 
 
+
 ### Contributing To HPCFront
 
+Clone the repository:
+  
+    git clone git@github.com:jairoserrano/HPCFront.git
+
+Change to the project folder and execute composer:
+
+    composer install
+
+In addition, clear the cache files:
+
+    php artisan cache:clear
 
 ### License
 
