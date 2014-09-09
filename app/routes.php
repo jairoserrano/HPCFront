@@ -13,5 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    return Redirect::to('project/');
 });
+
+Route::resource('project', 'ProjectController');

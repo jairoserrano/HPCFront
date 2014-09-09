@@ -1,6 +1,6 @@
 <?php
 
-class Projects extends \BaseController {
+class ProjectController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class Projects extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+			return View::make('project/index');
 	}
 
 
