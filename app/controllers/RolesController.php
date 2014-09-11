@@ -1,6 +1,6 @@
 <?php
 
-class ProjectController extends \BaseController {
+class RolesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,9 +9,7 @@ class ProjectController extends \BaseController {
 	 */
 	public function index()
 	{
-		$demo = HPCJob::all();
-		var_dump($demo);
-		return View::make('project.index');
+		//
 	}
 
 
@@ -22,7 +20,7 @@ class ProjectController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('project.create');
+		//
 	}
 
 

@@ -16,6 +16,9 @@ class CreateLogsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('content');
+
+            $table->integer('job_id')->unsigned()->index();
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
