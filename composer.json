@@ -3,7 +3,7 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
-    "required-dev":{
+    "require-dev":{
         "way/generators": "2.*",
         "barryvdh/laravel-debugbar": "1.*",
         "fzaninotto/faker": "v1.3.0",

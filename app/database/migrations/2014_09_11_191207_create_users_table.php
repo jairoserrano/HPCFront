@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
-class HPCJobTable extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,16 @@ class HPCJobTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('hpcjobs', function(Blueprint $table) {
+		Schema::create('users', function(Blueprint $table)
+		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('type');
-			$table->string('comments')->nullable();
+			$table->string('name', 250);
+			$table->string('email')->unique();
+			$table->string('password');
 			$table->timestamps();
-			});
+		});
 	}
+
 
 	/**
 	 * Reverse the migrations.
@@ -28,7 +30,7 @@ class HPCJobTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('hpcjobs');
+		Schema::drop('users');
 	}
 
 }
