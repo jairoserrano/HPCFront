@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Project extends Migration {
+class HPCJobTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class Project extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('project', function(Blueprint $table) {
+		Schema::create('hpcjobs', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('type');
@@ -28,7 +28,7 @@ class Project extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('project');
+		Schema::drop('hpcjobs');
 	}
 
 }

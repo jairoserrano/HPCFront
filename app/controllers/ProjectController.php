@@ -9,8 +9,8 @@ class ProjectController extends \BaseController {
 	 */
 	public function index()
 	{
-		$demo = Project::all();
-		var_dump($demo->name);
+		$demo = HPCJob::all();
+		var_dump($demo);
 		return View::make('project.index');
 	}
 
