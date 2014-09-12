@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="es"><head>
     <meta charset="utf-8">
-    <title></title>
+    <title>
+        @section('page_title')
+        @show
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/utb.css" rel="stylesheet">
+
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+
     <!--[if lt IE 9]>
-      <script src="/js/html5shiv.js"></script>
+      {{ HTML::script('assets/html5shiv/dist/html5shiv.min.js') }}
     <![endif]-->
+
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="/img/favicon.png">
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('assets/images/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('assets/images/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('assets/images/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/images/apple-touch-icon-57-precomposed.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
+
+    {{--Le styles--}}
+    {{ HTML::style('assets/bootstrap/dist/css/bootstrap.min.css')  }}
+    {{ HTML::style('assets/bootstrap/dist/css/bootstrap-theme.min.css')  }}
+    @section('styles')
+    @show
 </head>
 <body>
     <!-- El container es la caja principal, allí se ponen todos los contenidos, se recomienda mantener -->
@@ -55,7 +63,7 @@
             <div class="row clearfix">
                 <!-- Logo -->
                 <div class="col-md-3 column">
-                    <img alt="Logo UTB" src="img/logo.png">
+                    <img alt="Logo UTB" src="{{ asset('assets/images/logo.png') }}">
                 </div>
 
                 <!-- Título y slogan -->
@@ -94,5 +102,13 @@ PIE
             </div>
 
         </div>
+
+        {{--Le scripts--}}
+        {{ HTML::script('assets/jquery/dist/jquery.min.js') }}
+        {{ HTML::script('assets/jquery/dist/jquery.min.map') }}
+
+        {{ HTML::script('assets/bootstrap/dist/js/bootstrap.min.js') }}
+        @section('scripts')
+        @show
 </body>
 </html>
