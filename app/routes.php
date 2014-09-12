@@ -10,10 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-/*
-Route::get('/', function()
-{
-    return Redirect::to('project/');
-});*/
 
-Route::resource('/', [ 'as' => 'jobs', 'uses' => 'JobsController']);
+Route::get('/', ['as' => 'home', 'uses' => 'JobsController@index']);
+
+Route::resource('jobs','JobsController');

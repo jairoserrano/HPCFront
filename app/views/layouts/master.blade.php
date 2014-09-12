@@ -68,7 +68,8 @@
             <div class="row clearfix">
                 <!-- Logo -->
                 <div class="col-md-3 column">
-
+                    @section('sidebar')
+                    @show
                 </div>
 
                 <!-- Título y slogan -->
@@ -90,12 +91,8 @@ PIE
             <!-- Area copyright color definido en el archivo style.css-->
             <div class="row clearfix" id="copy">
 
-
-
             </div>
 
         </div>
-
-
 </body>
 </html>
