@@ -14,3 +14,4 @@
 Route::get('/', ['as' => 'home', 'uses' => 'JobsController@index']);
 
 Route::resource('jobs','JobsController');
+Route::resource('users','UsersController',array('except' => array('show')));
