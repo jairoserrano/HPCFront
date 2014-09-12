@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="utf-8">
+  <title>Mockup UTB - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo creado para el mockup que se creará en Drupal como theme">
+  <meta name="author" content="Edison Monsalve - @morpheusco con Bootstrap3">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/utb.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+
+<!-- El container es la caja principal, allí se ponen todos los contenidos, se recomienda mantener -->
+	<div class="container">
+		
+		<!-- Menú auxiliar, este menú se usará para todos los sitios, allí van los accesos más comunes, savio, sirius, etc -->
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+					<div class="navbar-header">
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button> 
+						<a class="navbar-brand" href="#">UTB</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li> <a href="http://bienestar.unitecnologica.edu.co/">Bienestar Institucional</a>	</li>
+							<li><a href="http://www.utbvirtual.edu.co/">SAVIO</a>	</li>
+							<li><a href="#">SIRIUS</a></li>
+							<li><a href="http://primo.gsl.com.mx:1701/">Bibliotecas</a>	</li>
+							<li><a href="http://correo.utbvirtual.edu.co/">Correo</a>
+							</li>	
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+		
+		<!-- Área encabezado ppal, Incluye logo, nombre, slogan, buscador y redes sociales -->
+		<div class="row clearfix">
+			<!-- Logo -->
+			<div class="col-md-3 column">
+				<img alt="Logo UTB" src="img/logo.png">
+			</div>		
+			
+			<!-- Título y slogan -->
+			<div class="col-md-5 column">
+				<h3>Universidad Tecnológica de Bolívar </h3>
+				<h4><small>Una Institución con vocación empresarial e Internacional</small>	</h4>
+			</div>
+			
+			<!-- Apoyo buscador y redes -->
+			<div class="col-md-4 column">
+				
+				<div align="right">
+						<img src="img/google.png">
+						<img src="img/twitter.png"> 
+						<img src="img/facebook.png"> 			
+				</div>
+				
+				<form class="navbar-form navbar-right" role="search">
+					<button type="submit" class="btn btn-default">Buscar</button>
+					<div class="form-group">
+						<input type="text" class="form-control">
+					</div> 
+				</form> 
+				
+			</div>
+			
+		</div>
+		
+		<!-- Área apoyo encabezado, Dos sub areas - contenidos sólo de apoyo al encabezado -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+						
+			</div>
+			
+			
+			
+		</div>
+		
+		<!-- Menú principal, Es posible que cambie la apariencia de color, pero la funcionalidad se muestra aquí -->
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button> 
+						<a class="navbar-brand" href="#">Inicio</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Activo</a>
+							</li>
+							<li><a href="#">Otro link</a></li>
+							<li><a href="#">Otro más</a></li>
+							<li><a href="#">Otro adicional</a></li>						
+							
+							<li class="dropdown">
+								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta académica<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Pregrado</a></li>
+									<li class="divider"></li>
+									<li><a href="#">-&gt; Técnicos</a></li>
+									<li><a href="#">-&gt; Tecnólogos</a></li>
+									<li><a href="#">- &gt;Profesionales</a></li>								
+									<li class="divider"></li>
+									<li><a href="#">Post-grados</a></li>
+									<li><a href="#">-&gt; Especializaciones</a></li>
+									<li><a href="#">-&gt; Maestrías</a></li>
+									<li><a href="#">-&gt; Doctorados</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Educación Permanente</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Uno posterior</a>
+							</li>												
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+		
+		<!-- Menú secundario, se usará para mostrar estructuras de navegación complejas de 2do y 3er nivel, no es obligatorio -->
+		
+		
+		<!-- Área galeria, útil para crear galerías - incluye código e imágenes responsive -->
+		<div class="row clearfix">
+			
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<br>
+			<div class="col-md-12 column">
+				
+				<div class="carousel slide" id="carousel-915683">
+					
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#carousel-915683"></li>
+						<li data-slide-to="1" data-target="#carousel-915683"></li>
+						<li data-slide-to="2" data-target="#carousel-915683"></li>
+					</ol>
+					
+					<div class="carousel-inner">
+						<div class="item active">
+							<img alt="" src="img/slide1.jpg">
+							<div class="carousel-caption">
+								<h4>Geoset: Un taller de formación multimedia y un gran convenio para iniciar el 2014</h4>
+								<p>	La educación superior de las Universidades más prestigiosas del mundo está evolucionando a gran velocidad hacia la incorporación de contenidos multimedia. Estos contenidos pueden estructurarse como cursos completamente virtuales, con fuerte competencia de conceptos, o simplemente hacia material de apoyo para el aprendizaje presencial. En todos los casos la primacía de los contenidos en inglés es casi absoluta.</p>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img alt="" src="img/slide2.jpg">
+							<div class="carousel-caption">
+								<h4>ONDAS abrió convocatoria para grupos de investigación infantiles y juveniles</h4>
+								<p>	La convocatoria busca fomentar una cultura ciudadana y democrática de ciencia, tecnología e innovación en niños y jóvenes de los municipios priorizados en el departamento de Bolívar, a través de la investigación como estrategia pedagógica.</p>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img alt="" src="img/slide3.jpg">
+							<div class="carousel-caption">
+								<h4>I Foro de Permanencia y Graduación Estudiantil Cartagena</h4>
+								<p>	La Universidad Tecnológica de Bolívar, en convenio con el Ministerio de Educación Nacional, realizó el  I Foro de Permanencia y Graduación Estudiantil-Cartagena 2013, un espacio que busca conocer y analizar las experiencias exitosas sobre el fortalecimiento de la retención estudiantil de universidades nacionales y regionales.</p>
+							</div>
+						</div>
+					</div> 
+					
+					<a class="left carousel-control" href="#carousel-915683" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a> 
+					<a class="right carousel-control" href="#carousel-915683" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area del breadcumbs o migas de pan -->
+		<div class="row clearfix">
+			
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<br>
+			<div class="col-md-12 column">
+				<ul class="breadcrumb">
+					<li><a href="#">Inicio</a> </li>
+					<li><a href="#">Programas</a> </li>
+					<li class="active">
+						Portada
+					</li>
+				</ul>
+			</div>
+		</div>	
+		
+	
+		
+		<!-- Area destacados, 2 posiciones en plantilla 50% - se puede dividir en 6 por diseño -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				
+			</div>
+			<div class="col-md-6 column">
+				
+			</div>
+		</div>
+		
+		<!-- Area especiales izquierda, desbalanceada a la izquierda, 4 x 8 proporción  25% x 75% aproximadamente - información complementaria -->
+		<div class="row clearfix">
+			
+			
+			
+			
+		</div>	
+		
+		<!-- Area conceptos, 4 posiciones en plantilla - Pueden ser comentarios o productos -->
+		<div class="row clearfix">
+			<div class="col-md-6 column">
+				
+			</div>
+			<div class="col-md-6 column">
+				
+			</div>
+		</div>
+		
+		<!-- Area Apoyo superior, 2 posiciones en plantilla 50% -->
+		<div class="row clearfix">
+			
+			
+		</div>	
+		
+		<!-- Area de contenidos principal, 3 columnas, 25x50x25  -->
+		
+		
+		<!-- Area de contenidos principal con sidebar right, 2 columnas, 25x75  -->
+		<div class="row clearfix">
+		
+			
+			<!-- Area de contenidos, contiene áreas adicionales apilables para uso de sistema y bloques auxiliares  -->
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<div class="col-md-9 column">
+				
+				<!-- highligths  -->
+				<div class="row clearfix">
+					
+					<div class="col-md-12 column">
+						
+						
+						
+					</div>
+					
+				</div>
+				
+				<!-- Help área de ayuda  -->
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						
+						
+					</div>
+				</div>
+				
+				<!-- Contenido Arriba  -->
+				<div class="row clearfix">
+					
+				</div>
+				
+				<!-- Content  -->
+				<div class="row clearfix">
+					
+					<!-- Contenidos de ejemplo -->
+					<div class="col-md-12 column">
+						
+						<div class="page-header">
+							<h1>Sección de noticias y artículos <small> - Categoría</small>	</h1>
+						</div>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a></p>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>	Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a></p>
+						
+						<div class="media">
+							 <a href="#" class="pull-left"><img src="img/usuario1.jpg" class="media-object" alt=""></a>
+							<div class="media-body">
+								<h4 class="media-heading">Comentario de primer nivel</h4> 
+								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+								
+								<div class="media">
+									 <a href="#" class="pull-left"><img src="img/usuario2.jpg" class="media-object" alt=""></a>
+									
+									<div class="media-body">
+										<h4 class="media-heading">Comentario respuesta de segundo nivel</h4> 
+										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>	Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.	</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a>	</p>
+					</div>
+				</div>
+				
+				<!-- Paginación - automática del sistema  -->
+				<ul class="pagination">
+					<li><a href="#">Anterior</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">Siguiente</a></li>
+				</ul>
+				
+				<!-- Contenido Abajo -->
+				<div class="row clearfix">
+					
+					
+					
+				</div>
+				
+			</div>
+			
+			<!-- Right sidebar  -->
+			
+			<div class="col-md-3 column">
+			
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<div class="panel panel-default">
+					
+					<div class="panel-heading">
+						<h3 class="panel-title">Información complementaria</h3>
+					</div>
+					
+					<div class="panel-body">
+						Ayuda por contexto <br>Utilice este tipo de paneles o bloques para complementar la información actual cargada.
+					</div>
+					
+					<div class="panel-footer">
+						Puede usar el pie para referirse a la fuente de la información.
+					</div>
+					
+				</div>
+				
+				<div class="panel panel-default">
+					
+					<div class="panel-heading">
+						<h3 class="panel-title">Información complementaria</h3>
+					</div>
+					
+					<div class="panel-body">
+						Ayuda por contexto <br>Puede usar varios bloques de información, contener hipervínculos y otros elementos html <br><br><a class="btn btn-primary btn-large" href="#">Ver más »</a>
+					</div>
+					
+					<div class="panel-footer">
+						Puede usar el pie para referirse a la fuente de la información.
+					</div>
+					
+				</div>			
+				
+				<form role="form">
+					
+					<div class="form-group">
+						 <label for="exampleInputEmail1">Usuario</label>
+						 <input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					
+					<div class="form-group">
+						 <label for="exampleInputPassword1">Contraseña</label>
+						 <input type="password" class="form-control" id="exampleInputPassword1">
+					</div>
+					
+					<div class="checkbox">
+						<label>	<input type="checkbox">No cerrar sesión	</label>
+					</div>
+					
+					<button type="submit" class="btn btn-default">Ingresar</button>
+					
+				</form>
+				
+			</div>
+			
+		</div>
+
+		<!-- Area de contenidos principal, 2 columnas con sidebar left, 75x25  -->
+			
+		
+		<!-- Area de contenidos principal, sin columnas, 100%  -->
+			
+		
+		<!-- Área apoyo inferior 50x50 - 2 áreas  -->
+		<div class="row clearfix">
+			
+			
+			
+			
+		</div>
+		
+		<!-- Area novedades, 4 posiciones en plantilla 25% cada una  -->
+		<div class="row clearfix">
+			<div class="col-md-6 column">
+			
+				<div class="row clearfix">
+					
+					<div class="col-md-6 column">
+						
+						
+						
+					</div>
+					
+					<div class="col-md-6 column">
+					
+						
+					
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-6 column">
+				<div class="row clearfix">
+					
+					<div class="col-md-6 column">
+
+						
+						
+					</div>
+					
+					<div class="col-md-6 column">
+
+						
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area resaltados 3, 2 posiciones en plantilla 50% - se puede dividir en 6 por diseño -->
+		<div class="row clearfix">
+			
+			
+			
+			
+			
+		</div>
+		
+		<!-- Area notas, 2 posiciones en plantilla 50% - se pueden usar paneles, tabs, etc por diseño -->
+		<div class="row clearfix">
+			
+			
+			
+			
+			
+		</div><hr>
+		
+		<!-- Área conceptos 5 columnas centradas -->
+			
+		
+		<!-- Area especiales derecha, desbalanceada a la derecha, 4 x 8 proporción  25% x 75% aproximadamente - información complementaria -->
+		<div class="row clearfix">
+			
+			
+			
+		</div>	
+		
+		<!-- Area opciones -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				
+				
+			</div>
+			
+			<div class="col-md-6 column">
+				
+			</div>
+		</div>
+		
+		<!-- Area complementos -->
+		<div class="row clearfix">
+			
+			
+			
+			
+		</div>
+		
+		<!-- Area columna especiales - no es obligatorio color de fondo 1 sola columna -->
+		<div class="row clearfix">
+			
+			
+			
+		</div>
+		
+		<!-- Menu politicas -->
+		<div class="row clearfix" id="menu_politicas">
+			
+			<div class="col-md-12 column">
+				
+				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+					
+					<div class="navbar-header">
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						 </button> 
+						 <a class="navbar-brand" href="http://www.unitecnologica.edu.co">UTB</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Mapa del sitio</a></li>
+							<li><a href="#">Contáctenos</a>	</li>
+							<li><a href="#">Condiciones de uso y términos legales</a></li>
+							<li><a href="#">Tratamiento datos personales</a></li>						
+							<li><a href="#">Imagen institucional</a></li>						
+						</ul>
+					</div>
+					
+				</nav>
+				
+			</div>
+			
+		</div>
+		
+		<!-- Área pie de pagina 3 columnas color definido en el archivo style.css -->
+		<div class="row clearfix" id="pie_pagina">
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Ternera</strong><br> 
+					Parque Industrial y Tecnológico Carlos Vélez Pombo <br> 
+					Km 1 Vía Turbaco<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(57) 5 6535200 - Fax: 57-5- 6619240
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Manga</strong><br> 
+					Campus Casa Lemaitre: Calle del Bouquet <br> 
+					Cra.21 #25-92, barrio Manga<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(5) 6606041-42-43
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Contacto página web:</strong><br> 
+					Sede Ternera Equipo Portal Institucional <br> 
+					info@unitecnologica.edu.co<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(+57 5)  6535234
+				</address> 
+			</div>
+			
+		</div>
+		
+		<!-- Area copyright color definido en el archivo style.css-->
+		<div class="row clearfix" id="copy">
+			
+			<div class="col-md-12 column">
+				
+				<p class="text-center text-muted">Horario de atención sede Manga y Ternera: <strong>lunes a viernes de 8:00 a.m. a 12:00 m. y 1:00 a 5:00 p.m.</strong> | Cartagena - Colombia | <em>Todos los Derechos Reservados © 2014</em> </p>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+</body>
+</html>

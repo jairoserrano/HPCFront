@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', ['as' => 'home', 'uses' => 'JobsController@index']);
+Route::get('/', ['as' => 'login', 'uses' => 'UsersController@getLogin']);
+Route::post('login', ['as' => 'post.login', 'uses' => 'UsersController@postLogin']);
+Route::resource('users','UsersController',array('except' => array('show')));
 
 Route::resource('jobs','JobsController');
-Route::resource('users','UsersController',array('except' => array('show')));

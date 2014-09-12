@@ -1,0 +1,594 @@
+<!doctype html>
+
+<html lang="es"><head>
+  <meta charset="utf-8">
+  <title>Mockup UTB - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo creado para el mockup que se creará en Drupal como theme">
+  <meta name="author" content="Edison Monsalve - @morpheusco con Bootstrap3">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/utb.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" >	
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+
+	<div id="menuauxiliar">
+		
+			<!-- Menú auxiliar, este menú se usará para todos los sitios, allí van los accesos más comunes, savio, sirius, etc color definido en el archivo utb.css -->
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<nav class="navbar navbar-default navbar-inverse" role="navigation">
+						<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+
+							</button> 
+							<a class="navbar-brand" href="#">UTB</a>
+						</div>
+						
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li> <a href="http://bienestar.unitecnologica.edu.co/">Bienestar Institucional</a>	</li>
+								<li><a href="http://www.utbvirtual.edu.co/">SAVIO</a>	</li>
+								<li><a href="#">SIRIUS</a></li>
+								<li><a href="http://primo.gsl.com.mx:1701/">Bibliotecas</a>	</li>
+								<li><a href="http://correo.utbvirtual.edu.co/">Correo</a>
+								</li>	
+							</ul>
+						</div>
+						
+					</nav>
+				</div>
+			</div>
+	
+	</div>	
+	
+	<!-- El container es la caja principal, allí se ponen todos los contenidos, se recomienda mantener -->
+	<div class="container">
+		
+		<!-- Área encabezado ppal, Incluye logo, nombre, slogan, buscador y redes sociales -->
+		<div class="row clearfix">
+		
+			<br>
+			<!-- Logo -->
+			<div class="col-md-3 column">
+				<img alt="Logo UTB" src="img/logo.png">
+			</div>		
+			
+			<!-- Título y slogan -->
+			<div class="col-md-5 column">
+				<h3>Universidad Tecnológica de Bolívar </strong>
+				<strong><small>Una Institución con vocación empresarial e Internacional</small>	</strong>
+			</div>
+			
+			<!-- Apoyo buscador y redes -->
+			<div class="col-md-4 column">
+				
+				<div align="right">
+						<img src="img/google.png">
+						<img src="img/twitter.png"> 
+						<img src="img/facebook.png"> 			
+				</div>
+				
+				<form class="navbar-form navbar-right" role="search">
+					<button type="submit" class="btn btn-default">Buscar</button>
+					<div class="form-group">
+						<input type="text" class="form-control">
+					</div> 
+				</form> 
+				
+			</div>
+			
+		</div>
+		
+		
+		<!-- Menú principal, Es posible que cambie la apariencia de color, pero la funcionalidad se muestra aquí -->
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button> 
+						<a class="navbar-brand" href="#">Inicio</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Activo</a>
+							</li>
+							<li><a href="#">Otro link</a></li>
+							<li><a href="#">Otro más</a></li>
+							<li><a href="#">Otro adicional</a></li>						
+							
+							<li class="dropdown">
+								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta académica<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Pregrado</a></li>
+									<li class="divider"></li>
+									<li><a href="#">-&gt; Técnicos</a></li>
+									<li><a href="#">-&gt; Tecnólogos</a></li>
+									<li><a href="#">- &gt;Profesionales</a></li>								
+									<li class="divider"></li>
+									<li><a href="#">Post-grados</a></li>
+									<li><a href="#">-&gt; Especializaciones</a></li>
+									<li><a href="#">-&gt; Maestrías</a></li>
+									<li><a href="#">-&gt; Doctorados</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Educación Permanente</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Uno posterior</a>
+							</li>												
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+		
+
+		
+		
+		<!-- Aquí lo que se va a mostrar  -->
+		<div class="row clearfix">
+			
+				
+				
+				
+			<div class="container">
+			
+			<h1>Mas snippets</h1>
+			<p>Aquí los contenidos</p>
+
+
+			
+			</div>
+		
+					
+			
+		</div>
+		
+		
+				
+	</div>
+	
+
+	<p>&nbsp;</p>
+	
+	<div class="row clearfix jumbo-default" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>
+	<p>&nbsp;</p>
+		
+	<div class="row clearfix jumbo-primary" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+	
+	<div class="row clearfix jumbo-success" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+		<div class="row clearfix jumbo-warning" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+	<div class="row clearfix jumbo-danger" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+		<div class="row clearfix jumbo-info" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+	<div class="row clearfix jumbo-muted" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>	
+	
+	<div class="row clearfix jumbo-verdecorp" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+
+	</div>	
+
+	<p>&nbsp;</p>
+
+	<div class="row clearfix jumbo-azulcorp" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-inverted" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+	
+	<div class="row clearfix jumbo-manga" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-manga-inv" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-ternera" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-ternera-inv" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-numeros" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-naciones" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-equipos" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-estudiantes" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-profesores" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+
+	<div class="row clearfix jumbo-grados" >
+
+					<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+					
+										<h3> Área especial 2!</h3>
+					<img alt="140x140" src="img/evento8.jpg" class="img-circle pull-right">
+					<p class="lead">	
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></
+
+	</div>	
+
+	<p>&nbsp;</p>	
+	
+	
+	
+	
+	
+	
+	<!-- Menu politicas -->
+	<div class="row clearfix" id="menu_politicas">
+	
+		<div class="container">
+		
+			<div class="col-md-12 column">
+				
+				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+					
+					<div class="navbar-header">
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						 </button> 
+						 <a class="navbar-brand" href="http://www.unitecnologica.edu.co">UTB</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Mapa del sitio</a></li>
+							<li><a href="#">Contáctenos</a>	</li>
+							<li><a href="#">Condiciones de uso y términos legales</a></li>
+							<li><a href="#">Tratamiento datos personales</a></li>						
+							<li><a href="#">Imagen institucional</a></li>						
+						</ul>
+					</div>
+					
+				</nav>
+				
+			</div>
+		
+		</div>
+			
+	</div>	
+	
+	<!-- Área pie de pagina 3 columnas color definido en el archivo utb.css -->
+	<div class="row clearfix" id="pie_pagina">
+
+		<div class="container">
+		
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Ternera</strong><br> 
+					Parque Industrial y Tecnológico Carlos Vélez Pombo <br> 
+					Km 1 Vía Turbaco<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(57) 5 6535200 - Fax: 57-5- 6619240
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Manga</strong><br> 
+					Campus Casa Lemaitre: Calle del Bouquet <br> 
+					Cra.21 #25-92, barrio Manga<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(5) 6606041-42-43
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Contacto página web:</strong><br> 
+					Sede Ternera Equipo Portal Institucional <br> 
+					info@unitecnologica.edu.co<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(+57 5)  6535234
+				</address> 
+			</div>
+			
+		</div>
+		
+	</div>	
+	
+	<!-- Area copyright color definido en el archivo utb.css-->
+	<div class="row clearfix" id="copy">
+		
+		<div class="col-md-12 column">
+			
+			<p class="text-center text-muted">Horario de atención sede Manga y Ternera: <strong>lunes a viernes de 8:00 a.m. a 12:00 m. y 1:00 a 5:00 p.m.</strong> | Cartagena - Colombia | <em>Todos los Derechos Reservados © 2014</em> </p>
+			
+		</div>
+		
+	</div>	
+	
+	
+	
+
+
+</body>
+
+</html>

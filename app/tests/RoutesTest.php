@@ -8,11 +8,15 @@
 
 class RoutesTest extends TestCase {
 
+    protected $routes;
 
-    /**
-     *Para verificar que existe el index
-     *
-     */
+    protected function setRoutes($route, $verbs = array()){
+        unset($this->routes);
+        $this->routes = [
+            $route = ['GET', 'POST', 'PUT', 'DELETE']
+        ];
+    }
+
     public function testUsersIndexRoute(){
         $this->call('GET', 'users');
         $this->assertResponseOk('La ruta para los usuarios no existe');

@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="utf-8">
+  <title>Mockup UTB - Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo creado para el mockup que se creará en Drupal como theme">
+  <meta name="author" content="Edison Monsalve - @morpheusco con Bootstrap3">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" >
+	<link href="css/utb.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+
+	<div id="menuauxiliar">
+		
+			<!-- Menú auxiliar, este menú se usará para todos los sitios, allí van los accesos más comunes, savio, sirius, etc color definido en el archivo utb.css -->
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<nav class="navbar navbar-default navbar-inverse" role="navigation">
+						<div class="navbar-header">
+							 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+
+							</button> 
+							<a class="navbar-brand" href="#">UTB</a>
+						</div>
+						
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li> <a href="http://bienestar.unitecnologica.edu.co/">Bienestar Institucional</a>	</li>
+								<li><a href="http://www.utbvirtual.edu.co/">SAVIO</a>	</li>
+								<li><a href="#">SIRIUS</a></li>
+								
+								<li class="dropdown">
+									 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta académica<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Pregrado</a></li>
+										<li class="divider"></li>
+										<li><a href="#">-&gt; Técnicos</a></li>
+										<li><a href="#">-&gt; Tecnólogos</a></li>
+										<li><a href="#">- &gt;Profesionales</a></li>								
+										<li class="divider"></li>
+										<li><a href="#">Post-grados</a></li>
+										<li><a href="#">-&gt; Especializaciones</a></li>
+										<li><a href="#">-&gt; Maestrías</a></li>
+										<li><a href="#">-&gt; Doctorados</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Educación Permanente</a></li>
+									</ul>
+								</li>								
+								
+								<li><a href="http://primo.gsl.com.mx:1701/">Bibliotecas</a>	</li>
+								<li><a href="http://correo.utbvirtual.edu.co/">Correo</a>
+								</li>	
+							</ul>
+						</div>
+						
+					</nav>
+				</div>
+			</div>
+	
+	</div>	
+	
+	<!-- El container es la caja principal, allí se ponen todos los contenidos, se recomienda mantener -->
+	<div class="container">
+		
+		<!-- Área encabezado ppal, Incluye logo, nombre, slogan, buscador y redes sociales -->
+		<div class="row clearfix">
+		
+			<br>
+			<!-- Logo -->
+			<div class="col-md-3 column">
+				<img alt="Logo UTB" src="img/logo.png">
+			</div>		
+			
+			<!-- Título y slogan -->
+			<div class="col-md-5 column">
+				
+				<div class="Titulo_UTB">
+					<hgroup class="Titulo_UTB">
+						<h1>Universidad Tecnológica de Bolívar</h1>
+						<h2 class="text-muted">Una Institución con vocación empresarial e Internacional</h2>
+						<h3>Decanatura de diseño gráfico</h3>
+					</hgroup>				
+				</div>
+				
+			</div>
+			
+			<!-- Apoyo buscador y redes -->
+			<div class="col-md-4 column">
+				
+				<div align="right">
+						<img src="img/google.png">
+						<img src="img/twitter.png"> 
+						<img src="img/facebook.png"> 			
+				</div>
+				
+				<form class="navbar-form navbar-right" role="search">
+					<button type="submit" class="btn btn-default">Buscar</button>
+					<div class="form-group">
+						<input type="text" class="form-control">
+					</div> 
+				</form> 
+				
+			</div>
+			
+		</div>
+		
+		<!-- Área apoyo encabezado, Dos sub areas - contenidos sólo de apoyo al encabezado -->
+		
+		
+		<!-- Menú principal, Es posible que cambie la apariencia de color, pero la funcionalidad se muestra aquí -->
+		<div class="row clearfix">
+			
+			<br />
+			<div class="col-md-12 column">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2"> 
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button> 
+						<a class="navbar-brand" href="#">Inicio</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a href="#">Activo</a>
+							</li>
+							<li><a href="#">Otro link</a></li>
+							<li><a href="#">Otro más</a></li>
+							<li><a href="#">Otro adicional</a></li>						
+							
+							<li class="dropdown">
+								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Oferta académica<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Pregrado</a></li>
+									<li class="divider"></li>
+									<li><a href="#">-&gt; Técnicos</a></li>
+									<li><a href="#">-&gt; Tecnólogos</a></li>
+									<li><a href="#">- &gt;Profesionales</a></li>								
+									<li class="divider"></li>
+									<li><a href="#">Post-grados</a></li>
+									<li><a href="#">-&gt; Especializaciones</a></li>
+									<li><a href="#">-&gt; Maestrías</a></li>
+									<li><a href="#">-&gt; Doctorados</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Educación Permanente</a></li>
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">Uno posterior</a>
+							</li>												
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+		
+		<!-- Menú secundario, se usará para mostrar estructuras de navegación complejas de 2do y 3er nivel, no es obligatorio -->
+		<div class="row clearfix">
+		
+			<div class="col-md-12 column">
+				
+				<nav class="navbar navbar-default" role="navigation">
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Sub Link1</a></li>
+							<li><a href="#">Sub Link2</a></li>
+							<li><a href="#">Sub Link3</a></li>
+							<li><a href="#">Sub Link4</a></li>						
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+		</div>
+		
+		<!-- Área galeria, útil para crear galerías - incluye código e imágenes responsive -->
+		<div class="row clearfix">
+			
+			<div class="col-md-12 column">
+				
+				<div class="carousel slide" id="carousel-915683">
+					
+					<ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#carousel-915683"></li>
+						<li data-slide-to="1" data-target="#carousel-915683"></li>
+						<li data-slide-to="2" data-target="#carousel-915683"></li>
+					</ol>
+					
+					<div class="carousel-inner">
+						<div class="item active">
+							<img alt="" src="img/slide1.jpg">
+							<div class="carousel-caption">
+								<h4>Geoset: Un taller de formación multimedia y un gran convenio para iniciar el 2014</h4>
+								<p>	La educación superior de las Universidades más prestigiosas del mundo está evolucionando a gran velocidad hacia la incorporación de contenidos multimedia. Estos contenidos pueden estructurarse como cursos completamente virtuales, con fuerte competencia de conceptos, o simplemente hacia material de apoyo para el aprendizaje presencial. En todos los casos la primacía de los contenidos en inglés es casi absoluta.</p>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img alt="" src="img/slide2.jpg">
+							<div class="carousel-caption">
+								<h4>ONDAS abrió convocatoria para grupos de investigación infantiles y juveniles</h4>
+								<p>	La convocatoria busca fomentar una cultura ciudadana y democrática de ciencia, tecnología e innovación en niños y jóvenes de los municipios priorizados en el departamento de Bolívar, a través de la investigación como estrategia pedagógica.</p>
+							</div>
+						</div>
+						
+						<div class="item">
+							<img alt="" src="img/slide3.jpg">
+							<div class="carousel-caption">
+								<h4>I Foro de Permanencia y Graduación Estudiantil Cartagena</h4>
+								<p>	La Universidad Tecnológica de Bolívar, en convenio con el Ministerio de Educación Nacional, realizó el  I Foro de Permanencia y Graduación Estudiantil-Cartagena 2013, un espacio que busca conocer y analizar las experiencias exitosas sobre el fortalecimiento de la retención estudiantil de universidades nacionales y regionales.</p>
+							</div>
+						</div>
+					</div> 
+					
+					<a class="left carousel-control" href="#carousel-915683" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a> 
+					<a class="right carousel-control" href="#carousel-915683" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area del breadcumbs o migas de pan -->
+		<div class="row clearfix">
+			
+			<br />
+			<div class="col-md-12 column">
+				<ul class="breadcrumb">
+					<li><a href="#">Inicio</a> </li>
+					<li><a href="#">Programas</a> </li>
+					<li class="active">
+						Portada
+					</li>
+				</ul>
+			</div>
+		</div>	
+		
+		<!-- Area destacados, 2 posiciones en plantilla 50% - se puede dividir en 6 por diseño -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				<div class="row">
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen1.jpg">
+							<div class="caption">
+								<h3>Servicio 1</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>	</p>
+								<p>	<a class="btn btn-default" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen2.jpg">
+							<div class="caption">
+								<h3>Servicio 2</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small></p>
+								<p>	<a class="btn btn-primary" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen3.jpg">
+							<div class="caption">
+								<h3>Servicio 3</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>	</p>
+								<p>	<a class="btn btn-success" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-6 column">
+				<div class="row">
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen4.jpg">
+							<div class="caption">
+								<h3>Servicio 4</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>	</p>
+								<p>	<a class="btn btn-info" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen5.jpg">
+							<div class="caption">
+								<h3>Servicio 5</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>	</p>
+								<p>	<a class="btn btn-warning" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="img/tumb-imagen6.jpg">
+							<div class="caption">
+								<h3>Servicio 6</h3>
+								<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small>	</p>
+								<p>	<a class="btn btn-danger" href="#">Action</a></p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area especiales izquierda, desbalanceada a la izquierda, 4 x 8 proporción  25% x 75% aproximadamente - información complementaria -->
+		<div class="row clearfix">
+			
+			<div class="col-md-8 column">
+				
+				<div class="jumbotron well">
+					<h3> Área especial 1!</h3>
+					<p>	<img alt="140x140" src="img/evento8.jpg" class="img-circle" align="right">
+						Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-primary btn-large" href="#">Ver más »</a></p>
+				</div>
+				
+			</div>
+			
+			<div class="col-md-4 column">
+				
+				<div class="jumbotron well">
+					<h3> Información de apoyo </h3>
+					<p><small> Área de contenidos, puede tener o nó color (diseño), puede ser una noticia importante.</small></p>
+					<p>	<a class="btn btn-danger btn-large" href="#">Ver más »</a>	</p>
+				</div>
+				
+			</div>
+		</div>	
+		
+		<!-- Area conceptos, 4 posiciones en plantilla - Pueden ser comentarios o productos -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				<div class="row clearfix">
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/evento6.jpg" class="img-circle">
+						<blockquote class="pull-right">
+							<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+							<small>Fulanito de tal <cite>Evento 1</cite></small>
+						</blockquote> 
+						<a href="#" class="btn btn-primary" type="button">Leer -&gt;</a>
+					</div>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/evento2.jpg" class="img-circle">
+						<blockquote class="pull-right">
+							<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+							<small>Menganito de tal <cite>Evento 2</cite></small>
+						</blockquote> 
+						<button type="button" class="btn btn-success btn-default">Leer -&gt;</button>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-md-6 column">
+				<div class="row clearfix">
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/evento7.jpg" class="img-circle">
+						<blockquote class="pull-right">
+							<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+							<small>Pepito de tal <cite>Evento 3</cite></small>
+						</blockquote> 
+						<a href="#" class="btn btn-warning" type="button">Leer -&gt;</a>
+					</div>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/evento4.jpg" class="img-circle">
+						<blockquote class="pull-right">
+							<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+							<small>Juanito de tal <cite>Evento 4</cite></small>
+						</blockquote> 
+						<a href="#" class="btn btn-danger" type="button">Leer -&gt;</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area Apoyo superior, 2 posiciones en plantilla 50% -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				<div class="thumbnail">
+					<img alt="300x200" src="img/tumb-imagen4.jpg">
+					<div class="caption">
+						<h3> Área información 1 </h3>
+						<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small></p>
+						<p><a class="btn btn-info" href="#"> ver información </a></p>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-6 column">
+				
+				<div class="thumbnail">
+					<img alt="300x200" src="img/tumb-imagen6.jpg">
+					<div class="caption">
+						<h3> Área información 2 </h3>
+						<p><small>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</small></p>
+						<p><a class="btn btn-warning" href="#"> ver información </a></p>
+					</div>
+				</div>
+				
+			</div>
+		</div>	
+		
+		<!-- Area de contenidos principal, 3 columnas, 25x50x25  -->
+		
+		
+		<!-- Area de contenidos principal con sidebar right, 2 columnas, 25x75  -->
+		<div class="row clearfix">
+			
+			<!-- Area de contenidos, contiene áreas adicionales apilables para uso de sistema y bloques auxiliares  -->
+			<div class="col-md-9 column">
+				
+				<!-- alert-sucess  -->
+				<div class="row clearfix">
+					
+					<div class="col-md-12 column">
+						
+						<div class="alert alert-dismissable alert-success">
+							 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4>Alerta!</h4> 
+							<strong>Atención!</strong> Este bloque se usa para resaltar una información de última hora o <strong>muy importante </strong> -  <a href="#" class="alert-link">Puede tener link</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<!-- alert-info  -->
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="alert alert-dismissable alert-info">
+							 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4>Alerta2!</h4> 
+							<strong>Ayuda!</strong> Esta área comúnmente se usa para <strong>ayuda del sistema </strong>, ambos tipos de mensajes poseen una X (botón) para ser ocultadas -  <a href="#" class="alert-link">link auxiliar</a>
+						</div>
+						
+					</div>
+				</div>
+				
+				<!-- Warning  -->
+				<div class="row clearfix">
+					
+					<div class="col-md-12 column">
+						
+						<div class="alert alert-dismissable alert-warning">
+							 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4>Alerta!</h4> 
+							<strong>Atención!</strong> Este bloque se usa para resaltar una información de última hora o <strong>muy importante </strong> -  <a href="#" class="alert-link">Puede tener link</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<!-- Danger  -->
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						
+						<div class="alert alert-dismissable alert-danger">
+							 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4>Alerta2!</h4> 
+							<strong>Ayuda!</strong> Esta área comúnmente se usa para <strong>ayuda del sistema </strong>, ambos tipos de mensajes poseen una X (botón) para ser ocultadas -  <a href="#" class="alert-link">link auxiliar</a>
+						</div>
+						
+					</div>
+				</div>				
+				<!-- Help área de ayuda  -->
+				<div class="row clearfix">
+					
+					<div class="col-md-12 column">
+						
+						<div class="alert alert-dismissable">
+							 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4>Alerta!</h4> 
+							<strong>Atención!</strong> Este bloque se usa para resaltar una información de última hora o <strong>muy importante </strong> -  <a href="#" class="alert-link">Puede tener link</a>
+						</div>
+						
+					</div>
+					
+				</div>			
+				
+				<!-- Content  -->
+				<div class="row clearfix">
+					
+					<!-- Contenidos de ejemplo -->
+					<div class="col-md-12 column">
+						
+						<div class="page-header">
+							<h1>Sección de noticias y artículos <small> - Categoría</small>	</h1>
+						</div>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a></p>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>	Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a></p>
+						
+						<div class="media">
+							 <a href="#" class="pull-left"><img src="img/usuario1.jpg" class="media-object" alt=""></a>
+							<div class="media-body">
+								<h4 class="media-heading">Comentario de primer nivel</h4> 
+								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+								
+								<div class="media">
+									 <a href="#" class="pull-left"><img src="img/usuario2.jpg" class="media-object" alt=""></a>
+									
+									<div class="media-body">
+										<h4 class="media-heading">Comentario respuesta de segundo nivel</h4> 
+										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+						
+						<h2>Encabezado de nodo (contenido)</h2>
+						<p>	Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.	</p>
+						<p>	<a class="btn" href="#">Ver detalles  »</a>	</p>
+					</div>
+				</div>
+				
+				<!-- Paginación - automática del sistema  -->
+				<ul class="pagination">
+					<li><a href="#">Anterior</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">Siguiente</a></li>
+				</ul>
+				
+			</div>
+			
+			<!-- Right sidebar  -->
+			
+			<div class="col-md-3 column">
+			
+				<div class="panel panel-default">
+					
+					<div class="panel-heading">
+						<h3 class="panel-title">Información complementaria</h3>
+					</div>
+					
+					<div class="panel-body">
+						Ayuda por contexto <br>Utilice este tipo de paneles o bloques para complementar la información actual cargada.
+					</div>
+					
+					<div class="panel-footer">
+						Puede usar el pie para referirse a la fuente de la información.
+					</div>
+					
+				</div>
+				
+				<div class="panel panel-default">
+					
+					<div class="panel-heading">
+						<h3 class="panel-title">Información complementaria</h3>
+					</div>
+					
+					<div class="panel-body">
+						Ayuda por contexto <br>Puede usar varios bloques de información, contener hipervínculos y otros elementos html <br><br><a class="btn btn-default btn-large" href="#">Ver más »</a>
+					</div>
+					
+					<div class="panel-footer">
+						Puede usar el pie para referirse a la fuente de la información.
+					</div>
+					
+				</div>			
+				
+				<form role="form">
+					
+					<div class="form-group">
+						 <label for="exampleInputEmail1">Usuario</label>
+						 <input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					
+					<div class="form-group">
+						 <label for="exampleInputPassword1">Contraseña</label>
+						 <input type="password" class="form-control" id="exampleInputPassword1">
+					</div>
+					
+					<div class="checkbox">
+						<label>	<input type="checkbox">No cerrar sesión	</label>
+					</div>
+					
+					<button type="submit" class="btn btn-default">Ingresar</button>
+					
+				</form>
+				
+			</div>
+			
+		</div>
+
+		<!-- Area de contenidos principal, sin columnas, 100%  -->
+		<div class="row clearfix">
+					
+			<!-- Area de contenidos, contiene áreas adicionales apilables para uso de sistema y bloques auxiliares  -->
+			<div class="col-md-12 column">
+				
+				<!-- Content  -->
+				<div class="row clearfix">
+					
+					<!-- Contenidos de ejemplo -->
+					<div class="col-md-12 column">
+						
+						<h1>Test general de elementos</h1>
+						<p>A partir de este punto están los elementos que se pueden usar - por lo menos la mayoría - identifique las clases para ser usadas posteriormente en el editor del CMS.</p>
+						<p>	<a class="btn" href="#">ejemplo de un link  »</a> <hr /></p>
+						
+						<h1>títulos</h1>
+						<p>Tipos de títulos por defecto</p>
+					
+						<h1>h1. Bootstrap heading</h1>
+						<h2>h2. Bootstrap heading</h2>
+						<h3>h3. Bootstrap heading</h3>
+						<h4>h4. Bootstrap heading</h4>
+						<h5>h5. Bootstrap heading</h5>
+						<h6>h6. Bootstrap heading</h6>
+						<hr />
+						
+						<p>Elementos con la etiqueta small </p>
+						<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+						<h2>h2. Bootstrap heading <small>Secondary text</small></h2>
+						<h3>h3. Bootstrap heading <small>Secondary text</small></h3>
+						<h4>h4. Bootstrap heading <small>Secondary text</small></h4>
+						<h5>h5. Bootstrap heading <small>Secondary text</small></h5>
+						<h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+						<hr />
+						<p>Párrafos con la clase .lead</p>
+						<p class="lead">Donec id elit non mi porta gravida at <em>Aquí va texto con énfasis </em> eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<hr />
+						
+						
+						<h2>Uso de font-awesome</h2>
+						<p>Estaremos probando <br />
+						<i class="fa fa-camera-retro fa-5x"></i> fa-camera-retro</p>
+						
+						<h3>Prueba para cambiar los logos sociales</h3>
+						
+						
+						<ul class="fa-ul">
+						  <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+						  <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+						  <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+						  <li><i class="fa-li fa fa-square"></i>in lists</li>
+						</ul>
+						
+						
+						<p>Otra más, pero esta es oficial</p>
+						
+						<ul class="social-links">
+							<li><a class="facebook" href="http://www.facebook.com/morpheusco" target="_blank" title="Facebook"></a></li>
+							<li><a class="email" href="mailto:edison.monsalve@utbvirtual.edu.co" title="Email"> </a></li>
+							<li><a class="linkedin" href="http://www.linkedin.com/profile/view?id=58777516&amp;trk=tab_pro" target="_blank" title="Linkedin"> </a></li>
+							<li><a class="twitter" href="www.twitter.com/morpheusco" target="_blank" title="Twitter"> </a></li>
+							<li><a class="youtube" href="http://www.youtube.com/morpheusco" target="_blank" title="Youtube"> </a></li>
+							<li><a class="google-plus" href="https://plus.google.com/108352039776212405714#108352039776212405714/posts" target="_blank" title="Google+"> </a></li>
+						</ul>
+						
+
+						<p>Otra más, pero esta es oficial ya modificada</p>
+						
+						<div class="sociales">
+							<a href="http://www.facebook.com/morpheusco" target="_blank" title="Facebook"> <i class="fa fa-stack fa-facebook-square fa-3x"></i> </a>
+							<a href="mailto:edison.monsalve@utbvirtual.edu.co" title="Email"> <i class="fa fa-envelope-square fa-stack fa-3x"></i>  </a>
+							<a href="http://www.linkedin.com/profile/view?id=58777516&amp;trk=tab_pro" target="_blank" title="Linkedin"> <i class="fa fa-stack fa-linkedin-square fa-3x"></i>  </a>
+							<a href="www.twitter.com/morpheusco" target="_blank" title="Twitter"> <i class="fa fa-twitter-square fa-stack fa-3x"></i>  </a>
+							<a href="http://www.youtube.com/morpheusco" target="_blank" title="Youtube"> <i class="fa fa-youtube-square fa-stack fa-3x"></i>  </a>
+							<a href="https://plus.google.com/108352039776212405714#108352039776212405714/posts" target="_blank" title="Google+"> <i class="fa fa-google-plus-square fa-stack fa-3x"></i>  </a>
+						</div>
+
+
+						<p>Otra más, pero esta es oficial ya con truco</p>
+						
+						<div >
+							<a class="btn btn-default" href="http://www.facebook.com/morpheusco" target="_blank" title="Facebook"> 
+								<i class="fa fa-facebook-square fa-2x"> </i> 
+							</a>
+							<a class="btn btn-default" href="mailto:edison.monsalve@utbvirtual.edu.co" title="Email"> 
+								<i class="fa fa-envelope-square fa-2x"></i>  
+							</a>
+							<a class="btn btn-default" href="http://www.linkedin.com/profile/view?id=58777516&amp;trk=tab_pro" target="_blank" title="Linkedin"> 
+								<i class="fa fa-linkedin-square fa-2x"></i>  
+							</a>
+							<a class="btn btn-default" href="http://www.twitter.com/morpheusco" target="_blank" title="Twitter"> 
+								<i class="fa fa-twitter-square fa-2x"></i>  
+							</a>
+							<a class="btn btn-default" href="http://www.youtube.com/morpheusco" target="_blank" title="Youtube"> 
+								<i class="fa fa-youtube-square fa-2x"></i>  
+							</a>
+
+							<a class="btn btn-default" href="https://plus.google.com/108352039776212405714#108352039776212405714/posts" target="_blank" title="Google+"> 
+								<i class="fa fa-google-plus-square fa-2x"></i>  
+							</a>
+
+							<a class="btn btn-default" href="https://plus.google.com/108352039776212405714#108352039776212405714/posts" target="_blank" title="Vimeo+"> 
+								<i class="fa fa-vimeo-square fa-2x"></i>  
+							</a>						
+						</div>
+
+						
+						<p>Direcciones Ejemplo</p>
+						
+						<address>
+							<strong>Twitter, Inc.</strong><br />
+							795 Folsom Ave, Suite 600<br />
+							San Francisco, CA 94107<br />
+							<abbr title="Phone">P:</abbr> (123) 456-7890
+						</address>
+
+						<address>
+							<strong>Full Name</strong><br>
+							<a href="mailto:#">first.last@example.com</a>
+						</address>
+						<hr />
+						
+						<p>Citas y variaciones de citas en bloques o en línea, usa etiqueta footer</p>
+						
+						<blockquote>
+							<p>Muchas veces se me pasó por la cabeza la idea de escribir a alguno de ellos (todos estaban vivos entonces) y pedirle una orientación sobre cómo ser un escritor. Nunca me atreví a hacerlo, por timidez, o, acaso, por ese pesimismo inhibitorio —¿para qué escribirles, si sé que ninguno se dignará contestarme?— que suele frustrar las vocaciones de muchos jóvenes en países donde la literatura no significa gran cosa para la mayoría y sobrevive en los márgenes de la vida social, como quehacer casi clandestino</p>
+							<footer>Escrito por  <cite title="Cartas a un joven novelista">Mario Vargas Llosa</cite></footer>
+						</blockquote>
+						<p>opción 2</p>
+						<blockquote class="blockquote-reverse">
+							<p>Muchas veces se me pasó por la cabeza la idea de escribir a alguno de ellos (todos estaban vivos entonces) y pedirle una orientación sobre cómo ser un escritor. Nunca me atreví a hacerlo, por timidez, o, acaso, por ese pesimismo inhibitorio —¿para qué escribirles, si sé que ninguno se dignará contestarme?— que suele frustrar las vocaciones de muchos jóvenes en países donde la literatura no significa gran cosa para la mayoría y sobrevive en los márgenes de la vida social, como quehacer casi clandestino</p>
+							<footer>Escrito por  <cite title="Cartas a un joven novelista">Mario Vargas Llosa</cite></footer>
+						</blockquote>
+						<br /> <hr />
+						<h4>Listas en línea con list-inline</h4>
+						<ul class="list-inline">
+							<li>Elemento 1</li>
+							<li>Elemento 2</li>
+							<li>Elemento 3</li>
+						</ul>
+						
+						<br />
+						<h4>Listas de definición1 y con atributo dl-horizontal</h4>
+						<dl>
+							<dt>What is the format of the class?</dt>
+							<dd>The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</dd>
+							<dt>Will the text of the lectures be available?</dt>
+							<dd>Your fellow classmates have contributed subtitles of lecture content in a number of languages. We encourage you to contribute captions as well!</dd>
+						</dl>
+						<br />
+						<dl class="dl-horizontal">
+							<dt>What is the format of the class?</dt>
+							<dd>The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</dd>
+							<dt>Will the text of the lectures be available?</dt>
+							<dd>Your fellow classmates have contributed subtitles of lecture content in a number of languages. We encourage you to contribute captions as well!</dd>
+						</dl>
+						<hr />
+						<p>Especiales de texto</p>
+						<p>código, uso de la etiqueta code</p>
+						<p>cuando usted use <code>Comandos que deban ser seguidos paso - paso - paso </code> puede usar esta etiqueta.</p>
+						
+						<hr /><br />
+						<h4>Tablas</h4>
+						<h4>Tabla básica </h4>
+						
+						<table summary="Título de la tabla" >
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								
+							</tbody>
+						</table>
+						
+						<h4>Tabla con la clase table</h4>
+						
+						<table summary="Título de la tabla" class="table">
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<h4>Tabla con franjas</h4>
+						<table summary="Título de la tabla" class="table table-striped">
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<h4>Tabla con bordes</h4>
+						<table summary="Título de la tabla" class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+							</tbody>
+						</table>						
+
+						<h4>Tabla con efecto al pasar el mouse</h4>
+						<table summary="Título de la tabla" class="table table-hover">
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr>
+									<td>dato 3 </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+							</tbody>
+						</table>	
+
+						<h4>Tabla con efecto al pasar el mouse y algunas Filas de color</h4>
+						<table summary="Título de la tabla" class="table table-hover">
+							<thead>
+								<tr>
+									<th>Universidad </th>
+									<th>Tipo de convenio </th>
+									<th>Página web (URL) </th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>Pie de página 1 </td>
+									<td>Pie de página 2 </td>
+									<td>Pie de página 3</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>dato normal</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr class="active">
+									<td>Clase active</td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr class="success">
+									<td>clase sucess </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr class="warning">
+									<td>dato warning </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr class="danger">
+									<td>dato danger </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>								</tr>								<tr>
+									<td>dato 1</td>
+									<td>dato 2</td>
+									<td> <a href="#" title="" target="_blank">Txt </a> </td>
+								</tr>
+								<tr class="info">
+									<td>dato info </td>
+									<td>dato 4 </td>
+									<td> <a href="#" title="" target="_blank">TXT </a> </td>
+								</tr>
+							</tbody>
+						</table>						
+						
+						<h4>Tabla con con scroll automático "responsive" cuando se visualiza en resoluciones menores, se crea primero un div</h4>
+						<div class="table-responsive">
+							<table summary="Título de la tabla" class="table">
+								<thead>
+									<tr>
+										<th>Universidad </th>
+										<th>Tipo de convenio </th>
+										<th>Página web (URL) </th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td>Pie de página 1 </td>
+										<td>Pie de página 2 </td>
+										<td>Pie de página 3</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<td>dato 1</td>
+										<td>dato 2</td>
+										<td> <a href="#" title="" target="_blank">Txt </a> </td>
+									</tr>
+									<tr>
+										<td>dato 3 </td>
+										<td>dato 4 </td>
+										<td> <a href="#" title="" target="_blank">TXT </a> </td>
+									</tr>								<tr>
+										<td>dato 1</td>
+										<td>dato 2</td>
+										<td> <a href="#" title="" target="_blank">Txt </a> </td>
+									</tr>
+									<tr>
+										<td>dato 3 </td>
+										<td>dato 4 </td>
+										<td> <a href="#" title="" target="_blank">TXT </a> </td>
+									</tr>
+								</tbody>
+							</table>							
+						</div>
+						<h4>Estilos de Imágenes</h4>
+						<p>imagen normal</p>
+						<img src="img/evento2.jpg" />
+						<p>Imagen con bordes redondeados</p>
+						<img src="img/evento2.jpg" class="img-rounded" />
+						<p>Imagen con efecto redondo</p>
+						<img src="img/evento2.jpg" class="img-circle" />
+						<p>Imagen con boble borde - thumbnail</p>
+						<img src="img/evento2.jpg" class="img-thumbnail" />
+						
+						<h4>Variaciones de textos</h4>
+						<h4>Texto de color</h4>
+						<p class="text-muted">Texto muted - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="text-primary">Texto primary - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="text-success">Texto sucess - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="text-info">Texto info - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="text-warning">Texto warning - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="text-danger">Texto danger - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						
+						<h4>Texto de fondo diferente - el color del texto es asignado directamente por párrafo</h4>
+						<p class="bg-primary">bg primary - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="bg-success">bg sucess - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="bg-info">bg info - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="bg-warning">bg warning - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						<p class="bg-danger">bg danger - The class will consist of lecture videos, which are broken into small chunks, usually between eight and twelve minutes each. Some of these may contain integrated quiz questions. There will also be standalone quizzes that are not part of video lectures. There will be approximately two hours worth of video content per week.</p>
+						
+						<h4>Iconos para usar</h4>
+						<p>Usted puede usar íconos usando la clase y el nombre - revise la documentación de bootstrap, pero en síntesis se usa dentro de una etiqueta span, ejemplos:</p>
+						<p class="lead">ícono del buscador <span class="glyphicon glyphicon-search"></i> - <br />
+						ícono para descarga de la nube <span class="glyphicon glyphicon-cloud-download"></i> - <br /> 
+						ícono para el teléfono  <span class="glyphicon glyphicon-phone-alt"></i> - <br />
+						ícono para el dispositivo móvil  <span class="glyphicon glyphicon-phone"></i> - <br />
+						ícono para el usuario  <span class="glyphicon glyphicon-user"></i> - <br />
+						ícono para la cinta de video  <span class="glyphicon glyphicon-film"></i> - <br />
+						ícono para el inicio  <span class="glyphicon glyphicon-home"></i> - <br />
+						ícono para el audio  <span class="glyphicon glyphicon-volume-up"></i> - <br />
+						ícono para el etiquetado  <span class="glyphicon glyphicon-tag"></i> - <br />
+						ícono para la foto o cámara  <span class="glyphicon glyphicon-camera"></i> - <br />
+						ícono para el video o cámara 2  <span class="glyphicon glyphicon-facetime-video"></i> - <br />
+						ícono para la imagen  <span class="glyphicon glyphicon-picture"></i> - <br />
+						ícono para el posicionamiento  <span class="glyphicon glyphicon-screenshot"></i> - <br />
+						ícono para el regalo  <span class="glyphicon glyphicon-gift"></i> - <br />
+						ícono para el visualizador  <span class="glyphicon glyphicon-eye-open"></i> - <br />
+						ícono para el calendario  <span class="glyphicon glyphicon-calendar"></i> - <br />
+						ícono para el comentario  <span class="glyphicon glyphicon-comment"></i> - <br />
+						ícono para el folder   <span class="glyphicon glyphicon-folder-open"></i> - <br />
+						ícono para el comunicado  <span class="glyphicon glyphicon-bullhorn"></i> - <br />
+						ícono para el check good  <span class="glyphicon glyphicon-thumbs-up"></i> - <br />
+						ícono para el mundo  <span class="glyphicon glyphicon-globe"></i> - <br />
+						ícono para el download  <span class="glyphicon glyphicon-paperclip"></i> - <br />
+						ícono para el download  <span class="glyphicon glyphicon-heart-empty"></i> - <br />
+						</p> <hr />
+						
+						<h4>Ejemplo de diseño</h4>
+						
+						<div class="col-md-6 column">
+							
+							<div class="row">
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-home" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-facetime-video" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-phone" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="col-md-6 column">
+							<div class="row">
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-folder-open" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-comment" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<div class="caption">
+											<p class="text-center">	<span class="glyphicon glyphicon-gift" style="font-size:8em;"></i></p>
+											<p>Texto de apoyo para este ícono, puede ser un <a href="#">hipervínculo</a> por ejemplo o puede incluso tener un botón.</p><br />
+											<p>	<a class="btn btn-default" href="#">Action</a></p>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>						
+						
+						<h4>Barras de progreso</h4>
+						<p>Ejemplo 1 - sin texto interno</p>
+						<div class="progress">
+						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+							<span class="sr-only">60% Complete</i>
+						  </div>
+						</div>
+						<p>Ejemplo 2 - con texto interno</p>
+						<div class="progress">
+						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+							Estado proyecto - 60%
+						  </div>
+						</div>
+						
+						<p>Otras barras </p>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+							<span class="sr-only">40% Complete (success)</i>
+						  </div>
+						</div>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+							<span class="sr-only">20% Complete</i>
+						  </div>
+						</div>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+							<span class="sr-only">60% Complete (warning)</i>
+						  </div>
+						</div>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							<span class="sr-only">80% Complete</i>
+						  </div>
+						</div>
+						
+						<p> Con barras simples </p>
+						<div class="progress progress-striped">
+						  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+							<span class="sr-only">40% Complete (success)</i>
+						  </div>
+						</div>
+						<div class="progress progress-striped">
+						  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+							<span class="sr-only">20% Complete</i>
+						  </div>
+						</div>
+						<div class="progress progress-striped">
+						  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+							<span class="sr-only">60% Complete (warning)</i>
+						  </div>
+						</div>
+						<div class="progress progress-striped">
+						  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+							<span class="sr-only">80% Complete (danger)</i>
+						  </div>
+						</div>						
+						
+						<p>Con barras animadas</p>
+						<div class="progress progress-striped active">
+						  <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+							<span class="sr-only">45% Complete</i>
+						  </div>
+						</div>						
+						
+						<p>Acumuladas</p>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-success" style="width: 35%">
+							<span class="sr-only">35% Complete (success)</i>
+						  </div>
+						  <div class="progress-bar progress-bar-warning" style="width: 20%">
+							<span class="sr-only">20% Complete (warning)</i>
+						  </div>
+						  <div class="progress-bar progress-bar-danger" style="width: 10%">
+							<span class="sr-only">10% Complete (danger)</i>
+						  </div>
+						</div>			
+
+						<h4>Listas de grupo, para evitar tablas</h4>
+						<ul class="list-group">
+						  <li class="list-group-item">Cras justo odio</li>
+						  <li class="list-group-item">Dapibus ac facilisis in</li>
+						  <li class="list-group-item">Morbi leo risus</li>
+						  <li class="list-group-item">Porta ac consectetur ac</li>
+						  <li class="list-group-item">Vestibulum at eros</li>
+						</ul>						
+						<br /> 
+						
+						<p>Con links </p>
+						<div class="list-group">
+						  <a href="#" class="list-group-item active">Cras justo odio </a>
+						  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item">Morbi leo risus</a>
+						  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+						  <a href="#" class="list-group-item">Vestibulum at eros</a>
+						</div>
+						<br />
+						
+						<h4></h4>
+						<p>Mi menú para drupal, con nav adelante, ul con clase list-group y clases list-group-item en los li</p> <hr /> <br />
+						
+						<nav>
+							<ul class="list-group">
+							  <li class="list-group-item active"><a href="#">Dapibus ac facilisis in - active</a></li>
+							  <li class="list-group-item"><a href="#">Morbi leo risus</a></li>
+							  <li class="list-group-item"><a href="#">Cras justo odio </a></li>
+							  <li class="list-group-item"><a href="#">Porta ac consectetur ac</a></li>
+							  <li class="list-group-item"><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						
+						</nav>
+						
+						<br /> <br/>
+
+						<p>Mi menú para drupal, con nav adelante, ul con clase list-group y clases list-group-item en los a</p> <hr /> <br />
+						
+						<nav>
+							<ul class="list-group">
+							  <li><a href="#" class="list-group-item">Dapibus ac facilisis in</a></li>
+							  <li><a href="#" class="list-group-item">Morbi leo risus</a></li>
+							  <li><a href="#" class="list-group-item active">Cras justo odio - active </a></li>
+							  <li><a href="#" class="list-group-item">Porta ac consectetur ac</a></li>
+							  <li><a href="#" class="list-group-item">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>
+						
+						<br /> <br/>
+
+						<p>Mi menú para drupal, con nav con clase list-group adelante, ul y clases list-group-item en los a</p> <hr /> <br />
+						
+						<nav  class="list-group">
+							<ul>
+							  <li><a href="#" class="list-group-item">Dapibus ac facilisis in</a></li>
+							  <li><a href="#" class="list-group-item">Morbi leo risus</a></li>
+							  <li><a href="#" class="list-group-item active">Cras justo odio - active </a></li>
+							  <li><a href="#" class="list-group-item">Porta ac consectetur ac</a></li>
+							  <li><a href="#" class="list-group-item">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>						
+						
+						<br /> <br/>	
+
+						<p>Mi menú para drupal, con nav con clase list-group adelante, ul y clases list-group-item en los li</p> <hr /> <br />
+						
+						<nav  class="list-group">
+							<ul>
+							  <li class="list-group-item"><a href="#">Dapibus ac facilisis in</a></li>
+							  <li class="list-group-item"><a href="#">Morbi leo risus</a></li>
+							  <li class="list-group-item active"><a href="#">Cras justo odio - active </a></li>
+							  <li class="list-group-item"><a href="#">Porta ac consectetur ac</a></li>
+							  <li class="list-group-item"><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>						
+						
+						<br /> <br/>	
+						
+						<br /> <br/>	
+
+						<p>Mi menú para drupal, con nav con clase list-group adelante, ul clase="menu" y clases lef en los li</p> <hr /> <br />
+						
+						<nav  class="list-group">
+							<ul class="menu">
+							  <li class="leaf"><a href="#" class="btn-default" >Dapibus ac facilisis in</a></li>
+							  <li class="leaf"><a href="#">Morbi leo risus</a></li>
+							  <li class="leaf active"><a href="#">Cras justo odio - active </a></li>
+							  <li class="leaf"><a href="#">Porta ac consectetur ac</a></li>
+							  <li class="leaf"><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>						
+						
+						<br /> <br/>						
+
+						<p>Mi menú para drupal, con nav con clase list-group adelante, ul clase="menu" y clases lef en los li con clases bouton default en a</p> <hr /> <br />						
+						<nav  class="list-group">
+							<ul class="menu">
+							  <li class="leaf"><a href="#" class="btn btn-default btn-lg">Dapibus ac facilisis in</a></li>
+							  <li class="leaf"><a href="#" class="btn btn-default btn-lg">Morbi leo risus</a></li>
+							  <li class="leaf active"><a href="#" class="btn btn-default btn-lg">Cras justo odio - active </a></li>
+							  <li class="leaf"><a href="#" class="btn btn-default btn-lg active">Porta ac consectetur ac</a></li>
+							  <li class="leaf"><a href="#" class="btn btn-default btn-lg">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>						
+						
+						<br /> <br/>
+						
+						<p>Mi menú para drupal, con nav limpia con clase nav nav-pills nav-stacked, ul limpio y en los li o a limpios</p> <hr /> <br />
+						
+						<nav>
+							<ul class="nav nav-pills nav-stacked">
+							  <li class=""><a href="#">Dapibus ac facilisis in</a></li>
+							  <li class=""><a href="#">Morbi leo risus</a></li>
+							  <li class=""><a href="#">Cras justo odio - active </a></li>
+							  <li class=""><a href="#">Porta ac consectetur ac</a></li>
+							  <li class=""><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>							
+
+						<br /> <br/>
+						
+						<p>Mi menú para drupal, con nav limpia con clase nav nav-pills nav-stacked, ul limpio y en los li leaf o a limpios</p> <hr /> <br />
+						
+						<nav>
+							<ul class="nav nav-pills nav-stacked">
+							  <li class="leaf"><a href="#">Dapibus ac facilisis in</a></li>
+							  <li class="leaf"><a href="#">Morbi leo risus</a></li>
+							  <li class="leaf"><a href="#">Cras justo odio - active </a></li>
+							  <li class="leaf"><a href="#">Porta ac consectetur ac</a></li>
+							  <li class="leaf"><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>			
+
+						<p>Mi menú para drupal, con nav limpia con clase en ul nav nav-pills nav-stacked y menu, ul limpio y en los li leaf y a limpios</p> <hr /> <br />
+						
+						<nav>
+							<ul class="nav nav-pills nav-stacked menu">
+							  <li class="leaf"><a href="#">Dapibus ac facilisis in</a></li>
+							  <li class="leaf"><a href="#">Morbi leo risus</a></li>
+							  <li class="leaf"><a href="#">Cras justo odio - active </a></li>
+							  <li class="leaf"><a href="#">Porta ac consectetur ac</a></li>
+							  <li class="leaf"><a href="#">Vestibulum at eros</a></li>
+							</ul>						
+						</nav>	
+						
+						<p>Con clases contextuales</p>
+						
+						<ul class="list-group">
+						  <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+						  <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+						  <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+						  <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+						</ul>
+						<div class="list-group">
+						  <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item list-group-item-info">Cras sit amet nibh libero</a>
+						  <a href="#" class="list-group-item list-group-item-warning">Porta ac consectetur ac</a>
+						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+						</div>
+						<br />
+						
+						<p>Listas de grupo para contenido paso a paso</p>						
+						<div class="list-group">
+						  
+						  <a href="#" class="list-group-item active">
+							<h4 class="list-group-item-heading">List group item heading</h4>
+							<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						  </a>
+						  
+						  
+						  <a href="#" class="list-group-item">
+							<h4 class="list-group-item-heading">List group item heading</h4>
+							<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						  </a>
+						  <a href="#" class="list-group-item">
+							<h4 class="list-group-item-heading">List group item heading</h4>
+							<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+						  </a>						  
+						</div>
+						<br />
+						
+						<h4>Paneles</h4>
+						<p>Panel con título, contenido y pie </p>
+						
+						<div class="panel panel-default">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />
+						
+						<p>Paneles con variaciones de color</p>
+						
+						<div class="panel panel-primary">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />
+						
+						<div class="panel panel-success">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />
+						
+						<div class="panel panel-info">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />
+						
+						<div class="panel panel-warning">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />
+						
+						<div class="panel panel-danger">
+							
+							<div class="panel-heading">
+								<h3 class="panel-title">Panel title	</h3>
+							</div>
+
+							<div class="panel-body">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+							
+							<div class="panel-footer">
+								Panel footer
+							</div>
+							
+						</div>
+						<br />		
+
+						<h4>Well - </h4>
+						<p>Cuadro resaltado simple</p>
+						<div class="well">
+							Contenido para resaltado. - <br />
+							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</div>						
+						<p>Cuadro resaltado agrandado</p>
+						<div class="well well-lg">
+							Contenido para resaltado. - <br />
+							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</div>						
+						<p>Cuadro resaltado disminuido</p>
+						<div class="well well-sm">
+							Contenido para resaltado. - <br />
+							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</div>		
+						<hr /> <br /><br />
+						
+						<!-- Programas ficha - Ejemplos -->
+						<div class="row clearfix">
+								
+							<div class="col-md-12 column">
+
+								<div class="row">
+
+								  <!-- Navigation Buttons -->
+								  <div class="col-md-2">
+									
+									<ul class="nav nav-pills nav-stacked" id="Programas">
+									  
+									  <li class="active"><a href="#descripcion">Descripción</a></li>
+									  <li><a href="#egresados">Egresados</a></li>
+									  <li><a href="#malla">Malla curricular</a></li>
+									  <li><a href="#investigacion">Investigación</a></li>	  
+									  <li><a href="#director">Director de programa</a></li>
+									  <li><a href="#profesores">Profesores</a></li>
+									  <li><a href="#contacto">Contacto</a></li>
+									
+									</ul>
+									
+								  </div>
+
+								  <!-- Content -->
+								  <div class="col-md-10">
+									
+									<div class="tab-content">
+									  
+									  <div class="tab-pane active" id="descripcion">
+										
+										<p>El programa se fundamenta en en varias disciplinas, en las que predomina el estudio sistemático de procesos algorítmicos que describen y transforman información, con el fin de optimizar o simplificar los diferentes sistemas complejos que describen el contexto, mediante la generación de modelos y soluciones en beneficio del entorno, promoviendo el desarrollo sostenible y con calidad.</p>
+										<p>El programa, tiene una duración de 9 semestres con una escolaridad aproximada de 4 años y medio. La jornada del programa es diurna.</p>
+										<p>Currículo Integrado, el plan de estudios de Ingeniería de Sistemas está constituido por un conjunto de cursos relacionados con diferentes áreas del conocimiento, que ofrecen al estudiante una formación integral, tanto en la fundamentación básica como en la formación profesional, social y humanística.</p>
+										<p>Los cursos que conforman el currículo del Programa, se han clasificado en cinco (5) áreas académicas, a saber:</p>
+
+									  </div>
+									  
+									  <div class="tab-pane" id="egresados">
+										
+										<p>Con excelente formación en los aspectos social y humanístico que le faciliten su integración al medio, con un alto sentido de compromiso y participación, así como una conciencia clara de su papel como profesional y como miembro de la sociedad, sobre la estructura de principios y valores que distingue a la institución.  Excelentes niveles de comunicación y habilidades para trabajo de grupo.  Con capacidad de dirigir proyectos informáticos.</p> 
+										<p>Igualmente, la Tecnológica considera que, además de su formación científica y técnica, es esencial que sus egresados reúnan valores y calidades personales bien fundamentadas, para poder desempeñar sus funciones, entre las cuales podemos listar:</p>
+										<ul>
+											<li>Capacidad de análisis y crítica</li>
+											<li>Creatividad e imaginación</li>
+											<li>Seguridad</li>
+											<li>Capacidad de autoaprendizaje</li>
+											<li>Adaptabilidad al cambio.</li>
+										</ul>
+
+									  </div>
+									  
+									  <div class="tab-pane" id="malla">
+										
+										<p>Aquí la malla</p>
+									
+									  </div>
+
+									  <div class="tab-pane" id="investigacion">
+										
+										<p>El programa de Ingeniería de Sistemas cuenta con un grupo de investigación que desarrolla metodologías, técnicas y herramientas computacionales en las áreas de TIC para el desarrollo, ingeniería de software y comunicaciones y redes. Esto es posible mediante la realización de proyectos de innovación que responden a necesidades de la industria y de la sociedad del caribe colombiano, con el propósito de mejorar el impacto, eficiencia y usabilidad de las TIC en el fortalecimiento de procesos educativos, tecnológicos y organizacionales.</p>
+										<p>Este grupo se encuentran conformado por profesores de la Facultad de Ingeniería, la Escuela de Estudios Técnicos y Tecnológicos, asistentes de investigación y estudiantes de posgrado y pregrado. El grupo de investigación tiene un trabajo muy activo con el sector externo a nivel regional y nacional a través de la ejecución de proyectos de investigación y consultoría en temas específicos requeridos por la industria.</p>
+										<p>GRITAS: Grupo de Investigación en Tecnologías Aplicadas y Sistemas de Información</p>
+									
+									  </div>
+
+									  <div class="tab-pane" id="director">
+										
+										<p>Jairo Serrano</p>
+									
+									  </div>
+
+									  <div class="tab-pane" id="profesores">
+										
+										<p>Muchos</p>
+									
+									  </div>
+
+									  <div class="tab-pane" id="contacto">
+										
+										<p>Poquito</p>
+									
+									  </div>	  
+									  
+									</div>
+									
+								  </div>
+
+								</div>
+
+							</div>
+
+						</div>						
+						
+						
+						
+						<hr /> <br /><br />
+					<!-- Fin de los contenidos de ejemplo -->
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>	
+		
+		<!-- Área apoyo inferior 50x50 - 2 áreas  -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				<div class="panel-group" id="panel-715086">
+					
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-715086" href="#panel-element-627427">Noticia tipo acordeón</a>
+						</div>
+						<div id="panel-element-627427" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="img/usuario3.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-715086" href="#panel-element-878548">Noticia no. 2</a>
+						</div>
+						<div id="panel-element-878548" class="panel-collapse collapse">
+							<div class="panel-body">
+								<img src="img/usuario4.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+					</div>
+					
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-715086" href="#panel-element-123456">Noticia no. 3</a>
+						</div>
+						<div id="panel-element-123456" class="panel-collapse collapse">
+							<div class="panel-body">
+								<img src="img/usuario2.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+						
+					</div><br>	
+					
+				</div>
+				
+			</div>
+			
+			<div class="col-md-6 column">
+				
+				<div class="panel-group" id="panel-597643">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-597643" href="#panel-element-847201">Evento en acordeón 1</a>
+						</div>
+						<div id="panel-element-847201" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="img/usuario8.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="panel panel-default">
+						
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-597643" href="#panel-element-24581">Evento en acordeón 2</a>
+						</div>
+						<div id="panel-element-24581" class="panel-collapse collapse">
+							<div class="panel-body">
+								<img src="img/usuario6.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+						
+					</div>
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							 <a class="panel-title" data-toggle="collapse" data-parent="#panel-597643" href="#panel-element-95754">Evento en acordeón 3</a>
+						</div>
+						<div id="panel-element-95754" class="panel-collapse collapse">
+							<div class="panel-body">
+								<img src="img/usuario7.jpg" align="right">
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</div>
+						</div>
+						
+					</div>	
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<!-- Area notas, 2 posiciones en plantilla 50% - se pueden usar paneles, tabs, etc por diseño -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+			
+				<div class="tabbable" id="tabs-282970">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#panel-674885" data-toggle="tab">Tema de interés no. 1</a></li>
+						<li><a href="#panel-179068" data-toggle="tab">Tema de interés no. 2</a>	</li>
+					</ul>
+					
+					<div class="tab-content">
+						
+						<div class="tab-pane active" id="panel-674885">
+							<img src="img/usuario3.jpg" align="right" class="img-circle">
+							<p> <br>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. <br>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <a class="btn btn-warning" href="#">Leer más... </a> </p> 
+						</div>
+						
+						<div class="tab-pane" id="panel-179068">
+							<img src="img/usuario5.jpg" align="left" class="img-circle">
+							<p> <br>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. <br>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> 
+						</div>
+						
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="col-md-6 column">
+				
+				<div class="tabbable" id="tabs-338929">
+					<ul class="nav nav-tabs">
+						<li class="active">	<a href="#panel-246877" data-toggle="tab">Tema de interés no. 3</a>	</li>
+						<li class=""><a href="#panel-185624" data-toggle="tab">Tema de interés no. 4</a></li>
+					</ul>
+					
+					<div class="tab-content">
+						
+						<div class="tab-pane active" id="panel-246877">
+							<img src="img/usuario6.jpg" align="left" class="img-circle">
+							<p> <br>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. <br>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p> 
+						</div>
+						
+						<div class="tab-pane" id="panel-185624">
+							<img src="img/usuario7.jpg" align="right" class="img-circle">
+							<p> <br>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit. <br>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. <a class="btn btn-warning" href="#">Leer más... </a> </p> 
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+		</div><hr>
+		
+		<!-- Área conceptos 5 columnas centradas -->
+		<div class="row clearfix">
+			
+			<!-- columna con offset - se corren todas a la derecha - al final queda una libre no renderizada-->
+			<!-- Alert primary -->
+			<div class="col-md-2 col-md-offset-1">	
+				
+				<div class="alert alert-dismissable alert-primary">
+					<h4> Concepto 1	</h4> 
+					<img alt="140x140" src="img/evento7.jpg" class="img-rounded">
+					<br><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p>
+					<a class="btn btn-primary btn-block" href="#">Ver más »</a>
+				</div>
+				
+			</div>	
+			
+			<!-- Alert sucess-->
+			<div class="col-md-2">	
+				
+				<div class="alert alert-success alert-dismissable">
+					<h4> Concepto 2	</h4> 
+					<img alt="140x140" src="img/evento2.jpg" class="img-rounded">
+					<br><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p>
+					<a class="btn btn-success btn-block" href="#">Ver más »</a>
+				</div>
+				
+			</div>	
+			
+			<!-- Alert info-->			
+			<div class="col-md-2">	
+				
+				<div class="alert alert-info alert-dismissable">
+					<h4> Concepto 3	</h4> 
+					<img alt="140x140" src="img/evento4.jpg" class="img-rounded">
+					<br><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p>
+					<a class="btn btn-info btn-block" href="#">Ver más »</a>
+				</div>
+				
+			</div>	
+
+			<!-- Alert warning-->			
+			<div class="col-md-2">	
+				
+				<div class="alert alert-warning alert-dismissable">
+					<h4> Concepto 4	</h4> 
+					<img alt="140x140" src="img/evento8.jpg" class="img-rounded">
+					<br><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p>
+					<a class="btn btn-warning btn-block" href="#">Ver más »</a>
+				</div>
+				
+			</div>		
+			
+			<!-- Alert danger-->			
+			<div class="col-md-2">	
+				
+				<div class="alert alert-danger alert-dismissable">
+					<h4> Concepto 5	</h4> 
+					<img alt="140x140" src="img/evento1.jpg" class="img-rounded">
+					<br><p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p>
+					<a class="btn btn-default btn-block" href="#">Ver más »</a>
+				</div>
+				
+			</div>
+		</div>	
+		
+		<!-- Area especiales derecha, desbalanceada a la derecha, 4 x 8 proporción  25% x 75% aproximadamente - información complementaria -->
+		<div class="row clearfix">
+			
+			<div class="col-md-4 column">
+				
+				<div class="jumbotron well">
+					<h3> Información de apoyo </h3>
+					<p><small> Área de contenidos, puede tener o nó color (diseño), puede ser una noticia importante.</small></p>
+					<p>	<a class="btn btn-primary btn-large" href="#">Ver más &gt;</a>	</p>
+				</div>
+				
+			</div>
+			
+			<div class="col-md-8 column">
+				
+				<div class="jumbotron well">
+					<h3> Área especial 2!</h3>
+					<p>	<img alt="140x140" src="img/evento8.jpg" class="img-circle" align="right">
+					Este tipo de mensaje se reserva para destacar contenidos, pueden ser imágenes, puede ser una noticia importante o imágenes sólamente, puede ser útil para notas de redacción.</p>
+					<p>	<a class="btn btn-warning btn-large" href="#">Ver más &gt;</a></p>
+				</div>
+				
+			</div>
+		</div>	
+		
+		<!-- Area opciones -->
+		<div class="row clearfix">
+			
+			<div class="col-md-6 column">
+				
+				<div class="row clearfix">
+					
+					<h4>¿Qué dicen nuestros estudiantes?</h4>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/usuario6.jpg" class="img-circle" align="right">
+						<p class="text-right">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+						<small>Someone famous <cite>Source Title</cite></small>
+					</div>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/usuario6.jpg" class="img-circle" align="right">
+						<p class="text-left">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+						<small>Someone famous <cite>Source Title</cite></small>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<div class="col-md-6 column">
+				<div class="row clearfix">
+					
+					<h4>¿Qué dicen nuestros afiliados?</h4>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/usuario6.jpg" class="img-circle" align="right">
+						<p class="text-center">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+						<small>Someone famous <cite>Source Title</cite></small>
+					</div>
+					
+					<div class="col-md-6 column">
+						<img alt="140x140" src="img/usuario6.jpg" class="img-circle" align="right">
+						<p class="text-justify">	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p> 
+						<small>Someone famous <cite>Source Title</cite></small>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- Area columna especiales - no es obligatorio color de fondo 1 sola columna -->
+		<div class="row clearfix">
+			
+			<br />
+			<div class="col-md-12 column">
+				
+				<div class="alert alert-dismissable alert-warning">
+					<h4> Área Especial para contenidos de 1 sola columna</h4> 
+					<img alt="140x140" src="img/area4.jpg" class="img-rounded" align="right"><br>
+					<p>Este tipo de mensaje se reserva para destacar contenidos, no se aconseja su uso para contenidos grandes, se aconseja para contenidos que no tengan un diseño que no concuerde con ninguna de las áreas definidas anteriormente. Ocupará el ancho completo del área donde se defina, puede ser una nota importante.</p>
+					<p><strong>NO necesariamente tendrá color</strong></p>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Donec sed odio dui.</p><br>
+					<a class="btn btn-warning btn-large" href="#">Ver más »</a>
+				</div>
+				
+			</div>
+			
+		</div>
+				
+	</div>
+	
+	<!-- Menu politicas -->
+	<div class="row clearfix" id="menu_politicas">
+	
+		<div class="container">
+		
+			<div class="col-md-12 column">
+				
+				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+					
+					<div class="navbar-header">
+						 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3"> 
+							<span class="sr-only">Toggle navigation</i>
+							<span class="icon-bar"></i>
+							<span class="icon-bar"></i>
+							<span class="icon-bar"></i>
+						 </button> 
+						 <a class="navbar-brand" href="http://www.unitecnologica.edu.co">UTB</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Mapa del sitio</a></li>
+							<li><a href="#">Contáctenos</a>	</li>
+							<li><a href="#">Condiciones de uso y términos legales</a></li>
+							<li><a href="#">Tratamiento datos personales</a></li>						
+							<li><a href="#">Imagen institucional</a></li>						
+						</ul>
+					</div>
+					
+				</nav>
+				
+			</div>
+		
+		</div>
+			
+	</div>	
+	
+	<!-- Área pie de pagina 3 columnas color definido en el archivo utb.css -->
+	<div class="row clearfix" id="pie_pagina">
+
+		<div class="container">
+		
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Ternera</strong><br> 
+					Parque Industrial y Tecnológico Carlos Vélez Pombo <br> 
+					Km 1 Vía Turbaco<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(57) 5 6535200 - Fax: 57-5- 6619240
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Sede Manga</strong><br> 
+					Campus Casa Lemaitre: Calle del Bouquet <br> 
+					Cra.21 #25-92, barrio Manga<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(5) 6606041-42-43
+				</address>
+			</div>
+			
+			<div class="col-md-4 column">
+				<address> 
+					<strong>Contacto página web:</strong><br> 
+					Sede Ternera Equipo Portal Institucional <br> 
+					info@unitecnologica.edu.co<br> 
+					<abbr title="Teléfono">Tel:</abbr> 
+					(+57 5)  6535234
+				</address> 
+			</div>
+			
+		</div>
+		
+	</div>	
+	
+	<!-- Area copyright color definido en el archivo utb.css-->
+	<div class="row clearfix" id="copy">
+		
+		<div class="col-md-12 column">
+			
+			<p class="text-center text-muted">Horario de atención sede Manga y Ternera: <strong>lunes a viernes de 8:00 a.m. a 12:00 m. y 1:00 a 5:00 p.m.</strong> | Cartagena - Colombia | <em>Todos los Derechos Reservados © 2014</em> </p>
+			
+		</div>
+		
+	</div>	
+	
+<!-- Enable the tabs para programas -->
+	<script type="text/javascript">
+	  $('#Programas a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	  });
+	</script>	
+	
+	
+</body>
+</html>

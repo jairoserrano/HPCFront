@@ -22,7 +22,9 @@
 
     {{--Le styles--}}
     {{ HTML::style('assets/bootstrap/dist/css/bootstrap.min.css')  }}
-    {{ HTML::style('assets/bootstrap/dist/css/bootstrap-theme.min.css')  }}
+    {{ HTML::style('assets/utb/css/bootstrap-theme.min.css')  }}
+    {{ HTML::style('assets/utb/css/utb.css')  }}
+
     @section('styles')
     @show
 </head>
