@@ -41,16 +41,25 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">UTB</a>
+                            {{ link_to('#', 'UTB') }}
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li> <a href="http://bienestar.unitecnologica.edu.co/">Bienestar Institucional</a>	</li>
-                                <li><a href="http://www.utbvirtual.edu.co/">SAVIO</a>	</li>
-                                <li><a href="#">SIRIUS</a></li>
-                                <li><a href="http://primo.gsl.com.mx:1701/">Bibliotecas</a>	</li>
-                                <li><a href="http://correo.utbvirtual.edu.co/">Correo</a>
+                                <li>
+                                    {{ link_to('http://bienestar.unitecnologica.edu.co/', 'Bienestar Institucional') }}
+                                </li>
+                                <li>
+                                    {{ link_to('http://www.utbvirtual.edu.co/', 'SAVIO') }}
+                                </li>
+                                <li>
+                                    {{ link_to('#', 'SIRIUS') }}
+                                </li>
+                                <li>
+                                    {{ link_to('http://primo.gsl.com.mx:1701/', 'Bibliotecas') }}
+                                </li>
+                                <li>
+                                   {{ link_to('http://correo.utbvirtual.edu.co/', 'Correo') }}
                                 </li>
                             </ul>
                         </div>
@@ -63,7 +72,7 @@
             <div class="row clearfix">
                 <!-- Logo -->
                 <div class="col-md-3 column">
-                    <img alt="Logo UTB" src="{{ asset('assets/images/logo.png') }}">
+                    {{ HTML::image(asset('assets/images/logo.png'), 'UTB')  }}
                 </div>
 
                 <!-- Título y slogan -->
