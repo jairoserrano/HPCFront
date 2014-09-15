@@ -1,11 +1,15 @@
 @extends('layouts.master')
-@section('page_title')
+@section('title')
+Usuarios de la plataforma
+@stop
+
+@section('content_title')
 Usuarios de la plataforma
 @stop
 
 @section('content')
 {{-- dd($users)  --}}
-<table class="table-bordered">
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Nombre</th>

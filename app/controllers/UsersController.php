@@ -95,8 +95,4 @@ class UsersController extends \BaseController {
 		//
 	}
 
-    public function getLogin(){}
-    public function postLogin(){}
-
-
 }

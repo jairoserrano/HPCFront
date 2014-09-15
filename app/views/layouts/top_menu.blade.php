@@ -2,18 +2,12 @@
 <!-- Menú auxiliar, este menú se usará para todos los sitios, allí van los accesos más comunes, savio, sirius, etc -->
 <div class="row clearfix">
     <div class="col-md-12 column">
-        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <nav class="navbar navbar-default navbar-inverse top-menu" role="navigation">
             <div class="navbar-header">
-                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                {{ link_to('#', 'UTB', array('class' => 'navbar-brand')) }}
+                <a href="{{ url('#') }}" class="navbar-brand"><span class="glyphicon glyphicon-arrow-left"></span>  UTB</a>
             </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         {{ link_to('http://bienestar.unitecnologica.edu.co/', 'Bienestar Institucional') }}

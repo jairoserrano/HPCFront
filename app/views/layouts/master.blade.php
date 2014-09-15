@@ -2,7 +2,7 @@
 <html lang="es"><head>
     <meta charset="utf-8">
     <title>
-        @section('page_title')
+        @section('title')
         @show
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,33 +32,25 @@
 <body>
     @include('layouts.top_menu')
     <!-- El container es la caja principal, allí se ponen todos los contenidos, se recomienda mantener -->
-        <div class="container">
 
-
-
-            <!-- Área encabezado ppal, Incluye logo, nombre, slogan, buscador y redes sociales -->
-            <div class="row clearfix">
+            <div class="row clearfix content-container">
                 <!-- Logo -->
-                <div class="col-md-3 column">
+                <div id="sidebar" class="col-md-3 column">
+                    <div class="top-brand row clearfix">
                     {{ HTML::image(asset('assets/images/logo.png'), 'UTB')  }}
-                </div>
-
-                <!-- Título y slogan -->
-                <div class="col-md-5 column">
-                    <h3>Universidad Tecnológica de Bolívar</h3>
-                </div>
-
-            </div>
-
-            <div class="row clearfix">
-                <!-- Logo -->
-                <div class="col-md-3 column">
+                    </div>
                     @section('sidebar')
                     @show
                 </div>
 
                 <!-- Título y slogan -->
-                <div class="col-md-5 column">
+                <div id="main-content" class="col-md-9 column">
+                    <div class="page-title">
+                    <h1>
+                    @section('content_title')
+                    @show
+                    </h1>
+                    </div>
                     @yield('content')
                 </div>
 
@@ -77,8 +69,6 @@ PIE
             <div class="row clearfix" id="copy">
 
             </div>
-
-        </div>
 
         {{--Le scripts--}}
         {{ HTML::script('assets/jquery/dist/jquery.min.js') }}
