@@ -2,7 +2,7 @@
 
 use Mockery\Mock;
 
-class UsersControllerTest extends TestCase
+/*class UsersControllerTest extends TestCase
 {
 
     protected $methods = [
@@ -114,4 +114,4 @@ class UsersControllerTest extends TestCase
 
     }
 
-} 
+} */
