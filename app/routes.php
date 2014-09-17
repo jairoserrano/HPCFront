@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', ['as' => 'login', 'uses' => 'AuthController@login']);
-Route::post('auth', ['as' => 'auth', 'uses' => 'AuthController@auth']);
-Route::resource('users','UsersController',array('except' => array('show')));
 
-Route::resource('jobs','JobsController');

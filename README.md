@@ -16,10 +16,6 @@ Change to the project folder and execute composer:
 
     composer install
 
-Execute the migrations:
-
-    php artisan migrate
-
 In addition, clear the cache files:
 
     php artisan cache:clear

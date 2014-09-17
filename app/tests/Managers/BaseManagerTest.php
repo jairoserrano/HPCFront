@@ -7,11 +7,5 @@
  */
 
 class BaseManagerTest extends TestCase{
-    protected $methods = [
-        'getEntityId',
-        'getCreateRules',
-        'getUpdateRules',
-        'save',
-        'isValid'
-    ];
+
 }
