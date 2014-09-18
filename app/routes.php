@@ -11,4 +11,4 @@
 |
 */
 
-
+Route::resource('projects', 'ProjectsController', array('except' => 'show'));
