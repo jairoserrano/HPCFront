@@ -16,6 +16,7 @@ class CreateJobsTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('name');
+            $table->text('description')->nullable()->default('');
             $table->enum('type', array('java', 'php', 'bash', 'python'));
 			$table->timestamps();
 
