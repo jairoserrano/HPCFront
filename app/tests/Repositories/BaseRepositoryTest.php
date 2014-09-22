@@ -7,10 +7,7 @@
  */
 
 class BaseRepositoryTest extends TestCase{
-
-    protected $methods = [
-        'getEntity',
-        'find',
-        'all',
-    ];
+    public function testIsTrue(){
+        $this->assertTrue(true);
+    }
 } 

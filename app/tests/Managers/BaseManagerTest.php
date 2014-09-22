@@ -7,5 +7,7 @@
  */
 
 class BaseManagerTest extends TestCase{
-
+    public function testIsTrue(){
+        $this->assertTrue(true);
+    }
 }

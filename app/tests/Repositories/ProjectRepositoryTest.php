@@ -1,8 +1,7 @@
 <?php
 
 class ProjectRepositoryTest extends TestCase{
-
-    protected $methods = [
-        'getEntity',
-    ];
+    public function testIsTrue(){
+        $this->assertTrue(true);
+    }
 } 
