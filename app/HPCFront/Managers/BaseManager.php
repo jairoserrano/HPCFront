@@ -1,7 +1,10 @@
 <?php namespace HPCFront\Managers;
 
 
-abstract class BaseManager {
+use CobraYa\Managers\ValidationException;
+
+abstract class BaseManager
+{
 
     protected $entity;
     protected $rules;
@@ -15,48 +18,20 @@ abstract class BaseManager {
         $this->data = array_only($input, array_keys($this->rules));
     }
 
-    public function save(){
-
-        if($this->isValid()){
-
-            $project = $this->entity->fill($this->data);
-            $project->save();
-
-            return true;
-
-        }else{
-
-            return false;
-        }
+    public function save()
+    {
+        $project = $this->entity->fill($this->data);
+        $project->save();
     }
 
-    public function isValid(){
+    public function isValid()
+    {
         $validation = \Validator::make($this->data, $this->rules);
 
-        if($validation->fails()){
-            $this->setErrors($validation->messages());
-            return false;
-        }else{
-            return true;
+        if ($validation->fails()) {
+            throw new ValidationException('Validation failed', $validation->messages());
         }
 
-
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getErrors()
-    {
-        return $this->errors;
-    }
-
-    /**
-     * @param mixed $errors
-     */
-    protected function setErrors($errors)
-    {
-        $this->errors = $errors;
     }
 
 } 

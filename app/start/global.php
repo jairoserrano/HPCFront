@@ -52,6 +52,21 @@ App::error(function(Exception $exception, $code)
 });
 
 /*
+ * Custom validation exception
+ */
+
+App::error(function(\CobraYa\Managers\ValidationException $exception)
+{
+    if(Request::ajax()){
+        Response::json(array(
+            'sucess' => false,
+            'errors' => $exception->getErrors(),
+        ));
+    }
+    return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
+/*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
 |--------------------------------------------------------------------------

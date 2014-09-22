@@ -1,7 +1,5 @@
 <?php namespace HPCFront\Managers;
 
-use HPCFront\Entities\Project;
-
 class CreateProjectManager extends BaseManager implements ManagerInterface
 {
 

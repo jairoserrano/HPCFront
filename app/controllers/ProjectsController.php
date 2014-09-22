@@ -5,7 +5,8 @@ use HPCFront\Managers\CreateProjectManager;
 use HPCFront\Managers\UpdateProjectManager;
 use HPCFront\Entities\Project;
 
-class ProjectsController extends \BaseController {
+class ProjectsController extends \BaseController
+{
 
     protected $projectRepository;
 
@@ -16,102 +17,95 @@ class ProjectsController extends \BaseController {
 
 
     /**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$projects = $this->projectRepository->all();
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $projects = $this->projectRepository->all();
 
         return View::make('projects.index', compact('projects'));
-	}
+    }
 
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('projects.create');
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('projects.create');
+    }
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
         $manager = new CreateProjectManager(new Project(), Input::all());
-
-        if($manager->save()){
-            return Redirect::route('projects.index');
-        }else {
-            return Redirect::back()->withInput()->withErrors($manager->getErrors());
-        }
+        $manager->save();
+        return Redirect::route('projects.index');
 
 	}
 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		$project = $this->projectRepository->find($id);
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $project = $this->projectRepository->find($id);
 
         return View::make('projects.edit', compact('project'));
-	}
+    }
 
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
         $project = $this->projectRepository->find($id);
 
         $manager = new UpdateProjectManager($project, Input::all());
+        $manager->save();
 
-        if($manager->save()){
-            return Redirect::route('projects.index');
-        }else {
-            return Redirect::back()->withInput()->withErrors($manager->getErrors());
-        }
+        return Redirect::route('projects.index');
 
-	}
+    }
 
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
         Project::destroy($id);
 
         return Redirect::route('projects.index');
