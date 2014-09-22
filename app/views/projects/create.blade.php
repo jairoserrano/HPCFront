@@ -3,5 +3,5 @@
     {{ $errors->first('name', '<p class="error_message">:message</p>') }}
     {{ Form::textarea('description') }}
     {{ $errors->first('description', '<p class="error_message">:message</p>') }}
-    {{ Form::submit('Enviar') }}
+    {{ Form::submit('Crear') }}
 {{ Form::close() }}
