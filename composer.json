@@ -5,6 +5,7 @@
 	"license": "MIT",
     "require-dev":{
         "way/generators": "2.*",
+        "way/laravel-test-helpers": "dev-master",
         "barryvdh/laravel-debugbar": "1.*",
         "fzaninotto/faker": "v1.3.0",
         "mockery/mockery": "dev-master"
