@@ -12,3 +12,5 @@ Thumbs.db
 *~
 
 app/database/production.sqlite
+
+.idea/workspace.xml
