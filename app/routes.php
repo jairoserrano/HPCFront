@@ -12,3 +12,8 @@
 */
 
 Route::resource('projects', 'ProjectsController', array('except' => 'show'));
+
+Route::resource('jobs', 'JobsController');
+
+Route::resource('entries', 'EntriesController');
+Route::resource('results', 'ResultsController');
