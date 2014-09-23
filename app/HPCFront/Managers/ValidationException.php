@@ -1,4 +1,4 @@
-<?php namespace CobraYa\Managers;
+<?php namespace HPCFront\Managers;
 
 
 class ValidationException extends \Exception {

@@ -55,7 +55,7 @@ App::error(function(Exception $exception, $code)
  * Custom validation exception
  */
 
-App::error(function(\CobraYa\Managers\ValidationException $exception)
+App::error(function( \HPCFront\Managers\ValidationException $exception)
 {
     if(Request::ajax()){
         Response::json(array(
