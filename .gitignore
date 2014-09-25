@@ -1,6 +1,5 @@
 /bootstrap/compiled.php
 /vendor
-/app/database/production.sqlite
 composer.phar
 composer.lock
 .env.*.php
@@ -10,7 +9,7 @@ Thumbs.db
 .idea/*
 */cache/*
 *~
-
+/v
 app/database/production.sqlite
-
+public/assets/*
 .idea/workspace.xml
