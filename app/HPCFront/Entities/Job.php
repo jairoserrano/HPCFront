@@ -3,7 +3,7 @@
 
 class Job extends \Eloquent {
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'type', 'project_id', 'executable'];
 
     public function entries(){
         return $this->hasMany('\HPCFront\Entities\Entry');

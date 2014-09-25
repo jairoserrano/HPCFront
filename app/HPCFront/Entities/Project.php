@@ -5,7 +5,7 @@ class Project extends \Eloquent {
 	protected $fillable = ['name', 'description'];
 
     public function jobs(){
-        return $this->hasMany('\HPCFront\Entities\Jobs');
+        return $this->hasMany('\HPCFront\Entities\Job');
     }
 
 }
