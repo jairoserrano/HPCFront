@@ -1,5 +1,5 @@
 <?php
-
+use HPCFront\Entities\Project;
 use Faker\Factory as Faker;
 
 class ProjectsTableSeeder extends Seeder {
@@ -8,7 +8,7 @@ class ProjectsTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 3) as $index)
 		{
 			Project::create([
                 'name' => $faker->name,

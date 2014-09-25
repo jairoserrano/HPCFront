@@ -15,13 +15,15 @@ class CreateJobsTable extends Migration {
 		Schema::create('jobs', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('project_id')->unsigned()->index();
             $table->string('name');
             $table->text('description')->nullable()->default('');
-            $table->enum('type', array('java', 'php', 'bash', 'python'));
+            $table->string('executable')->nullable()->default('');
+            $table->enum('type', array('java', 'php', 'python', 'C++', 'C'));
 			$table->timestamps();
 
-            $table->integer('project_id')->unsigned()->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+
 		});
 	}
 
