@@ -11,9 +11,12 @@
 |
 */
 
-Route::resource('projects', 'ProjectsController', array('except' => 'show'));
-
-Route::resource('jobs', 'JobsController');
-
-Route::resource('entries', 'EntriesController');
-Route::resource('results', 'ResultsController');
+Route::get('projects/{id}/create/job', array('as' => 'new_job', 'uses' => 'JobsController@newJob'));
+Route::get('jobs/{id}/create/entry', array('as' => 'new_entry', 'uses' => 'EntriesController@newEntry'));
+Route::get('jobs/{id}/run', array('as' => 'run_job', 'uses' => 'JobsController@runJob'));
+Route::get('entry/getdocument/{id}', 'EntriesController@getFile');
+Route::get('result/getdocument/{id}', 'ResultsController@getFile');
+Route::resource('entries', 'EntriesController', array('except' => array('create', 'show', 'index')));
+Route::resource('projects', 'ProjectsController');
+Route::resource('jobs', 'JobsController', array('except' => array('create', 'show')));
+Route::resource('results', 'ResultsController', array('only', array('store', 'destroy')));
