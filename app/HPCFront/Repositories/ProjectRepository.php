@@ -2,22 +2,24 @@
 
 use HPCFront\Entities\Project;
 
-class ProjectRepository implements RepositoryInterface{
+class ProjectRepository extends BaseRepository
+{
 
-    protected $project;
-
-    function __construct(Project $project)
+    public function getEntity()
     {
-        $this->project = $project;
+        return new Project();
     }
 
-    public function all()
+    public function findWithAllJobsInformation($id)
     {
-        return $this->project->all();
-    }
-
-    public function find($id)
-    {
-        return $this->project->find($id);
+        return $this->entity->with(
+            array(
+                'jobs' => function($query){
+                    $query->orderBy('created_at', 'ASC');
+                },
+                'jobs.entries',
+                'jobs.results'
+            )
+        )->where('id', '=', $id)->first();
     }
 }
