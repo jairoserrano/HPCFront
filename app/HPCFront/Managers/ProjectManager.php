@@ -1,6 +1,6 @@
 <?php namespace HPCFront\Managers;
 
-class CreateProjectManager extends BaseManager implements ManagerInterface
+class ProjectManager extends BaseManager implements ManagerInterface
 {
 
     function getRules()
@@ -10,5 +10,7 @@ class CreateProjectManager extends BaseManager implements ManagerInterface
             'description' => 'required'
         );
     }
+
+
 
 }
