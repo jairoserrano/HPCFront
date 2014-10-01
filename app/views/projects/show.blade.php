@@ -1,40 +1,49 @@
-<h1>{{{ $project->name }}}</h1>
-{{ link_to_route('projects.index', 'Ver todos los proyectos') }}
-{{ link_to_route('new_job', 'Crear Trabajo', array('id' => $project->id)) }}
-<p>{{{ $project->description }}}</p>
-<ul>
-@foreach($project->jobs as $job)
-<li>
-{{ $job->name }} -- {{ $job->type }}
-{{ link_to_route('run_job', 'Correr Trabajo', array('id' => $job->id)) }}
-</li>
-<h2>Archivos de entrada</h2>
-{{ link_to_route('new_entry', 'Agregar Entrada', array('id' => $job->id)) }}
-<ul>
-@foreach($job->entries as $entry)
-    <li>
-    {{ $entry->name }} -- {{ link_to_action('EntriesController@getFile', 'Descargar Archivo', array('id' => $entry->id)) }}
-    {{ link_to_route('entries.edit', 'Editar entrada', array('id' => $entry->id)) }}
+@extends('layouts.master')
+@section('styles')
+    {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
+@stop
+@section('content')
+<section class="row jumbotron">
+  <h1>{{{ $project->name }}}</h1>
+  <p>{{{ $project->description }}}</p>
+</section>
+<button id="create-job" class="btn btn-default" data-url="{{ route('new_job', array('id' => $project->id)) }}" style="float: right;margin-top: 8px;">Crear trabajo</button>
+<h1 class="page-header">Trabajos</h1>
 
-    {{ Form::open(array('method' => 'DELETE','route' => array('entries.destroy', $entry->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
-        {{ Form::hidden('project_id', $project->id) }}
-        <button type="submit" class="btn btn-danger">Eliminar Entrada</button>
-    {{ Form::close() }}
-    </li>
-@endforeach
-</ul>
-<h2>Archivos de salida</h2>
-<ul>
-@foreach($job->results as $result)
-    <li>
-        {{ $result->name }}
-        {{ Form::open(array('method' => 'DELETE','route' => array('results.destroy', $result->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
-                    {{ Form::hidden('project_id', $project->id) }}
+<section class="content col-md-12">
+    <div class="inner row">
+        @foreach($project->jobs as $job)
+        <article class="bs-callout bs-callout-info col-md-12">
+        <h2>{{ $job->name }} <small>{{ $job->type }}</small></h2>
+        <p>{{ $job->description }}</p>
+        <p style="text-align: right;">
+        <a class="btn btn-link" href="{{ route('jobs.show', array('id' => $job->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
+        </article>
+        @endforeach
+    </div>
+</section>
+</section>
+<div id="modal" class="modal fade"></div>
+@stop
+@section('scripts')
+    {{ HTML::script(asset("assets/jasny-bootstrap/dist/js/jasny-bootstrap.min.js")) }}
 
-            <button type="submit" class="btn btn-danger">Eliminar Resultados</button>
-        {{ Form::close() }}
-    </li>
-@endforeach
-</ul>
-@endforeach
-</ul>
+    {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
+    {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
+    {{ HTML::script(asset("js/ui.modal.js")) }}
+    {{ HTML::script(asset("js/ui.form.js")) }}
+    {{ HTML::script(asset("js/form.components.js")) }}
+    <script>
+        (function($, window){
+            $('document').ready(function(){
+                UIModal.init('#modal');
+                UIModal.showCreateModal('#create-job');
+
+                $('#modal').on('shown.bs.modal', function (e) {
+                    UIForm.init('#modal form');
+                    UIForm.validate(CreateProjectFields.rules, CreateProjectFields.messages)
+                });
+            });
+        }(jQuery, window));
+    </script>
+@stop
