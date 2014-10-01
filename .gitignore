@@ -10,7 +10,7 @@ Thumbs.db
 */cache/*
 *~
 /v
-app/database/production.sqlite
+app/database/local.sqlite
 public/assets/*
 public/files/*
 .idea/workspace.xml
