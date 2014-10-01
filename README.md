@@ -20,6 +20,10 @@ In addition, clear the cache files:
 
     php artisan cache:clear
 
+After that you should go to public folder and make sure to have [node.js](http://nodejs.org/) and [Bower](http://bower.io/#install-bower) installed, after that execute
+
+    bower install
+
 ### License
 
 The HPCFront software licensed under the [AGPL v3](http://www.gnu.org/licenses/agpl-3.0.html).
