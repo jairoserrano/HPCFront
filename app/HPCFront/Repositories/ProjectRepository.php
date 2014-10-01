@@ -18,8 +18,10 @@ class ProjectRepository extends BaseRepository
                     $query->orderBy('created_at', 'ASC');
                 },
                 'jobs.entries',
-                'jobs.results'
             )
         )->where('id', '=', $id)->first();
+    }
+    public function getLastProject(){
+        return ($this->entity->count() > 0) ? $this->entity->orderBy('id', 'DESC')->first() : 0 ;
     }
 }
