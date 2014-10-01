@@ -9,7 +9,7 @@ Thumbs.db
 .idea/*
 */cache/*
 *~
-/v
+app/config/grid/*
 app/database/local.sqlite
 public/assets/*
 public/files/*

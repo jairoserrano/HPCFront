@@ -150,7 +150,7 @@ class JobsController extends \BaseController
 
         //dd("java -jar $job->executable $entry->path $toResult");
 
-        echo exec("java -jar $job->executable $entry $toResult");
+        exec("java -jar $job->executable $entry $toResult");
 
 
         //return Redirect::route('jobs.show', array($id));
