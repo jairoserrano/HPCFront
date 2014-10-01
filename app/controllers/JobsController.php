@@ -147,7 +147,7 @@ class JobsController extends \BaseController
 
         //java -jar  JobRotator.jar   /ruta_de_entrada/datos.xls   /ruta_de_salida
 
-        dd("java -jar $job->executable $entry->path $toResult");
+        //dd("java -jar $job->executable $entry->path $toResult");
 
         exec("java -jar $job->executable $entry $toResult");
 
