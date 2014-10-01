@@ -2,7 +2,6 @@
 
 use HPCFront\Repositories\ProjectRepository;
 use HPCFront\Managers\ProjectManager;
-use HPCFront\Managers\UpdateProjectManager;
 use HPCFront\Entities\Project;
 
 class ProjectsController extends \BaseController
@@ -47,6 +46,9 @@ class ProjectsController extends \BaseController
      */
     public function store()
     {
+        if(Request::ajax()){
+
+        }
         $manager = new ProjectManager(new Project(), Input::all());
         $manager->save();
 
@@ -93,10 +95,10 @@ class ProjectsController extends \BaseController
     {
         $project = $this->projectRepository->find($id);
 
-        $manager = new UpdateProjectManager($project, Input::all());
+        $manager = new ProjectManager($project, Input::all());
         $manager->save();
 
-        return Redirect::route('projects.index');
+        return Redirect::route('projects.show', array($id));
 
     }
 
