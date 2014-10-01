@@ -32,19 +32,9 @@ class JobsController extends \BaseController
     {
         $input = Input::all();
         $lastJobId = $this->jobsRepository->getLastJob();
-<<<<<<< HEAD
-        //dd($lastJobId);
-	$projectId = Input::get('project_id');
-        $path = public_path() . "/files/projects/" . $projectId . "/jobs/" . ($lastJobId + 1) . "/";
-        //dd('todo en orden');
-	//$results = File::makeDirectory($path.'/results');
-        //$entries = File::makeDirectory($path.'/entries');
-        //dd([$input, $path]);
-=======
 
         $projectId = Input::get('project_id');
         $path = public_path() . "/files/projects/" . $projectId . "/jobs/" . ($lastJobId + 1) . "/";
->>>>>>> bf1d2cb39c89f7d52208241d819cfe7c9f7dd11b
         if (Input::hasFile('executable')) {
             $file_path = new FilesManager($path, Input::file('executable'));
             $input['executable'] = $file_path->getFilePath();
@@ -52,14 +42,10 @@ class JobsController extends \BaseController
 
         $manager = new CreateJobManager(new Job(), $input);
         $manager->save();
-<<<<<<< HEAD
-	File::makeDirectory($path.'/results');
-=======
 
         File::makeDirectory($path.'/results');
         File::makeDirectory($path.'/entries');
 
->>>>>>> bf1d2cb39c89f7d52208241d819cfe7c9f7dd11b
         return Redirect::back();
 
     }
@@ -164,7 +150,7 @@ class JobsController extends \BaseController
 
         //dd("java -jar $job->executable $entry->path $toResult");
 
-        echo exec("java -jar $job->executable $entry $toResult");
+        exec("java -jar $job->executable $entry $toResult");
 
 
         //return Redirect::route('jobs.show', array($id));

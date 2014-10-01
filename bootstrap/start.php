@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('homestead', 'perseus-macbook.local'),
-
+	'grid' => array('grid.unitecnologica.edu.co'),
 ));
 
 /*
