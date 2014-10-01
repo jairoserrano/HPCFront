@@ -14,8 +14,8 @@
     {{ HTML::style(asset('assets/bootstrap/dist/css/bootstrap.min.css')) }}
     {{-- HTML::style(asset('assets/bootstrap/dist/css/bootstrap-theme.min.css')) --}}
 
-    {{ HTML::style(asset('assets/bootstrap/dist/css/docs.min.css')) }}
-    {{ HTML::style(asset('assets/bootstrap/dist/css/dashboard.css')) }}
+    {{ HTML::style(asset('css/docs.min.css')) }}
+    {{ HTML::style(asset('css/dashboard.css')) }}
 
     @section('styles')
         @show
