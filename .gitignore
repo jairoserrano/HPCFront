@@ -12,4 +12,5 @@ Thumbs.db
 /v
 app/database/production.sqlite
 public/assets/*
+public/files/*
 .idea/workspace.xml
