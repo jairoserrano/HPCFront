@@ -1,7 +1,8 @@
 <?php namespace HPCFront\Managers;
 
 
-class JobManager extends BaseManager implements ManagerInterface {
+class CreateJobManager extends BaseManager implements ManagerInterface
+{
 
     function getRules()
     {
@@ -10,7 +11,7 @@ class JobManager extends BaseManager implements ManagerInterface {
             'description'   => 'required',
             'type'          => 'required',
             'project_id'    => 'required|integer',
-            'executable'    => 'required|',
+            'executable'    => '',
         );
     }
 

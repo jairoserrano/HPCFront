@@ -1,11 +1,11 @@
 <?php namespace HPCFront\Managers;
 
-
 abstract class BaseManager
 {
 
     protected $entity;
     protected $rules;
+    protected $project_path;
 
     abstract function getRules();
 
@@ -14,15 +14,17 @@ abstract class BaseManager
         $this->entity = $entity;
         $this->rules = $this->getRules();
         $this->data = array_only($input, array_keys($this->rules));
+        //dd($this->data);
     }
 
     public function save()
     {
         $this->isValid();
         $this->entity->fill($this->data);
-        $this->entity->save();
 
-        return true;
+        $newEntity = $this->entity->save();
+
+        return $newEntity;
     }
 
     public function isValid()
@@ -33,5 +35,7 @@ abstract class BaseManager
         }
 
     }
+
+
 
 } 
