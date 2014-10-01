@@ -144,16 +144,18 @@ class JobsController extends \BaseController
 
         $job = $this->jobsRepository->find($id);
         $entry = $this->entriesRepository->findJobEntry($job->id, $entryId);
-        $toResult = public_path()."/files/projects/".$job->project->id."/jobs/".$job->id."/results/";
+        $tojobDirectory = $toResult = public_path()."/files/projects/".$job->project->id."/jobs/".$job->id."/";
+        $toResult = $tojobDirectory."results/";
 
         //java -jar  JobRotator.jar   /ruta_de_entrada/datos.xls   /ruta_de_salida
 
         //dd("java -jar $job->executable $entry->path $toResult");
+        SSH::run(array(
+            "cd $tojobDirectory",
+            "java -jar $job->executable $entry $toResult",
+        ));
 
-        exec("java -jar $job->executable $entry $toResult");
-
-
-        //return Redirect::route('jobs.show', array($id));
+        return Redirect::route('jobs.show', array($id));
     }
 
 
