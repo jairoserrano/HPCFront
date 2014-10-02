@@ -4,8 +4,54 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a91aba7e134436dc57b30f02e8ff0805",
+    "hash": "8f34542301c4e78b2b26ccf386f9cd04",
     "packages": [
+        {
+            "name": "adldap/adldap",
+            "version": "4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ztec/adLDAP.git",
+                "reference": "65c7d88e77e2268b60c393e8850cd26ab35a0a6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ztec/adLDAP/zipball/65c7d88e77e2268b60c393e8850cd26ab35a0a6c",
+                "reference": "65c7d88e77e2268b60c393e8850cd26ab35a0a6c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "suggest": {
+                "ext-ldap": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "adLDAP": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GNU"
+            ],
+            "authors": [
+                {
+                    "name": "Richard Hyland",
+                    "email": "adldap@richardhyland.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "adLDAP, low-level library to query Active directory",
+            "homepage": "http://adldap.sourceforge.net",
+            "keywords": [
+                "active directory",
+                "ldap",
+                "windows"
+            ],
+            "time": "2013-08-29 14:19:36"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -234,24 +280,24 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "14665bc3c38c3ec24a12c904d013a663dc4a1d8f"
+                "reference": "3fe430a55ec73346c708f0b864820528d6c28eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/14665bc3c38c3ec24a12c904d013a663dc4a1d8f",
-                "reference": "14665bc3c38c3ec24a12c904d013a663dc4a1d8f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3fe430a55ec73346c708f0b864820528d6c28eda",
+                "reference": "3fe430a55ec73346c708f0b864820528d6c28eda",
                 "shasum": ""
             },
             "require": {
-                "classpreloader/classpreloader": "~1.0",
+                "classpreloader/classpreloader": "~1.0.2",
                 "d11wtq/boris": "~1.0",
                 "filp/whoops": "1.1.*",
                 "ircmaxell/password-compat": "~1.0",
-                "jeremeamia/superclosure": "~1.0",
+                "jeremeamia/superclosure": "~1.0.1",
                 "monolog/monolog": "~1.6",
                 "nesbot/carbon": "~1.0",
                 "patchwork/utf8": "1.1.*",
@@ -345,7 +391,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-09-15 02:45:24"
+            "time": "2014-10-02 19:50:12"
         },
         {
             "name": "monolog/monolog",
@@ -1630,6 +1676,52 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2014-09-23 05:25:11"
+        },
+        {
+            "name": "wells/l4-ldap-ntlm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wells/l4-ldap-ntlm.git",
+                "reference": "0907a4822715c7b48389637f2c808bae34073edd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wells/l4-ldap-ntlm/zipball/0907a4822715c7b48389637f2c808bae34073edd",
+                "reference": "0907a4822715c7b48389637f2c808bae34073edd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Wells\\L4LdapNtlm": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Wells",
+                    "email": "wells@users.noreply.github.com"
+                }
+            ],
+            "description": "An LDAP/Active Directory/NTLM authentication driver for Laravel 4.",
+            "homepage": "https://github.com/wells/l4-ldap-ntlm",
+            "keywords": [
+                "Authentication",
+                "L4",
+                "Laravel 4",
+                "auth",
+                "laravel",
+                "ldap"
+            ],
+            "time": "2014-05-28 16:13:02"
         }
     ],
     "packages-dev": [
@@ -1945,6 +2037,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "adldap/adldap": 20,
+        "wells/l4-ldap-ntlm": 20,
         "way/laravel-test-helpers": 20,
         "mockery/mockery": 20
     },

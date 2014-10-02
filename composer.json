@@ -11,9 +11,8 @@
         "mockery/mockery": "dev-master"
     },
 	"require": {
-		"laravel/framework": "4.2.*",
-        "adldap/adldap": "4.*@dev",
-        "wells/l4-ldap-ntlm": "dev-master"
+		"laravel/framework": "4.2.9",
+        "xavrsl/ldap": "dev-master"
 	},
 	"autoload": {
         "psr-4":{
