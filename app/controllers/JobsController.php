@@ -153,6 +153,7 @@ class JobsController extends \BaseController
 
         $job = $this->jobsRepository->find($id);
         $entry = $this->entriesRepository->findJobEntry($job->id, $entryId);
+
         $jobDirectory = public_path()."/files/projects/".$job->project->id."/jobs/".$job->id."/";
         $results = $jobDirectory."results/";
 
@@ -162,6 +163,7 @@ class JobsController extends \BaseController
         ), function($line){
             $this->ssh_output = $line.PHP_EOL;
         });
+
 
         return Redirect::route('jobs.show', array($id))->with(array('output' => $this->ssh_output));
     }
