@@ -13,6 +13,7 @@ class JobsController extends \BaseController
     protected $jobsRepository;
     protected $entriesRepository;
     protected $projectsRepository;
+    protected $ssh_output;
 
     function __construct(JobsRepository $jobsRepository,
                          EntriesRepository $entriesRepository)
@@ -62,8 +63,16 @@ class JobsController extends \BaseController
         $path = public_path() . "/files/projects/" . $job->project->id . "/jobs/" . $job->id . "/results";
 
         $results = File::allFiles($path);
+        $files = array();
+        foreach($results as $result){
+            $files[] = array(
+                'name' => $result->getFilename(),
+                'size' => round($result->getSize() / 1048576, 2),
+                'to_download' => $result->getRealpath(),
+            );
 
-        return View::make('jobs.show', compact(array('job', 'results')));
+        }
+        return View::make('jobs.show', compact(array('job', 'files')));
 
     }
 
@@ -144,19 +153,22 @@ class JobsController extends \BaseController
 
         $job = $this->jobsRepository->find($id);
         $entry = $this->entriesRepository->findJobEntry($job->id, $entryId);
-        $tojobDirectory = $toResult = public_path()."/files/projects/".$job->project->id."/jobs/".$job->id."/";
-        $toResult = $tojobDirectory."results/";
+        $jobDirectory = public_path()."/files/projects/".$job->project->id."/jobs/".$job->id."/";
+        $results = $jobDirectory."results/";
 
-        //java -jar  JobRotator.jar   /ruta_de_entrada/datos.xls   /ruta_de_salida
-
-        //dd("java -jar $job->executable $entry->path $toResult");
         SSH::run(array(
-            "cd $tojobDirectory",
-            "java -jar $job->executable $entry $toResult",
-        ));
+            "cd $jobDirectory",
+            "java -jar $job->executable $entry->path $results",
+        ), function($line){
+            $this->ssh_output = $line.PHP_EOL;
+        });
 
-        return Redirect::route('jobs.show', array($id));
+        return Redirect::route('jobs.show', array($id))->with(array('output' => $this->ssh_output));
     }
 
+    public function downloadResult(){
+        dd($result);
+        Response::download();
+    }
 
 }
