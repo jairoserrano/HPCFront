@@ -31,7 +31,7 @@
         @if(Session::has('login_error'))
         <p>Error</p>
         @endif
-        {{ Form::text('username', null, array('class' => 'form-control', 'placeholder'=> 'Cod Sirius', 'autofocus' => 'autofocus', 'required' => 'required')) }}
+        {{ Form::text('uid', null, array('class' => 'form-control', 'placeholder'=> 'Cod Sirius', 'autofocus' => 'autofocus', 'required' => 'required')) }}
         {{ Form::password('password', array('class' => 'form-control', 'placeholder'=> 'Contraseña', 'required' => 'required')) }}
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       {{ Form::close() }}

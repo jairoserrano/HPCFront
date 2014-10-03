@@ -13,7 +13,7 @@ class AuthController extends \BaseController
         $data = Input::only('username', 'password');
 
         $credentials = array(
-            'username' => $data['username'],
+            'username' => $data['uid'],
             'password' => $data['password']
         );
 
