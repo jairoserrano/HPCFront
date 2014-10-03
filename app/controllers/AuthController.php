@@ -1,20 +1,37 @@
 <?php
 
-class AuthController extends \BaseController{
+class AuthController extends \BaseController
+{
 
-    public function getLogin(){
+    public function getLogin()
+    {
         return View::make('auth.login');
     }
 
-    public function auth(){
+    public function auth()
+    {
+        $data = Input::only('username', 'password');
 
-        $input = Input::only('username', 'password');
+        $credentials = array(
+            'email' => $data['email'],
+            'password' => $data['password']
+        );
 
-        if(Ldap::auth($input['username'],$input['password'])){
-            return Redirect::route('projects.index');
-        }else{
-            return Redirect::back();
+        if (Auth::attempt($credentials)) {
+
+            return Redirect::route('pojects.index'); //provisional
+        } else {
+            return Redirect::back()->with('login_error', 1);
+
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return Redirect::action('login');
+
     }
 
 } 
