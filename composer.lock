@@ -4,54 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8f34542301c4e78b2b26ccf386f9cd04",
+    "hash": "66c0c4401715a9138711b0201ad51b30",
     "packages": [
-        {
-            "name": "adldap/adldap",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ztec/adLDAP.git",
-                "reference": "65c7d88e77e2268b60c393e8850cd26ab35a0a6c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ztec/adLDAP/zipball/65c7d88e77e2268b60c393e8850cd26ab35a0a6c",
-                "reference": "65c7d88e77e2268b60c393e8850cd26ab35a0a6c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "suggest": {
-                "ext-ldap": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "adLDAP": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GNU"
-            ],
-            "authors": [
-                {
-                    "name": "Richard Hyland",
-                    "email": "adldap@richardhyland.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "adLDAP, low-level library to query Active directory",
-            "homepage": "http://adldap.sourceforge.net",
-            "keywords": [
-                "active directory",
-                "ldap",
-                "windows"
-            ],
-            "time": "2013-08-29 14:19:36"
-        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -1678,27 +1632,31 @@
             "time": "2014-09-23 05:25:11"
         },
         {
-            "name": "wells/l4-ldap-ntlm",
-            "version": "dev-master",
+            "name": "xavrsl/ldap",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wells/l4-ldap-ntlm.git",
-                "reference": "0907a4822715c7b48389637f2c808bae34073edd"
+                "url": "https://github.com/XavRsl/Ldap.git",
+                "reference": "785c1c6d5f15df19b2b45b99374d01b8dd86d8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wells/l4-ldap-ntlm/zipball/0907a4822715c7b48389637f2c808bae34073edd",
-                "reference": "0907a4822715c7b48389637f2c808bae34073edd",
+                "url": "https://api.github.com/repos/XavRsl/Ldap/zipball/785c1c6d5f15df19b2b45b99374d01b8dd86d8a9",
+                "reference": "785c1c6d5f15df19b2b45b99374d01b8dd86d8a9",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4",
-                "php": ">=5.3.0"
+                "ext-ldap": "*",
+                "illuminate/support": "4.x",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "2.1.*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Wells\\L4LdapNtlm": "src/"
+                    "Xavrsl\\Ldap": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1707,21 +1665,17 @@
             ],
             "authors": [
                 {
-                    "name": "Brian Wells",
-                    "email": "wells@users.noreply.github.com"
+                    "name": "Xavier Roussel",
+                    "email": "contact@xavrsl.fr"
                 }
             ],
-            "description": "An LDAP/Active Directory/NTLM authentication driver for Laravel 4.",
-            "homepage": "https://github.com/wells/l4-ldap-ntlm",
+            "description": "Add Ldap Search possibilities to Laravel",
             "keywords": [
-                "Authentication",
-                "L4",
-                "Laravel 4",
-                "auth",
                 "laravel",
-                "ldap"
+                "ldap",
+                "search"
             ],
-            "time": "2014-05-28 16:13:02"
+            "time": "2014-09-09 14:43:29"
         }
     ],
     "packages-dev": [
@@ -2037,8 +1991,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "adldap/adldap": 20,
-        "wells/l4-ldap-ntlm": 20,
         "way/laravel-test-helpers": 20,
         "mockery/mockery": 20
     },
