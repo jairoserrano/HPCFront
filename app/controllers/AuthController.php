@@ -10,7 +10,7 @@ class AuthController extends \BaseController
 
     public function auth()
     {
-        $data = Input::only('username', 'password');
+        $data = Input::only('uid', 'password');
 
         $credentials = array(
             'uid' => $data['uid'],
@@ -19,7 +19,7 @@ class AuthController extends \BaseController
 
         if (Auth::attempt($credentials)) {
 
-            return Redirect::route('pojects.index'); //provisional
+            return Redirect::route('pojects.index');
         } else {
             return Redirect::back()->with('login_error', 1);
 
