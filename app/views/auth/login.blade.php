@@ -28,6 +28,9 @@
 
       {{ Form::open(array('route' => 'auth', 'class' => 'form-signin', 'role' => 'form')) }}
         <h2 class="form-signin-heading">Ingresar a HPCFront</h2>
+        @if(Session::has('login_error'))
+        <p>Error</p>
+        @endif
         {{ Form::text('username', null, array('class' => 'form-control', 'placeholder'=> 'Cod Sirius', 'autofocus' => 'autofocus', 'required' => 'required')) }}
         {{ Form::password('password', array('class' => 'form-control', 'placeholder'=> 'Contraseña', 'required' => 'required')) }}
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
