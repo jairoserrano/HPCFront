@@ -13,4 +13,5 @@ app/config/grid/*
 app/database/local.sqlite
 public/assets/*
 public/files/*
+app/config/packages/*
 .idea/workspace.xml
