@@ -6,9 +6,15 @@ class AuthController extends \BaseController{
         return View::make('auth.login');
     }
 
-    public function authLogin(){
+    public function auth(){
 
-        return Redirect::route('projects.index');
+        $input = Input::only('username', 'password');
+
+        if(Ldap::auth($input['username'],$input['password'])){
+            return Redirect::route('projects.index');
+        }else{
+            return Redirect::back();
+        }
     }
 
 } 
