@@ -18,7 +18,7 @@ class AuthController extends \BaseController
         );
 
 
-        if (Auth::attemp($credentials)) {
+        if (Auth::attempt($credentials)) {
             return Redirect::route('pojects.index');
         } else {
             return Redirect::back()->with('login_error', 1);
