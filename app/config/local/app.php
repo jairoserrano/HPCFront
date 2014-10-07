@@ -43,10 +43,14 @@ return array(
     'providers' => array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Illuminate\Auth\AuthServiceProvider',
+        'Ymo\L4OpenLdap\L4OpenLdapServiceProvider',
 
     ),
     'aliases' => array(
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'Auth'            => 'Illuminate\Support\Facades\Auth',
+
 
     ),
 );
