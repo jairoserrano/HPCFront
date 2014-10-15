@@ -1,39 +1,69 @@
 <?php namespace HPCFront\Managers;
 
+use Illuminate\Http\Request as Input;
+use HPCFront\Entities\EntityInterface;
+
 abstract class BaseManager
 {
 
-    protected $entity;
-    protected $rules;
+    private $entity;
+    private $data;
     protected $project_path;
+
 
     abstract function getRules();
 
-    function __construct($entity, $input)
+    function __construct(EntityInterface $entity, Input $input)
     {
-        $this->entity = $entity;
-        $this->rules = $this->getRules();
-        $this->data = array_only($input, array_keys($this->rules));
-        //dd($this->data);
+        $this->setEntity($entity);
+        $this->setData($input->all());
     }
 
     public function save()
     {
         $this->isValid();
         $this->entity->fill($this->data);
+        $this->entity->save();
 
-        $newEntity = $this->entity->save();
-
-        return $newEntity;
+        return true;
     }
 
     public function isValid()
     {
-        $validation = \Validator::make($this->data, $this->rules);
+        $validation = \Validator::make($this->data, $this->getRules());
         if ($validation->fails()) {
             throw new ValidationException('Validation failed', $validation->messages());
         }
 
+    }
+
+    protected function setData(Array $data)
+    {
+        $this->data = array_only($data, array_keys($this->getRules()));
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEntity()
+    {
+        return $this->entity;
+    }
+
+    /**
+     * @param mixed $entity
+     */
+    protected function setEntity( EntityInterface $entity)
+    {
+        $this->entity = $entity;
     }
 
 
