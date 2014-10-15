@@ -3,15 +3,18 @@
 use HPCFront\Repositories\ProjectRepository;
 use HPCFront\Managers\ProjectManager;
 use HPCFront\Entities\Project;
+use Illuminate\Routing\UrlGenerator as URL;
 
 class ProjectsController extends \BaseController
 {
 
     protected $projectRepository;
+    protected $url;
 
-    function __construct(ProjectRepository $projectRepository)
+    function __construct(ProjectRepository $projectRepository, URL $urlGenerator)
     {
         $this->projectRepository = $projectRepository;
+        $this->url = $urlGenerator;
     }
 
 
@@ -46,15 +49,14 @@ class ProjectsController extends \BaseController
      */
     public function store()
     {
-        if(Request::ajax()){
-
-        }
-        $manager = new ProjectManager(new Project(), Input::all());
+        $manager = new ProjectManager(new Project(), Input::instance());
         $manager->save();
+        $new_project_url = $this->url->route('projects.show', $manager->getEntity()->id);
 
-        return Redirect::route('projects.index');
+        return Redirect::route('projects.index')
+            ->with('success', $new_project_url);
 
-	}
+    }
 
 
     /**
@@ -95,10 +97,14 @@ class ProjectsController extends \BaseController
     {
         $project = $this->projectRepository->find($id);
 
-        $manager = new ProjectManager($project, Input::all());
+        $manager = new ProjectManager($project, Input::instance());
         $manager->save();
 
-        return Redirect::route('projects.show', array($id));
+        $updated_project_name = $manager->getEntity()->name;
+
+        return Redirect::route('projects.index')
+            ->with('updated', $updated_project_name);
+        ;
 
     }
 
@@ -111,9 +117,10 @@ class ProjectsController extends \BaseController
      */
     public function destroy($id)
     {
+
         Project::destroy($id);
 
-        return Redirect::route('projects.index');
+        return Response::json(true);
 
     }
 }
