@@ -16,6 +16,6 @@ abstract class BaseRepository implements RepositoryInterface{
     }
 
     public function all(){
-        return $this->entity->all();
+        return $this->entity->orderBy('created_at', 'DESC')->get();
     }
 } 

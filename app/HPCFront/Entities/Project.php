@@ -1,6 +1,6 @@
 <?php namespace HPCFront\Entities;
 
-class Project extends \Eloquent {
+class Project extends BaseEntity implements EntityInterface {
 
 	protected $fillable = ['name', 'description'];
 

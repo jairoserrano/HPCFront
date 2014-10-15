@@ -2,6 +2,5 @@
 
 
 interface ManagerInterface {
-
     public function getRules();
 } 
