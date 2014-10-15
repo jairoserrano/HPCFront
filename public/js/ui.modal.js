@@ -14,8 +14,7 @@ var UIModal = (function(window){
         $(context).on('click', button, function(){
             var $button =  $(this);
             $.get($button.data('url'), function(data){
-                $modal.html(data);
-                $modal.modal('show');
+                $modal.html(data).modal('show');
             });
         });
     };
@@ -24,8 +23,7 @@ var UIModal = (function(window){
         $(button).on('click', function(){
             var $button =  $(this);
             $.get($button.data('url'), function(data){
-                $modal.html(data);
-                $modal.modal('show');
+                $modal.html(data).modal('show');
             });
         });
     };
