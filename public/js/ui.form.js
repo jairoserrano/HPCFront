@@ -52,7 +52,9 @@ var UIForm = function () {
     return {
         init : function(form, ajax){
             setForm(form, ajax);
-            $form.find(':input[type="file"]').fileinput();
+            if($(':input[type="file"]').length){
+                $form.find(':input[type="file"]').fileinput();
+            }
         },
         validate: validate,
         $form:getForm
