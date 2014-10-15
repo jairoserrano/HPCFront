@@ -1,43 +1,38 @@
-var CreateProjectFields = {
-    "rules":{
-        name:{
+var ProjectFields = {
+    "rules": {
+        name: {
             required: true
         },
-        description:{
-            required:true
+        description: {
+            required: true
         }
     },
-    "messages":{
-        name:{
-            required: "Hey vale mia ponle un nombre"
+    "messages": {
+        name: {
+            required: "Hace falta colocar un nombre"
         },
-        description:{
-            required: "Hey vale mia ponle un descripción"
+        description: {
+            required: "Hace falta agregar una descripción"
         }
     }
 };
 
-var UpdateProjectFields = {
-    "rules":{},
-    "messages":{}
-};
-
 var CreateJobFields = {
-    "rules":{},
-    "messages":{}
+    "rules": {},
+    "messages": {}
 };
 
 var UpdateJobFields = {
-    "rules":{},
-    "messages":{}
+    "rules": {},
+    "messages": {}
 };
 
 var CreateEntryFields = {
-    "rules":{},
-    "messages":{}
+    "rules": {},
+    "messages": {}
 };
 
 var UpdateEntryFields = {
-    "rules":{},
-    "messages":{}
+    "rules": {},
+    "messages": {}
 };
