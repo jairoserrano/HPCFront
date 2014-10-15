@@ -36,6 +36,10 @@ class CreateJobsTable extends Migration {
 	public function down()
 	{
 		Schema::drop('jobs');
+
+        $file = new File();
+
+        $file->deleteDirectory(storage_path().'/jobs');
 	}
 
 }
