@@ -13,11 +13,14 @@
 <section class="content col-md-12">
     <div class="inner row">
         @foreach($project->jobs as $job)
-        <article class="bs-callout bs-callout-info col-md-12">
+        <article class="bs-callout bs-callout-info col-md-12 job">
         <h2>{{ $job->name }} <small>{{ $job->type }}</small></h2>
         <p>{{ $job->description }}</p>
         <p style="text-align: right;">
-        <a class="btn btn-link" href="{{ route('jobs.show', array('id' => $job->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
+            <button class="btn btn-danger delete-job" data-url="{{{ route('jobs.destroy', array($job->id)) }}}" data-method="DELETE"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
+            <button class="btn btn-success edit-job" data-url="{{{ route('jobs.edit', array($job->id)) }}}"><i class="glyphicon glyphicon-edit"></i> Editar</button>
+            <button class="btn btn-info view-job" data-url="{{ route('jobs.show', array('id' => $job->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</button>
+        </p>
         </article>
         @endforeach
     </div>
@@ -38,10 +41,27 @@
             $('document').ready(function(){
                 UIModal.init('#modal');
                 UIModal.showCreateModal('#create-job');
+                UIModal.showEditModal('button.edit-job', 'section.content');
 
                 $('#modal').on('shown.bs.modal', function (e) {
                     UIForm.init('#modal form');
-                    UIForm.validate(CreateProjectFields.rules, CreateProjectFields.messages)
+                    UIForm.validate(EditJobFields.rules, EditJobFields.messages)
+                });
+
+                $('section.content').on('click', 'button.view-job', function(){
+                    window.location.href = $(this).data('url');
+                });
+
+                $('section.content').on('click', 'button.delete-job', function(){
+                    $.ajax({
+                        url: $(this).data('url'),
+                        method: $(this).data('method')
+                    })
+                    .done(function(data) {
+                        if(data === true){
+                            document.location.reload(true);
+                        }
+                    });
                 });
             });
         }(jQuery, window));
