@@ -14,12 +14,12 @@ class AuthController extends \BaseController
 
         $credentials = array(
             'username' => $data['username'],
-            'password' => sha1($data['password'])
+            'password' => $data['password']
         );
 
 
         if (Auth::attempt($credentials)) {
-            return Redirect::back()->with('login_success', 1);
+            return Redirect::route('projects.index');
         } else {
             return Redirect::back()->with('login_error', 1);
         }
@@ -27,9 +27,8 @@ class AuthController extends \BaseController
 
     public function logout()
     {
-        //Auth::logout();
-
-        return Redirect::action('login');
+        Auth::logout();
+        return Redirect::route('login');
 
     }
 
