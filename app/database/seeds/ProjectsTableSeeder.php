@@ -6,7 +6,7 @@ class ProjectsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+/*		$faker = Faker::create();
 
 		foreach(range(1, 3) as $index)
 		{
@@ -14,7 +14,7 @@ class ProjectsTableSeeder extends Seeder {
                 'name' => $faker->name,
                 'description' => $faker->text,
 			]);
-		}
+		}*/
 	}
 
 }

@@ -6,7 +6,7 @@ class JobsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+/*		$faker = Faker::create();
         $types = array('java', 'php', 'python', 'cpp', 'c');
 
 		foreach(range(1, 7) as $index)
@@ -18,7 +18,7 @@ class JobsTableSeeder extends Seeder {
                 'project_id' => rand(1, 3),
                 'type' => $types[rand(1, 5)],
 			]);
-		}
+		}*/
 	}
 
 }
