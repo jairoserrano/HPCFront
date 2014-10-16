@@ -28,7 +28,7 @@ return array(
 
 	'connections' => array(
 
-		'production' => array(
+		'local' => array(
 			'host'      => '192.168.10.10',
 			'username'  => 'vagrant',
 			'password'  => 'vagrant',
