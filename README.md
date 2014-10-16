@@ -24,19 +24,13 @@ After that you should go to public folder and make sure to have [node.js](http:/
 
     bower install
 
-### LDAP Ath Configuration
+LDAP Ath Configuration run 
 
-Run `composer update`.
+    php artisan config:publish diegognt/ldap-auth-driver`
 
-Open `app/config/app.php` and add:
+Adjust the config file for your LDAP settings found in:
 
-`Diegognt\LdapAuthDriver\LdapAuthDriverServiceProvider`
-
-Open `app/config/auth.php` and change the authentication driver to `ldap`.
-
-Run `php artisan config:publish diegognt/ldap-auth-driver` and adjust the config file for your LDAP settings.
-
-It can be found in `app/config/packages/diegognt/ldap-auth-driver`.
+    app/config/packages/diegognt/ldap-auth-driver
 
 ### License
 
