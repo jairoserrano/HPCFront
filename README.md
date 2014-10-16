@@ -24,19 +24,14 @@ After that you should go to public folder and make sure to have [node.js](http:/
 
     bower install
 
-### LDAP Ath Configuration
+LDAP Auth Configuration just run:
 
-Run `composer update`.
+    php artisan config:publish diegognt/ldap-auth-driver
 
-Open `app/config/app.php` and add:
+Adjust the config file for your LDAP settings found in:
 
-`Diegognt\LdapAuthDriver\LdapAuthDriverServiceProvider`
+    app/config/packages/diegognt/ldap-auth-driver
 
-Open `app/config/auth.php` and change the authentication driver to `ldap`.
-
-Run `php artisan config:publish diegognt/ldap-auth-driver` and adjust the config file for your LDAP settings.
-
-It can be found in `app/config/packages/diegognt/ldap-auth-driver`.
 
 ### License
 
@@ -44,4 +39,4 @@ The HPCFront software licensed under the [AGPL v3](http://www.gnu.org/licenses/a
 
 The Laravel Software licenced under the [MIT license](http://opensource.org/licenses/MIT)
 
-## Build on Laravel PHP Framework
+Build on Laravel PHP Framework
