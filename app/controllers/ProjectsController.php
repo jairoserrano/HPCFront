@@ -1,20 +1,18 @@
 <?php
 
 use HPCFront\Repositories\ProjectRepository;
-use HPCFront\Managers\ProjectManager;
+use HPCFront\Managers\CreateProjectManager;
+use HPCFront\Managers\UpdateProjectManager;
 use HPCFront\Entities\Project;
-use Illuminate\Routing\UrlGenerator as URL;
 
 class ProjectsController extends \BaseController
 {
 
     protected $projectRepository;
-    protected $url;
 
-    function __construct(ProjectRepository $projectRepository, URL $urlGenerator)
+    function __construct(ProjectRepository $projectRepository)
     {
         $this->projectRepository = $projectRepository;
-        $this->url = $urlGenerator;
     }
 
 
@@ -25,7 +23,7 @@ class ProjectsController extends \BaseController
      */
     public function index()
     {
-        $projects = $this->projectRepository->all();
+        $projects = $this->projectRepository->getAllUserProjects(Auth::user()->id);
 
         return View::make('projects.index', compact('projects'));
     }
@@ -49,9 +47,9 @@ class ProjectsController extends \BaseController
      */
     public function store()
     {
-        $manager = new ProjectManager(new Project(), Input::instance());
+        $manager = new CreateProjectManager(new Project(), Input::instance());
         $manager->save();
-        $new_project_url = $this->url->route('projects.show', $manager->getEntity()->id);
+        $new_project_url = URL::route('projects.show', $manager->getEntity()->id);
 
         return Redirect::route('projects.index')
             ->with('success', $new_project_url);
@@ -97,7 +95,7 @@ class ProjectsController extends \BaseController
     {
         $project = $this->projectRepository->find($id);
 
-        $manager = new ProjectManager($project, Input::instance());
+        $manager = new UpdateProjectManager($project, Input::instance());
         $manager->save();
 
         $updated_project_name = $manager->getEntity()->name;
