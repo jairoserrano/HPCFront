@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "53d2c8bee43724b6f09dedee59f75e9a",
+    "hash": "a02d24c08000618e51a181079df79f42",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -86,6 +86,52 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "time": "2014-01-17 12:21:18"
+        },
+        {
+            "name": "diegognt/ldap-auth-driver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diegognt/ldap-auth-driver.git",
+                "reference": "caf013b50912ea0e45f0ee50c72ce1ded3321ee7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diegognt/ldap-auth-driver/zipball/caf013b50912ea0e45f0ee50c72ce1ded3321ee7",
+                "reference": "caf013b50912ea0e45f0ee50c72ce1ded3321ee7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4|~5",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Diegognt\\LdapAuthDriver": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "Diego Navarro",
+                    "email": "diego.nava07@gmail.com"
+                }
+            ],
+            "description": "An OpenLDAP authentication driver for Laravel 4.x",
+            "homepage": "https://github.com/diegognt/ldap-auth-driver",
+            "keywords": [
+                "Authentication",
+                "L4",
+                "Laravel 4",
+                "auth",
+                "laravel",
+                "openldap"
+            ],
+            "time": "2014-10-16 16:45:28"
         },
         {
             "name": "filp/whoops",
@@ -1630,52 +1676,6 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2014-09-23 05:25:11"
-        },
-        {
-            "name": "ymo/l4-openldap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yuri-moens/l4-openldap.git",
-                "reference": "025629da1d78d1be752316aadf2e47d2158f26bd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yuri-moens/l4-openldap/zipball/025629da1d78d1be752316aadf2e47d2158f26bd",
-                "reference": "025629da1d78d1be752316aadf2e47d2158f26bd",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~4|~5",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Ymo\\L4OpenLdap": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "WTFPL"
-            ],
-            "authors": [
-                {
-                    "name": "Yuri Moens",
-                    "email": "yuri.moens@gmail.com"
-                }
-            ],
-            "description": "An OpenLDAP authentication driver for Laravel 4.",
-            "homepage": "https://github.com/yuri-moens/l4-openldap",
-            "keywords": [
-                "Authentication",
-                "L4",
-                "Laravel 4",
-                "auth",
-                "laravel",
-                "openldap"
-            ],
-            "time": "2014-09-20 15:09:52"
         }
     ],
     "packages-dev": [
@@ -1840,12 +1840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "627a6c8eaf9772ad25c9bdaecc0187d562bf8213"
+                "reference": "8e567de2249a8f7eb8051a855b9d0a6472d38c8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/627a6c8eaf9772ad25c9bdaecc0187d562bf8213",
-                "reference": "627a6c8eaf9772ad25c9bdaecc0187d562bf8213",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/8e567de2249a8f7eb8051a855b9d0a6472d38c8e",
+                "reference": "8e567de2249a8f7eb8051a855b9d0a6472d38c8e",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2014-10-01 10:20:07"
+            "time": "2014-10-16 09:15:15"
         },
         {
             "name": "way/generators",
@@ -1991,7 +1991,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ymo/l4-openldap": 20,
+        "diegognt/ldap-auth-driver": 20,
         "way/laravel-test-helpers": 20,
         "mockery/mockery": 20
     },
