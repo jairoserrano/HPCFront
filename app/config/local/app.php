@@ -44,7 +44,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
-        'Ymo\L4OpenLdap\L4OpenLdapServiceProvider',
+        'Diegognt\LdapAuthDriver\LdapAuthDriverServiceProvider',
 
     ),
     'aliases' => array(
