@@ -10,16 +10,16 @@ class AuthController extends \BaseController
 
     public function auth()
     {
-        $data = Input::only('uid', 'password');
+        $data = Input::only('username', 'password');
 
         $credentials = array(
-            'uid' => $data['uid'],
+            'username' => $data['username'],
             'password' => sha1($data['password'])
         );
 
 
         if (Auth::attempt($credentials)) {
-            return Redirect::route('pojects.index');
+            return Redirect::back()->with('login_success', 1);
         } else {
             return Redirect::back()->with('login_error', 1);
         }
