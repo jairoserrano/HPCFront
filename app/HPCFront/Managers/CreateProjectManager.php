@@ -10,7 +10,7 @@ class CreateProjectManager extends BaseManager implements ManagerInterface
         return array(
             'name' => 'required',
             'description' => 'required',
-            'project_owner' => 'required',
+            'user_owner' => 'required',
         );
     }
 
