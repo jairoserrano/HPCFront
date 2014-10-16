@@ -9,6 +9,7 @@
     {{ Form::open(array('route' => 'projects.store','method' => 'POST', 'role' =>'form', 'class' =>'form')) }}
         {{ Field::name('name') }}
         {{ Field::textarea('description') }}
+        {{ Form::hidden('user_owner', Auth::user()->username) }}
         <div class="form-actions">
             {{ Form::submit('Crear', array('class' => 'btn btn-success')) }}
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
