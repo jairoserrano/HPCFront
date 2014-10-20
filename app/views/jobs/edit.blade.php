@@ -7,7 +7,7 @@
     <h4 class="modal-title">Actualizar información del rabajo</h4>
   </div>
   <div class="modal-body">
-    {{ Form::open(array('route' => array('jobs.update', $job->id),'method' => 'PUT', 'role' =>'form', 'class' =>'form', 'files' => true)) }}
+    {{ Form::open(array('route' => array('project.jobs.update', $project_id, $job->id),'method' => 'PUT', 'role' =>'form', 'class' =>'form', 'files' => true)) }}
         {{ Field::name('name', $job->name) }}
         {{ Field::select('type', $types, $job->type) }}
         {{ Field::textarea('description', $job->description) }}

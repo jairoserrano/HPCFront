@@ -9,7 +9,7 @@
 </section>
 <section class="row page-header">
     <button id="run-job" class="btn btn-success" data-url="{{ route('run_job', array('id' => $job->id)) }}" style="float: right;">Correr trabajo</button>
-    <button id="edit-job" class="btn btn-primary" data-url="{{ route('jobs.edit', array('id' => $job->id)) }}" style="float: right; margin-right: 8px;">Editar información del trabajo</button>
+    <button id="edit-job" class="btn btn-primary" data-url="{{ route('project.jobs.edit', array($project_id, $job->id)) }}" style="float: right; margin-right: 8px;">Editar información del trabajo</button>
 </section>
 <section class="content row">
     <section class="col-md-6 entries">
@@ -34,18 +34,19 @@
     </section>
     <section class="col-md-6 results">
         <h2 class="page-header">Archivos de salida</h2>
-
-        @foreach($results as $result)
+        @foreach($files as $file)
             <article class="bs-callout bs-callout-success">
-                {{ $result->name }}
-                {{ Form::open(array('method' => 'DELETE','route' => array('results.destroy', $result->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
-                   {{ Form::hidden('job_id', $job->id) }}
-
-                    <button type="submit" class="btn btn-danger">Eliminar Resultados</button>
-                {{ Form::close() }}
+                <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
             </article>
         @endforeach
     </section>
+</section>
+<section class="output row">
+@if(Session::has('output'))
+<secttion class="col-md-12">
+    {{{ Session::get('output') }}}
+</secttion>
+@endif
 </section>
 <div id="modal" class="modal fade"></div>
 @stop

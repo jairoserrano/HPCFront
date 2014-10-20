@@ -1,4 +1,8 @@
 @extends('layouts.master')
+
+@section('page_title')
+Lista de proyectoz
+@stop
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
 @stop
@@ -7,7 +11,7 @@
   <h1>{{{ $project->name }}}</h1>
   <p>{{{ $project->description }}}</p>
 </section>
-<button id="create-job" class="btn btn-default" data-url="{{ route('new_job', array('id' => $project->id)) }}" style="float: right;margin-top: 8px;">Crear trabajo</button>
+<button id="create-job" class="btn btn-default" data-url="{{ route('project.jobs.create', array('id' => $project->id)) }}" style="float: right;margin-top: 8px;">Crear trabajo</button>
 <h1 class="page-header">Trabajos</h1>
 
 <section class="content col-md-12">
@@ -17,9 +21,9 @@
         <h2>{{ $job->name }} <small>{{ $job->type }}</small></h2>
         <p>{{ $job->description }}</p>
         <p style="text-align: right;">
-            <button class="btn btn-danger delete-job" data-url="{{{ route('jobs.destroy', array($job->id)) }}}" data-method="DELETE"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
-            <button class="btn btn-success edit-job" data-url="{{{ route('jobs.edit', array($job->id)) }}}"><i class="glyphicon glyphicon-edit"></i> Editar</button>
-            <button class="btn btn-info view-job" data-url="{{ route('jobs.show', array('id' => $job->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</button>
+            <button class="btn btn-danger delete-job" data-url="{{{ route('project.jobs.destroy', array($project->id, $job->id)) }}}" data-method="DELETE"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
+            <button class="btn btn-success edit-job" data-url="{{{ route('project.jobs.edit', array($project->id, $job->id)) }}}"><i class="glyphicon glyphicon-edit"></i> Editar</button>
+            <button class="btn btn-info view-job" data-url="{{ route('project.jobs.show', array($project->id, $job->id)) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</button>
         </p>
         </article>
         @endforeach
