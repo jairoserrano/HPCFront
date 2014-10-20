@@ -13,6 +13,7 @@ class ValidationException extends \Exception {
 
     public function getErrors()
     {
+        dd($this->errors);
         return $this->errors;
     }
 

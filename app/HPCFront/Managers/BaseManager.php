@@ -1,6 +1,7 @@
 <?php namespace HPCFront\Managers;
 
 use Illuminate\Http\Request as Input;
+use Illuminate\Filesystem\Filesystem as File;
 use HPCFront\Entities\EntityInterface;
 
 abstract class BaseManager
@@ -8,6 +9,8 @@ abstract class BaseManager
 
     private $entity;
     private $data;
+    private $input;
+    protected $file;
     protected $project_path;
 
 
@@ -15,7 +18,9 @@ abstract class BaseManager
 
     function __construct(EntityInterface $entity, Input $input)
     {
+        $this->file = New File();
         $this->setEntity($entity);
+        $this->setInput($input);
         $this->setData($input->all());
     }
 
@@ -58,6 +63,10 @@ abstract class BaseManager
         return $this->entity;
     }
 
+    public function getInput(){
+        return $this->input;
+    }
+
     /**
      * @param mixed $entity
      */
@@ -66,6 +75,10 @@ abstract class BaseManager
         $this->entity = $entity;
     }
 
-
-
-} 
+    protected function setInput(Input $input){
+        $this->input = $input;
+    }
+    protected function setNewData($name, $content){
+        $this->data[$name] = $content;
+    }
+}

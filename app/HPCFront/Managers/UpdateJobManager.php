@@ -9,7 +9,8 @@
 namespace HPCFront\Managers;
 
 
-class UpdateJobManager extends BaseManager{
+class UpdateJobManager extends JobManager
+{
 
     function getRules()
     {
@@ -20,4 +21,22 @@ class UpdateJobManager extends BaseManager{
             'executable'    => '',
         );
     }
+
+
+    public function save()
+    {
+
+        if ($this->getInput()->hasFile('executable')) {
+            $file_path = new FilesManager($this->getExecsPath(), $this->getInput()->file('executable'));
+            $this->setNewData('executable', $file_path->getFilePath());
+        } else {
+            $input['executable'] = $this->getEntity()->executable;
+        }
+
+        $this->isValid();
+        $this->getEntity()->fill($this->getData());
+        $this->getEntity()->save();
+
+    }
+
 } 

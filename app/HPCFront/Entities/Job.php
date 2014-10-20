@@ -1,7 +1,7 @@
 <?php namespace HPCFront\Entities;
 
 
-class Job extends \Eloquent {
+class Job extends BaseEntity implements EntityInterface {
 
     protected $fillable = ['name', 'description', 'type', 'project_id', 'executable'];
 
