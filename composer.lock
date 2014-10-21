@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/diegognt/ldap-auth-driver.git",
-                "reference": "caf013b50912ea0e45f0ee50c72ce1ded3321ee7"
+                "reference": "7e6e6bc55465253ae3d794afea7421e15a1bffe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/diegognt/ldap-auth-driver/zipball/caf013b50912ea0e45f0ee50c72ce1ded3321ee7",
-                "reference": "caf013b50912ea0e45f0ee50c72ce1ded3321ee7",
+                "url": "https://api.github.com/repos/diegognt/ldap-auth-driver/zipball/7e6e6bc55465253ae3d794afea7421e15a1bffe5",
+                "reference": "7e6e6bc55465253ae3d794afea7421e15a1bffe5",
                 "shasum": ""
             },
             "require": {
@@ -131,7 +131,7 @@
                 "laravel",
                 "openldap"
             ],
-            "time": "2014-10-16 16:45:28"
+            "time": "2014-10-16 20:10:47"
         },
         {
             "name": "filp/whoops",
