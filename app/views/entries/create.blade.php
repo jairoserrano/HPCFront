@@ -5,7 +5,7 @@
     <h4 class="modal-title">Crear Entrada</h4>
   </div>
   <div class="modal-body">
-    {{ Form::open(array('route' => 'entries.store','method' => 'POST', 'role' =>'form', 'class' =>'form', 'files' => true)) }}
+    {{ Form::open(array('route' => array('project.job.entries.store', $project_id, $job->id),'method' => 'POST', 'role' =>'form', 'class' =>'form', 'files' => true)) }}
         {{ Field::name('name') }}
         {{ Field::textarea('description', null, array('row' => '8')) }}
         <div class="fileinput fileinput-new input-group" data-provides="fileinput">

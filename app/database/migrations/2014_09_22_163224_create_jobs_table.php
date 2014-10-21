@@ -37,7 +37,9 @@ class CreateJobsTable extends Migration {
 	{
 		Schema::drop('jobs');
 
-        //File::deleteDirectory(storage_path().'/jobs');
+        File::deleteDirectory(storage_path().'/jobs');
+        File::deleteDirectory(storage_path().'/execs');
+
 	}
 
 }
