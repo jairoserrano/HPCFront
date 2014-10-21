@@ -8,26 +8,24 @@
   <p>{{ $job->description }}</p>
 </section>
 <section class="row page-header">
-    <button id="run-job" class="btn btn-success" data-url="{{ route('run_job', array('id' => $job->id)) }}" style="float: right;">Correr trabajo</button>
-    <button id="edit-job" class="btn btn-primary" data-url="{{ route('project.jobs.edit', array($project_id, $job->id)) }}" style="float: right; margin-right: 8px;">Editar información del trabajo</button>
+    <button id="run-job" class="btn btn-success" data-url="{{ route('run_job', array('id' => $job->id)) }}" style="float: right;"><i class="glyphicon glyphicon-play"></i> Correr trabajo</button>
+    <button id="edit-job" class="btn btn-primary" data-url="{{ route('project.jobs.edit', array($project_id, $job->id)) }}" style="float: right; margin-right: 8px;"><i class="glyphicon glyphicon-edit"></i> Editar información del trabajo</button>
 </section>
 <section class="content row">
     <section class="col-md-6 entries">
-    <button id="create-entry" class="btn btn-default btn-sm" data-url="{{ route('new_entry', array('id' => $job->id)) }}" style="float: right;margin-top: 4px;">Crear Entrada</button>
+    <button id="create-entry" class="btn btn-default btn-sm" data-url="{{ route('project.job.entries.create', array($project_id, $job->id)) }}" style="float: right;margin-top: 4px;"><i class="glyphicon glyphicon-plus"></i> Crear Entrada</button>
     <h2 class="page-header">Entradas</h2>
 
     @foreach($job->entries as $entry)
         <div class="bs-callout bs-callout-primary">
-            <h4>{{ $entry->name }}</h4>
+            <h3>{{ $entry->name }}<br><small>{{ $entry->file_name }} - {{ $entry->file_size }}MB</small></h3>
             <p style="float: left;">
-                {{ link_to_action('EntriesController@getFile', 'Descargar Archivo', array('id' => $entry->id), array('class' => 'btn btn-primary btn-sm', 'style' => 'margin-right:6px;')) }}
-                <button id="create-entry" class="btn btn-success btn-sm edit-entry" data-url="{{ route('entries.edit', array('id' => $entry->id)) }}">Editar Entrada</button>
+            <a href="{{route('get_entry',array($entry->id))}}" class="btn btn-primary btn-sm" style="margin-right:6px;"><i class="glyphicon glyphicon-save"></i> Descargar entrada</a>
+            <button id="create-entry" class="btn btn-success btn-sm edit-entry" data-url="{{ route('project.job.entries.edit', array($project_id, $job->id, $entry->id)) }}"><i class="glyphicon glyphicon-edit"></i> Editar entrada</button>
 
-                {{ Form::open(array('method' => 'DELETE','route' => array('entries.destroy', $entry->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
-                    {{ Form::hidden('job_id', $job->id) }}
-
-                    <button type="submit" class="btn btn-danger btn-sm">Eliminar Entrada</button>
-                {{ Form::close() }}
+            {{ Form::open(array('method' => 'DELETE','route' => array('project.job.entries.destroy',$project_id, $job->id, $entry->id), 'class' => 'form-horizontal', 'role' => 'form')) }}
+                <button type="submit" class="btn btn-danger btn-sm" style="margin-left:6px;"><i class="glyphicon glyphicon glyphicon-trash"></i> Eliminar Entrada</button>
+            {{ Form::close() }}
             </p>
         </div>
     @endforeach
