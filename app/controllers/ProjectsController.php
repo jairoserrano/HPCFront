@@ -67,10 +67,6 @@ class ProjectsController extends \BaseController
     {
         $project = $this->projectRepository->findWithAllJobsInformation($id);
 
-        if($project->user_owner != Auth::user()->username){
-            return Response::make('Unauthorized', 401);
-        }
-
         return View::make('projects.show', compact(array('project')));
 
     }
@@ -86,10 +82,6 @@ class ProjectsController extends \BaseController
     {
         $project = $this->projectRepository->find($id);
 
-        if($project->user_owner != Auth::user()->username){
-            return Response::make('Unauthorized', 401);
-        }
-
         return View::make('projects.edit', compact('project'));
     }
 
@@ -103,10 +95,6 @@ class ProjectsController extends \BaseController
     public function update($id)
     {
         $project = $this->projectRepository->find($id);
-
-        if($project->user_owner != Auth::user()->username){
-            return Response::make('Unauthorized', 401);
-        }
 
         $manager = new UpdateProjectManager($project, Input::instance());
         $manager->save();
