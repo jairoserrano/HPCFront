@@ -22,11 +22,14 @@ Route::group(array('before' => 'auth'), function () {
     Route::get('executables/download/{id}',array('as'=> 'download_executable', 'uses' => 'ExecutablesController@downloadFile'));
 
 
-    Route::resource('projects', 'ProjectsController');
-    Route::resource('project.jobs', 'ProjectJobsController', array('except' => 'index'));
-    Route::resource('project.job.entries', 'JobEntriesController', array('except' => array('show', 'index')));
-    Route::get('entry/get-entry/{entry_id}',array('as'=> 'get_entry', 'uses' => 'JobEntriesController@getFile'));
+    Route::group(array('before' => 'exists:resource'), function(){
 
+        Route::resource('projects', 'ProjectsController');
+        Route::resource('project.jobs', 'ProjectJobsController', array('except' => 'index'));
+        Route::resource('project.job.entries', 'JobEntriesController', array('except' => array('show', 'index')));
+    });
+
+    Route::get('entry/get-entry/{entry_id}',array('as'=> 'get_entry', 'uses' => 'JobEntriesController@getFile'));
     Route::get('jobs/{id}/run', array('as' => 'run_job', 'uses' => 'ProjectJobsController@runJob'));
     Route::post('jobs/{id}/exec', array('as' => 'exec_job', 'uses' => 'ProjectJobsController@executeJob'));
     Route::get('download/{result}', array('as'=> 'download_result', 'uses' => 'JobsController@downloadResult'));
@@ -34,3 +37,4 @@ Route::group(array('before' => 'auth'), function () {
 
     Route::get('logout', array( 'as'=> 'logout', 'uses' => 'AuthController@logout'));
 });
+
