@@ -3,6 +3,7 @@
 use Illuminate\Http\Request as Input;
 use Illuminate\Filesystem\Filesystem as File;
 use HPCFront\Entities\EntityInterface;
+use HPCFront\Exceptions\ValidationException;
 
 abstract class BaseManager
 {
