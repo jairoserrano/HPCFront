@@ -1,23 +1,39 @@
 @extends('layouts.master')
 
 @section('page_title')
-Lista de proyectoz
+Lista de proyectos
 @stop
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
 @stop
 @section('content')
-<section class="row jumbotron">
-  <h1>{{{ $project->name }}}</h1>
-  <p>{{{ $project->description }}}</p>
-</section>
-<button id="create-job" class="btn btn-default" data-url="{{ route('project.jobs.create', array('id' => $project->id)) }}" style="float: right;margin-top: 8px;">Crear trabajo</button>
-<h1 class="page-header">Trabajos</h1>
+
+    <section class="row">
+        <div class="inner col-md-12">
+            <ol class="breadcrumb">
+              <li><a href="{{{ route('projects.index') }}}">Todos los proyectos</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="jumbotron">
+        <div class="container">
+            <h1>{{{ $project->name }}}</h1>
+            <p>{{{ $project->description }}}</p>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="inner col-md-12">
+            <button id="create-job" class="btn btn-default" data-url="{{ route('project.jobs.create', array('id' => $project->id)) }}" style="float: right;margin-top: 8px;"><i class="glyphicon glyphicon-plus"></i> Crear trabajo</button>
+            <h1 class="page-header">Trabajos</h1>
+        </div>
+    </section>
 
 <section class="content col-md-12">
     <div class="inner row">
         @foreach($project->jobs as $job)
-        <article class="bs-callout bs-callout-info col-md-12 job">
+        <article class="bs-callout bs-callout-info job" style="margin: 20px 0px;">
         <h2>{{ $job->name }} <small>{{ $job->type }}</small></h2>
         <p>{{ $job->description }}</p>
         <p style="text-align: right;">

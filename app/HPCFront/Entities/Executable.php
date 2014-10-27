@@ -2,10 +2,9 @@
 
 use Symfony\Component\Finder\SplFileInfo;
 
-class Entry extends BaseEntity implements EntityInterface {
+class Executable extends BaseEntity implements EntityInterface{
 
-    protected $table    = 'entries';
-    protected $fillable = ['name', 'path', 'job_id'];
+    protected $fillable = array('name', 'path', 'type');
 
     public function job(){
         return $this->belongsTo('\HPCFront\Entities\Job');

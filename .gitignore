@@ -13,7 +13,7 @@ app/config/package/*
 app/config/grid/*
 app/database/local.sqlite
 public/assets/*
-app/storage/execs/*
+app/storage/executables/*
 app/storage/jobs/*
 app/config/packages/*
 .idea/workspace.xml

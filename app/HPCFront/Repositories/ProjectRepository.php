@@ -28,7 +28,21 @@ class ProjectRepository extends BaseRepository
             ->orderBy('created_at', 'DESC')
             ->get();
     }
+
     public function getLastProject(){
         return ($this->entity->count() > 0) ? $this->entity->orderBy('id', 'DESC')->first() : 0 ;
+    }
+
+    public function getUserProjects($user_id){
+        return $this->entity
+            ->with(
+                array(
+                    'projects' => function($query) use ($user_id){
+                        $query->where('user_owner', '=', $user_id);
+                    },
+                    'projects.jobs'
+                )
+            )
+            ->get();
     }
 }
