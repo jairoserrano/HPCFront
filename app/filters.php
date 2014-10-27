@@ -1,5 +1,5 @@
 <?php
-
+use HPCFront\Helpers\ResourceHelpers;
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -43,7 +43,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('/');
+			return Redirect::route('login');
 		}
 	}
 });
@@ -67,7 +67,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('login');
+	if (Auth::check()) return Redirect::route('login');
 });
 
 /*
@@ -87,4 +87,30 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+});
+
+
+
+Route::filter('exists', function($route, $request, $value){
+    $helper =  new ResourceHelpers();
+
+    foreach($route->parameters() as $resource => $id){
+        if($resource == 'project' || $resource == 'projects'){
+            if(!$helper->projectExists($id)){
+                throw new \HPCFront\Exceptions\ResourceNotFoundException('projecto no encontrado', 404);
+            }
+        }
+        if($resource == 'jobs' || $resource == 'job'){
+            if(!$helper->jobExists($id)){
+                throw new \HPCFront\Exceptions\ResourceNotFoundException('job no encontrado', 404);
+            }
+        }
+        if($resource == 'entries'){
+            if(!$helper->entryExists($id)){
+                throw new \HPCFront\Exceptions\ResourceNotFoundException('entry no encontrado', 404);
+            }
+        }
+
+    }
+
 });
