@@ -1,7 +1,7 @@
 <?php namespace HPCFront\Exceptions;
 
 
-class ResourceNotFoundException extends \Exception{
+class ResourceException extends \Exception{
 
 
     public function __construct($message, $code)

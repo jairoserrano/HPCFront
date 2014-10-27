@@ -70,7 +70,20 @@ App::error(function (\HPCFront\Exceptions\ValidationException $exception) {
  |
  */
 
-App::error(function (\HPCFront\Exceptions\ResourceNotFoundException $exception, $code) {
+App::error(function($exception, $code){
+    if ($code == 404){
+        $url = Request::url();
+        return Response::view(
+            'errors/404',
+            array(
+                'message' => "no sabemos que estás buscando y creemos que $url no tiene nada que ver con lo que hacemos aquí."
+            ),
+            404
+        );
+    }
+});
+
+App::error(function (\HPCFront\Exceptions\ResourceException $exception, $code) {
 
     $code = $exception->getCode();
     $pathInfo = Request::getPathInfo();
@@ -80,7 +93,7 @@ App::error(function (\HPCFront\Exceptions\ResourceNotFoundException $exception, 
 
     switch ($code) {
         case 403:
-            return Response::view('errors/403',array(), 403);
+            return Response::view('errors/403', array('message' => $exception->getMessage()), 403);
             break;
         case 500:
             return Response::view('errors/500', array(), 500);

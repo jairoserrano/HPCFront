@@ -97,20 +97,41 @@ Route::filter('exists', function($route, $request, $value){
     foreach($route->parameters() as $resource => $id){
         if($resource == 'project' || $resource == 'projects'){
             if(!$helper->projectExists($id)){
-                throw new \HPCFront\Exceptions\ResourceNotFoundException('projecto no encontrado', 404);
+                throw new \HPCFront\Exceptions\ResourceException('projecto no encontrado', 404);
             }
         }
         if($resource == 'jobs' || $resource == 'job'){
             if(!$helper->jobExists($id)){
-                throw new \HPCFront\Exceptions\ResourceNotFoundException('job no encontrado', 404);
+                throw new \HPCFront\Exceptions\ResourceException('job no encontrado', 404);
             }
         }
         if($resource == 'entries'){
             if(!$helper->entryExists($id)){
-                throw new \HPCFront\Exceptions\ResourceNotFoundException('entry no encontrado', 404);
+                throw new \HPCFront\Exceptions\ResourceException('entry no encontrado', 404);
             }
         }
 
     }
+
+});
+
+Route::filter('ownership', function($route, $request, $value){
+    $projectRepository =  new \HPCFront\Repositories\ProjectRepository();
+    $params = $route->parameters();
+
+    if(array_key_exists('project', $params) || array_key_exists('projects', $params)){
+        if(isset($params['projects'])){
+            $project_id = $params['projects'];
+        }
+
+        if(isset($params['project'])){
+            $project_id = $params['project'];
+        }
+
+        if(Auth::user()->username != $projectRepository->find($project_id)->user_owner){
+            throw new \HPCFront\Exceptions\ResourceException('No tienes acceso a éste proyecto o sus jobs', 403);
+        }
+    }
+
 
 });
