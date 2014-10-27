@@ -8,7 +8,6 @@ class CreateEntriesManager extends EntryManager implements ManagerInterface{
     {
         return array(
             'name'          => 'required',
-            'description'   => 'required',
             'path'          => 'required',
             'job_id'        => 'required'
         );
