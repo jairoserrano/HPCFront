@@ -16,15 +16,17 @@ class CreateJobsTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('project_id')->unsigned()->index();
+            $table->integer('executable_id')->unsigned()->index();
             $table->string('name');
             $table->text('description')->nullable()->default('');
-            $table->string('executable')->nullable()->default('');
-            $table->enum('type', array('java', 'php', 'python', 'C++', 'C'));
 			$table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('executable_id')->references('id')->on('executables')->onDelete('cascade');
 
 		});
+
+        File::makeDirectory(storage_path()."/jobs");
 	}
 
 
@@ -38,7 +40,6 @@ class CreateJobsTable extends Migration {
 		Schema::drop('jobs');
 
         File::deleteDirectory(storage_path().'/jobs');
-        File::deleteDirectory(storage_path().'/execs');
 
 	}
 
