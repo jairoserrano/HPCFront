@@ -13,10 +13,10 @@
 
 ClassLoader::addDirectories(array(
 
-	app_path().'/commands',
-	app_path().'/controllers',
-	app_path().'/models',
-	app_path().'/database/seeds',
+    app_path() . '/commands',
+    app_path() . '/controllers',
+    app_path() . '/models',
+    app_path() . '/database/seeds',
 
 ));
 
@@ -31,7 +31,7 @@ ClassLoader::addDirectories(array(
 |
 */
 
-Log::useFiles(storage_path().'/logs/laravel.log');
+Log::useFiles(storage_path() . '/logs/laravel.log');
 
 /*
 |--------------------------------------------------------------------------
@@ -46,24 +46,51 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
-	Log::error($exception);
+App::error(function (Exception $exception) {
+    Log::error($exception);
 });
 
 /*
  * Custom validation exception
  */
 
-App::error(function( \HPCFront\Managers\ValidationException $exception)
-{
-    if(Request::ajax()){
+App::error(function (\HPCFront\Exceptions\ValidationException $exception) {
+    if (Request::ajax()) {
         Response::json(array(
             'sucess' => false,
             'errors' => $exception->getErrors(),
         ));
     }
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
+
+/*
+ | Custom not found Resource
+ |
+ */
+
+App::error(function (\HPCFront\Exceptions\ResourceNotFoundException $exception, $code) {
+
+    $code = $exception->getCode();
+    $pathInfo = Request::getPathInfo();
+    $message = $exception->getMessage() ?: 'Exception';
+    //dd($exception->getMessage());
+    Log::error("$code - $message @ $pathInfo\r\n$exception");
+
+    switch ($code) {
+        case 403:
+            return Response::view('errors/403',array(), 403);
+            break;
+        case 500:
+            return Response::view('errors/500', array(), 500);
+            break;
+        case 404:
+            return Response::view('errors/404', array('message' => $exception->getMessage()), 404);
+            break;
+        default:
+            return Response::view('errors/404', array(), $exception->getCode());
+    }
 });
 
 /*
@@ -77,9 +104,8 @@ App::error(function( \HPCFront\Managers\ValidationException $exception)
 |
 */
 
-App::down(function()
-{
-	return Response::make("Be right back!", 503);
+App::down(function () {
+    return Response::make("Be right back!", 503);
 });
 
 /*
@@ -93,4 +119,4 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
+require app_path() . '/filters.php';
