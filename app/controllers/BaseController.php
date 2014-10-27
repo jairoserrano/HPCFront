@@ -2,17 +2,8 @@
 
 class BaseController extends Controller {
 
-	/**
-	 * Setup the layout used by the controller.
-	 *
-	 * @return void
-	 */
-
-
-    protected $jobTypes;
-
-    protected function setJobTypes(){
-        $this->jobTypes = array(
+    protected function getJobTypes(){
+        return array(
             'java'      => 'Java',
             'php'       => 'PHP',
             'python'    => 'Python',
