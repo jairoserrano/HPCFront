@@ -1,10 +1,10 @@
 <?php
 
 use HPCFront\Managers\FilesManager;
-use HPCFront\Managers\CreateJobManager;
-use HPCFront\Managers\UpdateJobManager;
+use HPCFront\Managers\JobManager;
 use HPCFront\Repositories\JobsRepository;
 use HPCFront\Repositories\EntriesRepository;
+use HPCFront\Repositories\ExecutableRepository;
 use HPCFront\Entities\Job;
 use Illuminate\Filesystem\Filesystem as File;
 use Carbon\Carbon;
@@ -15,18 +15,21 @@ class ProjectJobsController extends \BaseController
     protected $jobsRepository;
     protected $entriesRepository;
     protected $projectsRepository;
+    protected $executableRepository;
     protected $file;
     protected $ssh_output;
 
-    function __construct(JobsRepository $jobsRepository,
-                         EntriesRepository $entriesRepository,
-                            File $filesystem
+    function __construct(
+        JobsRepository $jobsRepository,
+        EntriesRepository $entriesRepository,
+        ExecutableRepository $executableRepository,
+        File $filesystem
     )
     {
         $this->jobsRepository = $jobsRepository;
         $this->entriesRepository = $entriesRepository;
         $this->file = $filesystem;
-        $this->setJobTypes();
+        $this->executableRepository = $executableRepository;
     }
 
     /**
@@ -59,8 +62,8 @@ class ProjectJobsController extends \BaseController
 
     public function create($project_id)
     {
-        $types = $this->jobTypes;
-        return View::make('jobs.create', compact(array('types', 'project_id')));
+        $executables = $this->executableRepository->listAll();
+        return View::make('jobs.create', compact(array('project_id', 'executables')));
     }
 
     /**
@@ -71,8 +74,10 @@ class ProjectJobsController extends \BaseController
     public function store($project_id)
     {
 
-        $manager = new CreateJobManager(new Job(), Input::instance());
+        $manager = new JobManager(new Job(), Input::instance());
         $manager->save();
+        $manager->createJobFolder('results');
+        $manager->createJobFolder('entries');
 
         return Redirect::route('projects.show', array($project_id));
 
@@ -88,9 +93,10 @@ class ProjectJobsController extends \BaseController
     public function edit($project_id, $job_id)
     {
         $job = $this->jobsRepository->find($job_id);
-        $types = $this->jobTypes;
+        $executables = $this->executableRepository->listAll();
 
-        return View::make('jobs.edit', compact('job', 'types', 'project_id'));
+
+        return View::make('jobs.edit', compact('job', 'executables', 'project_id'));
     }
 
 
@@ -104,7 +110,7 @@ class ProjectJobsController extends \BaseController
     {
         $job = $this->jobsRepository->find($job_id);
 
-        $manager = new UpdateJobManager($job, Input::instance());
+        $manager = new JobManager($job, Input::instance());
         $manager->save();
 
         return Redirect::route('project.jobs.show', array($project_id, $job_id));
