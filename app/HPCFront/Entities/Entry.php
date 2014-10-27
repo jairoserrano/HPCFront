@@ -1,6 +1,5 @@
 <?php namespace HPCFront\Entities;
 
-use HPCFront\Components\Builders\Field\Field;
 use Symfony\Component\Finder\SplFileInfo;
 
 class Entry extends BaseEntity implements EntityInterface {
