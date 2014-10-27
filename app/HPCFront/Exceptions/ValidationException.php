@@ -1,4 +1,4 @@
-<?php namespace HPCFront\Managers;
+<?php namespace HPCFront\Exceptions;
 
 
 class ValidationException extends \Exception {
