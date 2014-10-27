@@ -16,4 +16,3 @@ public/assets/*
 app/storage/executables/*
 app/storage/jobs/*
 app/config/packages/*
-.idea/workspace.xml
