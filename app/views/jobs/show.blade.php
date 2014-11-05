@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
+    {{ HTML::style(asset("assets/bootstrap-select/dist/css/bootstrap-select.min.css")) }}
 @stop
 @section('content')
     <section class="row">
@@ -67,7 +68,7 @@
 @stop
 @section('scripts')
     {{ HTML::script(asset("assets/jasny-bootstrap/dist/js/jasny-bootstrap.min.js")) }}
-
+    {{ HTML::script(asset("assets/bootstrap-select/dist/js/bootstrap-select.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
     {{ HTML::script(asset("js/ui.modal.js")) }}
@@ -82,7 +83,12 @@
                 UIModal.showCreateModal('#run-job');
                 UIModal.showEditModal('button.edit-entry','section.entries');
                 $('#modal').on('shown.bs.modal', function () {
-                    UIForm.init('#modal form');
+                    var $modal = $(this);
+                    UIForm.init('form');
+
+                    if($modal.find('form').hasClass('create-job')){
+                        UIForm.validate(CreateJobFields.rules, CreateJobFields.messages);
+                    }
                 });
             });
         }(jQuery, window));

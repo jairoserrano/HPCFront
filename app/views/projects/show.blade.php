@@ -5,6 +5,7 @@ Lista de proyectos
 @stop
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
+    {{ HTML::style(asset("assets/bootstrap-select/dist/css/bootstrap-select.min.css")) }}
 @stop
 @section('content')
 
@@ -50,7 +51,7 @@ Lista de proyectos
 @stop
 @section('scripts')
     {{ HTML::script(asset("assets/jasny-bootstrap/dist/js/jasny-bootstrap.min.js")) }}
-
+    {{ HTML::script(asset("assets/bootstrap-select/dist/js/bootstrap-select.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
     {{ HTML::script(asset("js/ui.modal.js")) }}
@@ -59,13 +60,18 @@ Lista de proyectos
     <script>
         (function($, window){
             $('document').ready(function(){
+
                 UIModal.init('#modal');
                 UIModal.showCreateModal('#create-job');
                 UIModal.showEditModal('button.edit-job', 'section.content');
 
                 $('#modal').on('shown.bs.modal', function (e) {
+                    var $modal = $(this);
                     UIForm.init('#modal form');
-                    UIForm.validate(EditJobFields.rules, EditJobFields.messages)
+                    if($modal.find('form').hasClass('create-job')){
+                        UIForm.validate(CreateJobFields.rules, CreateJobFields.messages);
+
+                    }
                 });
 
                 $('section.content').on('click', 'button.view-job', function(){

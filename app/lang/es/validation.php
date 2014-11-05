@@ -104,6 +104,9 @@ return array(
         'description' => 'Descripción',
         'type' => 'Tipo',
         'executable' => 'Archivo ejecutable',
+        'job_id' => 'Job',
+        'executable_id' => 'Ejecutable',
+
     ),
 
 );

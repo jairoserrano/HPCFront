@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@section('styles')
+    {{ HTML::style(asset("assets/bootstrap-select/dist/css/bootstrap-select.min.css")) }}
+@stop
 @section('content')
 <section class=" row">
     <div class="inner col-md-12">
@@ -42,6 +44,7 @@
 @stop
 @section('scripts')
     {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
+    {{ HTML::script(asset("assets/bootstrap-select/dist/js/bootstrap-select.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
     {{ HTML::script(asset("js/ui.modal.js")) }}
     {{ HTML::script(asset("js/ui.form.js")) }}
@@ -55,9 +58,10 @@
 
 
                 $('#modal').on('shown.bs.modal', function (e) {
-                console.log('hola');
+
                     UIForm.init('#modal form');
-                    UIForm.validate(ProjectFields.rules, ProjectFields.messages)
+                    UIForm.validate(ProjectFields.rules, ProjectFields.messages);
+
                 });
 
                 $('section.content').on('click', 'button.view-project', function(){

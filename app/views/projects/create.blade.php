@@ -7,7 +7,7 @@
   </div>
   <div class="modal-body">
     {{ Form::open(array('route' => 'projects.store','method' => 'POST', 'role' =>'form', 'class' =>'form')) }}
-        {{ Field::name('name') }}
+        {{ Field::text('name') }}
         {{ Field::textarea('description') }}
         {{ Form::hidden('user_owner', Auth::user()->username) }}
         <div class="form-actions">

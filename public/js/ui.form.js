@@ -2,21 +2,31 @@ var UIForm = function () {
     var isAjaxForm = Boolean(false);
     var $form;
 
-    var setForm = function(form, ajax){
+    var setForm = function (form, ajax) {
         $form = typeof form !== 'undefined' ? $(form) : $('form');
         isAjaxForm = typeof ajax !== 'undefined' ? ajax : false;
     };
 
-    var getForm = function(){
+    var getForm = function () {
         return $form;
     };
 
     var validate = function (rules, messages) {
         console.log('vamos a procesar el asunto');
+
+        $.validator.addMethod("valueNotEquals", function(value, element, arg){
+            return arg != value;
+        });
+
+        $.validator.addMethod("alpha", function(value, element) {
+            return this.optional(element) || value == value.match(/^[a-zA-Z\s]+$/);
+        });
+
         $form.each(function () {
             $(this).validate({
                 rules: rules,
                 messages: messages,
+                debug: true,
                 submitHandler: function (form) {
                     var _form = $(form);
                     if (isAjaxForm) {
@@ -24,7 +34,7 @@ var UIForm = function () {
                             type: _form.prop('method'),
                             url: _form.prop('action'),
                             data: _form.serialize()
-                        }).done(function(data) {
+                        }).done(function (data) {
                             console.log(data);
                         });
                     } else {
@@ -32,32 +42,39 @@ var UIForm = function () {
                         form.submit();
                     }
                 },
-                showErrors: function (map, list) {
-                    this.currentElements.parents('label:first, div:first').find('.has-error').remove();
-                    this.currentElements.parents('.form-group:first').removeClass('has-error');
-
-                    $.each(list, function (index, error) {
-                        var ee = $(error.element);
-                        var eep = ee.parents('label:first').length ? ee.parents('label:first') : ee.parents('div:first');
-
-                        ee.parents('.form-group:first').addClass('has-error');
-                        eep.find('.has-error').remove();
-                        eep.append('<p class="has-error help-block">' + error.message + '</p>');
-                    });
+                errorPlacement: function (error, element) {
+                    element.closest('.form-group').find('.help-block').html(error.text());
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                },
+                success: function (label) {
+                    $(label).closest('form').find('.valid').removeClass("invalid");
                 }
             });
         });
+
+        $form.data("validator").settings.ignore = "";
     };
 
     return {
-        init : function(form, ajax){
+        init: function (form, ajax) {
             setForm(form, ajax);
-            if($(':input[type="file"]').length){
+            if ($(':input[type="file"]').length) {
                 $form.find(':input[type="file"]').fileinput();
             }
+            if ($('select').length) {
+                $('select').each(function () {
+                    $(this).selectpicker();
+                });
+            }
+
         },
         validate: validate,
-        $form:getForm
+        $form: getForm
     }
 }();
 
