@@ -5,9 +5,14 @@
     <h4 class="modal-title">Crear Entrada</h4>
   </div>
   <div class="modal-body">
-{{ Form::open(array('route' => array('exec_job', $job->id),'method' => 'POST')) }}
+{{ Form::open(array('route' => array('exec_job', $job->id),'method' => 'POST', 'class' => 'form run-job', 'role' => 'form')) }}
+    <div class="checkbox">
+        <label for="no_entry">
+            {{ Form::checkbox('no_entry') }} Sin entradas
+        </label>
+    </div>
     {{ Field::select('entry_id', $entries) }}
-    {{ Form::submit('Correr Trabajo') }}
+    {{ Form::submit('Correr Trabajo', array('class' => 'btn btn-success submit')) }}
 {{ Form::close() }}
   </div>
 

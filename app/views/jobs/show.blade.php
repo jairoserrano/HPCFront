@@ -28,7 +28,7 @@
         </div>
     </section>
     <section class="content row">
-        <section class="col-md-6 entries">
+        <section class="col-md-4 entries">
             <button id="create-entry" class="btn btn-default btn-sm" data-url="{{ route('project.job.entries.create', array($project_id, $job->id)) }}" style="float: right;margin-top: 4px;"><i class="glyphicon glyphicon-plus"></i> Crear Entrada</button>
             <h2 class="page-header">Entradas</h2>
 
@@ -48,8 +48,16 @@
                 @endforeach
             </section>
         </section>
-        <section class="col-md-6 results">
+        <section class="col-md-4 results">
             <h2 class="page-header">Archivos de salida</h2>
+            @foreach($files as $file)
+                <article class="bs-callout bs-callout-success">
+                    <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
+                </article>
+            @endforeach
+        </section>
+        <section class="col-md-4 logs">
+            <h2 class="page-header">Logs de salida</h2>
             @foreach($files as $file)
                 <article class="bs-callout bs-callout-success">
                     <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
@@ -82,13 +90,60 @@
                 UIModal.showCreateModal('#edit-job');
                 UIModal.showCreateModal('#run-job');
                 UIModal.showEditModal('button.edit-entry','section.entries');
+
                 $('#modal').on('shown.bs.modal', function () {
                     var $modal = $(this);
-                    UIForm.init('form');
+                    var $form = $modal.find('form');
+                    UIForm.init('#modal form');
 
-                    if($modal.find('form').hasClass('create-job')){
-                        UIForm.validate(CreateJobFields.rules, CreateJobFields.messages);
+                    if($form.hasClass('edit-job')){
+                        console.log('a validar el editado ps :D');
+                        UIForm.validate(JobFields.rules, JobFields.messages);
                     }
+
+                    if($form.hasClass('create-entry')){
+                        console.log('a validar el editado ps :D');
+                        UIForm.validate(CreateEntryFields.rules, CreateEntryFields.messages);
+                    }
+
+                    if($form.hasClass('edit-entry')){
+                        console.log('a validar el editado ps :D');
+                        UIForm.validate(CreateEntryFields.rules, CreateEntryFields.messages);
+                    }
+
+                    if($form.hasClass('run-job')){
+                        console.log('a correr el trbajo');
+                        var $select = $form.find('select[name="entry_id"]');
+
+                        $form.find(':input[name="no_entry"]').on('change', function(e) {
+
+                            if(this.checked){
+                                $select.prop('disabled', true);
+                                $select.selectpicker('refresh');
+                            }else{
+                                $select.prop('disabled', false);
+                                $select.selectpicker('refresh');
+                            }
+                        });
+
+                        $form.find(':input[type="submit"].submit').on('click', function(e){
+                            e.preventDefault();
+                            //var $form = $(this);
+                            console.log($form);
+                            console.log('enviando');
+                            $.ajax({
+                                type : $form.prop('method'),
+                                url : $form.prop('action'),
+                                data : $form.serialize()
+                            }).done(
+                                function(data){
+                                console.log(data);
+                                }
+                            );
+                        });
+
+                    }
+
                 });
             });
         }(jQuery, window));

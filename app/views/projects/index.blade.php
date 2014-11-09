@@ -58,7 +58,6 @@
 
 
                 $('#modal').on('shown.bs.modal', function (e) {
-
                     UIForm.init('#modal form');
                     UIForm.validate(ProjectFields.rules, ProjectFields.messages);
 

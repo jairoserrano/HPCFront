@@ -66,12 +66,9 @@ Lista de proyectos
                 UIModal.showEditModal('button.edit-job', 'section.content');
 
                 $('#modal').on('shown.bs.modal', function (e) {
-                    var $modal = $(this);
                     UIForm.init('#modal form');
-                    if($modal.find('form').hasClass('create-job')){
-                        UIForm.validate(CreateJobFields.rules, CreateJobFields.messages);
+                    UIForm.validate(JobFields.rules, JobFields.messages);
 
-                    }
                 });
 
                 $('section.content').on('click', 'button.view-job', function(){
@@ -84,8 +81,8 @@ Lista de proyectos
                         method: $(this).data('method')
                     })
                     .done(function(data) {
-                        if(data === true){
-                            document.location.reload(true);
+                        if(Boolean(data) === true){
+                            location.reload(true);
                         }
                     });
                 });
