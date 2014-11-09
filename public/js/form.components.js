@@ -49,7 +49,7 @@ var EditExecutableFields = {
     }
 };
 
-var CreateJobFields = {
+var JobFields = {
     "rules": {
         name: {
             required: true
@@ -73,11 +73,6 @@ var CreateJobFields = {
             valueNotEquals: "Debes escojer una opción"
         }
     }
-};
-
-var UpdateJobFields = {
-    "rules": {},
-    "messages": {}
 };
 
 var CreateEntryFields = {

@@ -12,7 +12,6 @@ var UIForm = function () {
     };
 
     var validate = function (rules, messages) {
-        console.log('vamos a procesar el asunto');
 
         $.validator.addMethod("valueNotEquals", function(value, element, arg){
             return arg != value;
@@ -63,13 +62,16 @@ var UIForm = function () {
     return {
         init: function (form, ajax) {
             setForm(form, ajax);
-            if ($(':input[type="file"]').length) {
-                $form.find(':input[type="file"]').fileinput();
+            var $form = $(form);
+            var $inputFile = $form.find(':input[type="file"]');
+            var $selects = $form.find('select');
+
+
+            if ($inputFile.length) {
+                $inputFile.fileinput();
             }
-            if ($('select').length) {
-                $('select').each(function () {
-                    $(this).selectpicker();
-                });
+            if ($selects.length) {
+                $selects.selectpicker();
             }
 
         },
