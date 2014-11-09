@@ -106,6 +106,7 @@ return array(
         'executable' => 'Archivo ejecutable',
         'job_id' => 'Job',
         'executable_id' => 'Ejecutable',
+		'entry_id' => 'Archivos de entrada'
 
     ),
 
