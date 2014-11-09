@@ -10,7 +10,7 @@ class Job extends BaseEntity implements EntityInterface {
     }
 
     public function executable(){
-        return $this->hasOne('\HPCFront\Entities\Executable');
+        return $this->belongsTo('\HPCFront\Entities\Executable');
     }
 
     public function project(){
