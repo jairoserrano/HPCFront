@@ -1,7 +1,6 @@
 /bootstrap/compiled.php
 /vendor
 composer.phar
-composer.lock
 .env.*.php
 .env.php
 .DS_Store
@@ -16,3 +15,5 @@ public/assets/*
 app/storage/executables/*
 app/storage/jobs/*
 app/config/packages/*
+
+composer.lock
