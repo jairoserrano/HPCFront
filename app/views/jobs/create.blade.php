@@ -5,8 +5,8 @@
     <h4 class="modal-title">Crear Trabajo</h4>
   </div>
   <div class="modal-body">
-    {{ Form::open(array('route' => array('project.jobs.store', $project_id),'method' => 'POST', 'role' =>'form', 'class' =>'form', 'files' => true)) }}
-        {{ Field::name('name') }}
+    {{ Form::open(array('route' => array('project.jobs.store', $project_id),'method' => 'POST', 'role' =>'form', 'class' =>'form create-job', 'files' => true)) }}
+        {{ Field::text('name') }}
         {{ Field::textarea('description', null, array('row' => '8')) }}
         {{ Field::select('executable_id', $executables) }}
         {{ Form::hidden('project_id', $project_id) }}

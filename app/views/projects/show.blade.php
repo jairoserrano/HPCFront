@@ -5,6 +5,7 @@ Lista de proyectos
 @stop
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
+    {{ HTML::style(asset("assets/bootstrap-select/dist/css/bootstrap-select.min.css")) }}
 @stop
 @section('content')
 
@@ -50,7 +51,7 @@ Lista de proyectos
 @stop
 @section('scripts')
     {{ HTML::script(asset("assets/jasny-bootstrap/dist/js/jasny-bootstrap.min.js")) }}
-
+    {{ HTML::script(asset("assets/bootstrap-select/dist/js/bootstrap-select.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
     {{ HTML::script(asset("js/ui.modal.js")) }}
@@ -59,13 +60,15 @@ Lista de proyectos
     <script>
         (function($, window){
             $('document').ready(function(){
+
                 UIModal.init('#modal');
                 UIModal.showCreateModal('#create-job');
                 UIModal.showEditModal('button.edit-job', 'section.content');
 
                 $('#modal').on('shown.bs.modal', function (e) {
                     UIForm.init('#modal form');
-                    UIForm.validate(EditJobFields.rules, EditJobFields.messages)
+                    UIForm.validate(JobFields.rules, JobFields.messages);
+
                 });
 
                 $('section.content').on('click', 'button.view-job', function(){
@@ -78,8 +81,8 @@ Lista de proyectos
                         method: $(this).data('method')
                     })
                     .done(function(data) {
-                        if(data === true){
-                            document.location.reload(true);
+                        if(Boolean(data) === true){
+                            location.reload(true);
                         }
                     });
                 });

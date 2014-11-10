@@ -149,32 +149,57 @@ class ProjectJobsController extends \BaseController
 
     public function executeJob($id)
     {
-        //dd(Input::all());
-        $entryId = Input::get('entry_id');
+        if(Request::ajax()){
+            $job = $this->jobsRepository->find($id);
+            $jobDirectory = storage_path() . "/jobs/" . $job->id . "/";
+            $entry_path = '';
+            $result_name = Carbon::now()->timestamp;
+            $results = '';
+            $command = '';
 
-        $job = $this->jobsRepository->find($id);
-        $entry = $this->entriesRepository->findJobEntry($job->id, $entryId);
+            if (Input::get('no_entry') || Input::get('entry_id') == '0') {
+                $entryId = Input::get('entry_id');
+                $entry_path = Input::get('entry_id') > 0 ? $this->entriesRepository->findJobEntry($id, $entryId)->path : '';
+                $results = $jobDirectory . "results/$result_name";
+            }
 
-        $jobDirectory = public_path() . "/jobs/" . $job->id . "/";
-        $result_name = Carbon::now();
-        $results = $jobDirectory . "results/$result_name";
+            $log_file = $jobDirectory . "logs/$result_name"."_logs.txt";
+            $error_file = $jobDirectory . "logs/$result_name"."_errors.txt";
+            $executable = $job->executable->path;
 
-        //dd("java -jar $job->executable $entry->path $results");
-        SSH::run(array(
-            "cd $jobDirectory",
-            "java -jar $job->executable $entry->path $results",
-        ), function ($line) {
-            $this->ssh_output = $line . PHP_EOL;
-        });
-
-
-        return Redirect::route('jobs.show', array($id))
-            ->with(array('output' => $this->ssh_output));
+            if ($job->executable->type == 'js') {
+                $command = "node $executable $entry_path $results >> $log_file &";
+            }
+            if ($job->executable->type == 'java') {
+                $command = "java -jar $executable $entry_path $results &> $log_file &2> $error_file &";
+            }
+            //dd($command);
+            SSH::run(
+                array(
+                    "cd $jobDirectory",
+                    $command,
+                ), function($line){
+                    $this->ssh_output = $line.PHP_EOL;
+                }
+            );
+            dd('hola');
+            return Response::json(
+                array(
+                    'success' => true,
+                    'log' => \Crypt::encript($log_file),
+                    'log_errors' => \Crypt::encrypt($log_file),
+                )
+            );
+        }
     }
 
     public function downloadResult($result)
     {
         return Response::download(\Crypt::decrypt($result));
+    }
+
+    public function showResults($logs){
+
     }
 
 }

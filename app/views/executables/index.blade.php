@@ -4,6 +4,7 @@ Lista de ejecutables
 @stop
 @section('styles')
     {{ HTML::style(asset("assets/jasny-bootstrap/dist/css/jasny-bootstrap.min.css")) }}
+    {{ HTML::style(asset("assets/bootstrap-select/dist/css/bootstrap-select.min.css")) }}
 @stop
 @section('content')
 <section class="page-header row">
@@ -45,6 +46,7 @@ Lista de ejecutables
 @stop
 @section('scripts')
     {{ HTML::script(asset("assets/jasny-bootstrap/dist/js/jasny-bootstrap.min.js")) }}
+    {{ HTML::script(asset("assets/bootstrap-select/dist/js/bootstrap-select.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/jquery.validate.min.js")) }}
     {{ HTML::script(asset("assets/jquery.validation/dist/additional-methods.min.js")) }}
     {{ HTML::script(asset("js/ui.modal.js")) }}
@@ -53,14 +55,24 @@ Lista de ejecutables
     <script>
         (function($, window){
             $('document').ready(function(){
+
+                $.validator.addMethod("valueNotEquals", function(value, element, arg){
+                    return arg != value;
+                }, "Debe escojer una opción.");
                 UIModal.init('#modal');
                 UIModal.showCreateModal('#create-executable');
                 UIModal.showEditModal('button.edit-executable','section.executables');
 
 
                 $('#modal').on('shown.bs.modal', function (e) {
+                    var $modal = $(this);
                     UIForm.init('#modal form');
-                    UIForm.validate(ExecutableFields.rules, ExecutableFields.messages)
+                    if($modal.find('form').hasClass('create-executable')){
+                        UIForm.validate(CreateExecutableFields.rules, CreateExecutableFields.messages);
+                    }
+                    if($modal.find('form').hasClass('edit-executable')){
+                        UIForm.validate(EditExecutableFields.rules, EditExecutableFields.messages);
+                    }
                 });
 
 
