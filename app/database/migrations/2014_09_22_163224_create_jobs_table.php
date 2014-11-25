@@ -26,6 +26,7 @@ class CreateJobsTable extends Migration {
 
 		});
 
+        //File::makeDirectory(storage_path()."/jobs");
 		$path = storage_path()."/jobs";
 		SSH::run(array("mkdir $path"));
 	}
@@ -40,6 +41,7 @@ class CreateJobsTable extends Migration {
 	{
 		Schema::drop('jobs');
 
+        //File::deleteDirectory(storage_path().'/jobs');
 		$path = storage_path()."/jobs";
 		SSH::run(array("rm -Rf $path"));
 
