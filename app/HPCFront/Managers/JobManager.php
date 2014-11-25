@@ -13,11 +13,11 @@ class JobManager extends BaseManager{
     }
 
     public function createJobFolder($name){
-        $job_id =  $this->getEntity()->id;
+        $job_id = $this->getEntity()->id;
         $name = $this->getJobsRootFolder()."/$job_id/$name/";
 
         if(!$this->file->exists($name)){
-            return $this->file->makeDirectory($name, 0775, true);
+            return $this->file->makeDirectory($name, 0777, true);
         }
     }
 

@@ -168,7 +168,7 @@ class ProjectJobsController extends \BaseController
             $executable = $job->executable->path;
 
             if ($job->executable->type == 'js') {
-                $command = "node $executable $entry_path $results >> $log_file &";
+                $command = "node $executable $entry_path $results &> $log_file &2> $error_file &";
             }
             if ($job->executable->type == 'java') {
                 $command = "java -jar $executable $entry_path $results &> $log_file &2> $error_file &";
@@ -186,8 +186,9 @@ class ProjectJobsController extends \BaseController
             return Response::json(
                 array(
                     'success' => true,
-                    'log' => \Crypt::encript($log_file),
+                    'log' => \Crypt::encrypt($log_file),
                     'log_errors' => \Crypt::encrypt($log_file),
+		    'output' => $this->ssh_output,
                 )
             );
         }
