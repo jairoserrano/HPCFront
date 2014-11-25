@@ -17,7 +17,7 @@ class CreateExecutableManager extends ExecutableManager{
             $file_path = new FilesManager($this->getExecutablesPath(), $this->getInput()->file('path'));
             $full_file_path = $file_path->getFilePath();
             $this->setNewData('path', $full_file_path);
-
+            dd($full_file_path);
             \SSH::run(
                 array(
                     "chown -R hpcfront:apache $full_file_path",

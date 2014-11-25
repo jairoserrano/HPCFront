@@ -19,7 +19,7 @@ class JobManager extends BaseManager{
         if(!$this->file->exists($path_name)){
             \SSH::run(
                 array(
-                    "mkdir $path_name",
+                    "mkdir -p $path_name",
                     "chown -R hpcfront:apache $path_name",
                     "chmod -R u+rwx $path_name",
                     "chmod -R g+rw $path_name",
