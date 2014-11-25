@@ -19,7 +19,7 @@ class JobManager extends BaseManager{
         if(!$this->file->exists($path_name)){
 
             //return $this->file->makeDirectory($name, 0775, true);
-            return \SSH::run(array(
+            \SSH::run(array(
                 "mkdir $path_name",
             ));
         }
