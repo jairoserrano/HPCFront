@@ -16,12 +16,8 @@ class JobManager extends BaseManager{
         $job_id =  $this->getEntity()->id;
         $path_name = $this->getJobsRootFolder()."/$job_id/$name/";
 
-        if(!$this->file->exists($path_name)){
-
-            //return $this->file->makeDirectory($name, 0775, true);
-            \SSH::run(array(
-                "mkdir $path_name",
-            ));
+        if(!$this->file->exists($path_name){
+            \SSH::run(array("mkdir $path_name"));
         }
     }
 
