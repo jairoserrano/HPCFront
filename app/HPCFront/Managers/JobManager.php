@@ -12,12 +12,16 @@ class JobManager extends BaseManager{
         );
     }
 
-    public function createJobFolder($name){
+    public function createJobFolder($path_name){
         $job_id =  $this->getEntity()->id;
-        $name = $this->getJobsRootFolder()."/$job_id/$name/";
+        $path_name = $this->getJobsRootFolder()."/$job_id/$name/";
 
-        if(!$this->file->exists($name)){
-            return $this->file->makeDirectory($name, 0775, true);
+        if(!$this->file->exists($path_name)){
+
+            //return $this->file->makeDirectory($name, 0775, true);
+            return SSH::run(array(
+                "mkdir $path_name",
+            ));
         }
     }
 
