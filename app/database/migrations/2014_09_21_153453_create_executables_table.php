@@ -23,7 +23,7 @@ class CreateExecutablesTable extends Migration {
 
 		$path = storage_path()."/executables";
 		SSH::run(array("mkdir $path"));
-        //File::makeDirectory(storage_path()."/executables");
+
 
     }
 
@@ -36,10 +36,8 @@ class CreateExecutablesTable extends Migration {
 	public function down()
 	{
 		Schema::drop('executables');
-
-        //File::deleteDirectory(storage_path().'/executables');
-		//$path = storage_path().'/executables';
-		//SSH::run(array("rm -Rf $path"));
+		$path = storage_path().'/executables';
+		SSH::run(array("rm -Rf $path"));
 
     }
 
