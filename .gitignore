@@ -15,9 +15,5 @@ public/assets/*
 app/storage/executables/*
 app/storage/jobs/*
 app/config/packages/*
-<<<<<<< HEAD
 public/linux/*
-=======
-
 composer.lock
->>>>>>> 5ab514dcc34ff5f36a8ea4bb4124e3693d32824b
