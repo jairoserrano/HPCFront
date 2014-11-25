@@ -27,7 +27,15 @@ class CreateJobsTable extends Migration {
 		});
 
 		$path = storage_path()."/jobs";
-		SSH::run(array("mkdir $path"));
+		SSH::run(
+			array(
+				"mkdir $path",
+				"chown -R hpcfront:apache $path",
+				"chmod -R u+rwx $path",
+				"chmod -R g+rw $path",
+				"chmod -R o-rwx $path"
+			)
+		);
 	}
 
 

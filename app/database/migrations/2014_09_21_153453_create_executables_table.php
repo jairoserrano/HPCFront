@@ -22,7 +22,15 @@ class CreateExecutablesTable extends Migration {
 		});
 
 		$path = storage_path()."/executables";
-		SSH::run(array("mkdir $path"));
+		SSH::run(
+			array(
+				"mkdir $path",
+				"chown -R hpcfront:apache $path",
+				"chmod -R u+rwx $path",
+				"chmod -R g+rw $path",
+				"chmod -R o-rwx $path"
+			)
+		);
 
 
     }

@@ -16,8 +16,16 @@ class JobManager extends BaseManager{
         $job_id =  $this->getEntity()->id;
         $path_name = $this->getJobsRootFolder()."/$job_id/$name/";
 
-        if(!$this->file->exists($path_name){
-            \SSH::run(array("mkdir $path_name"));
+        if(!$this->file->exists($path_name)){
+            \SSH::run(
+                array(
+                    "mkdir $path_name",
+                    "chown -R hpcfront:apache $path_name",
+                    "chmod -R u+rwx $path_name",
+                    "chmod -R g+rw $path_name",
+                    "chmod -R o-rwx $path_name"
+                )
+            );
         }
     }
 
