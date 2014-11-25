@@ -38,8 +38,8 @@ class CreateExecutablesTable extends Migration {
 		Schema::drop('executables');
 
         //File::deleteDirectory(storage_path().'/executables');
-		$path = storage_path().'/executables';
-		SSH::run(array("rm -Rf $path"));
+		//$path = storage_path().'/executables';
+		//SSH::run(array("rm -Rf $path"));
 
     }
 

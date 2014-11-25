@@ -39,7 +39,6 @@ class CreateJobsTable extends Migration {
 	public function down()
 	{
 		Schema::drop('jobs');
-
 		$path = storage_path()."/jobs";
 		SSH::run(array("rm -Rf $path"));
 
