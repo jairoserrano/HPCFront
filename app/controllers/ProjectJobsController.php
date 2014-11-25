@@ -182,7 +182,7 @@ class ProjectJobsController extends \BaseController
                     $this->ssh_output = $line.PHP_EOL;
                 }
             );
-            dd('hola');
+            //dd('hola');
             return Response::json(
                 array(
                     'success' => true,
