@@ -51,21 +51,21 @@
         <section class="col-md-4 results">
             <h2 class="page-header">Archivos de salida</h2>
             @if(array_key_exists('results', $files))
-            @foreach($files['results'] as $files)
-                <article class="bs-callout bs-callout-success">
-                    <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
-                </article>
-            @endforeach
+                @foreach($files['results'] as $files)
+                    <article class="bs-callout bs-callout-success">
+                        <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
+                    </article>
+                @endforeach
             @endif
         </section>
         <section class="col-md-4 logs">
             <h2 class="page-header">Logs de salida</h2>
             @if(array_key_exists('logs', $files))
-            @foreach($files['logs'] as $file)
-                <article class="bs-callout bs-callout-success">
-                    <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
-                </article>
-            @endforeach
+                @foreach($files['logs'] as $file)
+                    <article class="bs-callout bs-callout-success">
+                        <h4><a href="{{{ route('download_result',array('result'=>$file['to_download'])) }}}">{{{ $file['name'] }}}</a> <small>{{{ $file['size'] }}} MB - {{{ $file['created_date'] }}}</small></h4>
+                    </article>
+                @endforeach
             @endif
         </section>
     </section>
