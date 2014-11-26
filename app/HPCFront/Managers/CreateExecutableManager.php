@@ -2,9 +2,11 @@
 namespace HPCFront\Managers;
 
 
-class CreateExecutableManager extends ExecutableManager{
+class CreateExecutableManager extends ExecutableManager
+{
 
-    public function save(){
+    public function save()
+    {
 
         if ($this->getInput()->hasFile('path')) {
             $file_path = new FilesManager($this->getExecutablesPath(), $this->getInput()->file('path'));
@@ -15,8 +17,7 @@ class CreateExecutableManager extends ExecutableManager{
         $this->getEntity()->fill($this->getData());
         $this->getEntity()->save();
         $full_file_path = $this->getEntity()->path->getPathName();
-        
-	//chown($full_file_path, "hpcfront");
+
         @chmod($full_file_path, 0750);
-    } 
+    }
 }
