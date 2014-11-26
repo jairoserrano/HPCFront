@@ -17,6 +17,7 @@ class ProjectJobsController extends \BaseController
     protected $projectsRepository;
     protected $executableRepository;
     protected $file;
+    protected $files_to_donwload;
     protected $ssh_output;
 
     function __construct(
@@ -32,6 +33,20 @@ class ProjectJobsController extends \BaseController
         $this->executableRepository = $executableRepository;
     }
 
+
+    private function addFilesToDownload($path, $type= 'results'){
+        $files = $this->file->allFiles($path);
+
+        foreach ($files as $result) {
+            $this->files_to_donwload[$type] = array(
+                'name' => $result->getFilename(),
+                'size' => round($result->getSize() / 1048576, 2),
+                'created_date' => Carbon::createFromTimeStamp($result->getMTime())->format('l jS \d\e F Y h:i:s A'),
+                'to_download' => \Crypt::encrypt($result->getRealpath()),
+            );
+
+        }
+    }
     /**
      * Display the specified resource.
      *
@@ -41,21 +56,18 @@ class ProjectJobsController extends \BaseController
     public function show($project_id, $job_id)
     {
         $job = $this->jobsRepository->getWithAllTheInformation($job_id);
-        $path = storage_path() . "/jobs/" . $job->id . "/results";
 
-        $results = $this->file->allFiles($path);
+        $paths = array(
+            'results' => storage_path() . "/jobs/" . $job->id . "/results",
+            'logs' => storage_path() . "/jobs/" . $job->id . "/logs",
+        );
 
-        $files = array();
-
-        foreach ($results as $result) {
-            $files[] = array(
-                'name' => $result->getFilename(),
-                'size' => round($result->getSize() / 1048576, 2),
-                'created_date' => Carbon::createFromTimeStamp($result->getMTime())->format('l jS \d\e F Y h:i:s A'),
-                'to_download' => \Crypt::encrypt($result->getRealpath()),
-            );
-
+        foreach($paths as $type => $path){
+            $this->addFilesToDownload($path, $type);
         }
+
+        $files = $this->files_to_donwload;
+
         return View::make('jobs.show', compact(array('job', 'files', 'project_id')));
 
     }
