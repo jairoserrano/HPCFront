@@ -34,7 +34,8 @@ class ProjectJobsController extends \BaseController
     }
 
 
-    private function addFilesToDownload($path, $type= 'results'){
+    private function addFilesToDownload($path, $type = 'results')
+    {
         $files = $this->file->allFiles($path);
 
         foreach ($files as $result) {
@@ -47,6 +48,7 @@ class ProjectJobsController extends \BaseController
 
         }
     }
+
     /**
      * Display the specified resource.
      *
@@ -62,7 +64,7 @@ class ProjectJobsController extends \BaseController
             'logs' => storage_path() . "/jobs/" . $job->id . "/logs",
         );
 
-        foreach($paths as $type => $path){
+        foreach ($paths as $type => $path) {
             $this->addFilesToDownload($path, $type);
         }
 
@@ -161,7 +163,7 @@ class ProjectJobsController extends \BaseController
 
     public function executeJob($id)
     {
-        if(Request::ajax()){
+        if (Request::ajax()) {
             $job = $this->jobsRepository->find($id);
             $jobDirectory = storage_path() . "/jobs/" . $job->id . "/";
             $entry_path = '';
@@ -175,8 +177,8 @@ class ProjectJobsController extends \BaseController
                 $results = $jobDirectory . "results/$result_name";
             }
 
-            $log_file = $jobDirectory . "logs/$result_name"."_logs.txt";
-            $error_file = $jobDirectory . "logs/$result_name"."_errors.txt";
+            $log_file = $jobDirectory . "logs/$result_name" . "_logs.txt";
+            $error_file = $jobDirectory . "logs/$result_name" . "_errors.txt";
             $executable = $job->executable->path;
 
             if ($job->executable->type == 'js') {
@@ -186,21 +188,14 @@ class ProjectJobsController extends \BaseController
                 $command = "java -jar $executable $entry_path $results &> $log_file &2> $error_file &";
             }
 
-            @chmod($log_file, 0764);
-            SSH::run(
-            array(
-            '',
-            ''
-            )
-            );
-            @chmod($error_file, 0764);
-            //dd($command);
             SSH::run(
                 array(
                     "cd $jobDirectory",
                     $command,
-                ), function($line){
-                    $this->ssh_output = $line.PHP_EOL;
+                    "chown hpcfront:apache $log_file && chown hpcfront:apache $error_file",
+                    "chmod 764 $log_file && chmod 764 $error_file"
+                ), function ($line) {
+                    $this->ssh_output = $line . PHP_EOL;
                 }
             );
             //dd('hola');
@@ -209,7 +204,7 @@ class ProjectJobsController extends \BaseController
                     'success' => true,
                     'log' => \Crypt::encrypt($log_file),
                     'log_errors' => \Crypt::encrypt($log_file),
-		    'output' => $this->ssh_output,
+                    'output' => $this->ssh_output,
                 )
             );
         }
@@ -220,13 +215,14 @@ class ProjectJobsController extends \BaseController
         return Response::download(\Crypt::decrypt($result));
     }
 
-    public function showOutputs($log_file){
-	//dd($log_file);
+    public function showOutputs($log_file)
+    {
+        //dd($log_file);
         $file = \Crypt::decrypt($log_file);
         //dd($file);
         $data = file($file);
         dd($data);
-        $line = $data[count($data)-1];
+        $line = $data[count($data) - 1];
 
         return Response::json($line);
     }
