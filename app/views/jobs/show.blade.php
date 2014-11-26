@@ -27,7 +27,7 @@
         </div>
         </div>
     </section>
-    <section class="content row">
+    <section class="content-list row">
         <section class="col-md-4 entries">
             <button id="create-entry" class="btn btn-default btn-sm" data-url="{{ route('project.job.entries.create', array($project_id, $job->id)) }}" style="float: right;margin-top: 4px;"><i class="glyphicon glyphicon-plus"></i> Crear Entrada</button>
             <h2 class="page-header">Entradas</h2>
@@ -70,11 +70,8 @@
         </section>
     </section>
     <section class="output row">
-        @if(Session::has('output'))
-        <secttion class="col-md-12">
-            {{{ Session::get('output') }}}
+        <secttion id="show-output" class="col-md-12">
         </secttion>
-        @endif
     </section>
     <div id="modal" class="modal fade"></div>
 @stop
@@ -101,22 +98,18 @@
                     UIForm.init('#modal form');
 
                     if($form.hasClass('edit-job')){
-                        console.log('a validar el editado ps :D');
                         UIForm.validate(JobFields.rules, JobFields.messages);
                     }
 
                     if($form.hasClass('create-entry')){
-                        console.log('a validar el editado ps :D');
                         UIForm.validate(CreateEntryFields.rules, CreateEntryFields.messages);
                     }
 
                     if($form.hasClass('edit-entry')){
-                        console.log('a validar el editado ps :D');
                         UIForm.validate(CreateEntryFields.rules, CreateEntryFields.messages);
                     }
 
                     if($form.hasClass('run-job')){
-                        console.log('a correr el trbajo');
                         var $select = $form.find('select[name="entry_id"]');
 
                         $form.find(':input[name="no_entry"]').on('change', function(e) {
@@ -132,8 +125,6 @@
 
                         $form.find(':input[type="submit"].submit').on('click', function(e){
                             e.preventDefault();
-                            //var $form = $(this);
-                            console.log($form);
                             console.log('enviando');
                             $.ajax({
                                 type : $form.prop('method'),
@@ -141,7 +132,13 @@
                                 data : $form.serialize()
                             }).done(
                                 function(data){
-                                console.log(data);
+                                    console.log(data);
+                                    $('#modal').modal('hide');
+                                    setInterval(function() {
+                                        $.get(location.origin + '/jobs/'+data.log+'/show', function(data){
+                                            $('<p>'+data+'</p>').appendTo('#show-output');
+                                        });
+                                    }, 1000);
                                 }
                             );
                         });

@@ -30,7 +30,7 @@ Route::group(array('before' => 'auth'), function () {
         Route::get('entry/get-entry/{entry_id}',array('as'=> 'get_entry', 'uses' => 'JobEntriesController@getFile'));
         Route::get('jobs/{id}/run', array('as' => 'run_job', 'uses' => 'ProjectJobsController@runJob'));
         Route::post('jobs/{id}/exec', array('as' => 'exec_job', 'uses' => 'ProjectJobsController@executeJob'));
-
+        Route::get('jobs/{log_file}/show', array('as' => 'get_log_output', 'uses' => 'ProjectJobsController@showOutputs'));
     });
 
     Route::get('download/{result}', array('as'=> 'download_result', 'uses' => 'JobsController@downloadResult'));

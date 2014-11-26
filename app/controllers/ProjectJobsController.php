@@ -211,8 +211,13 @@ class ProjectJobsController extends \BaseController
         return Response::download(\Crypt::decrypt($result));
     }
 
-    public function showResults($logs){
+    public function showOutputs($log_file){
 
+        $file = \Crypt::decrypt($log_file);
+        $data = file($file);
+        $line = $data[count($data)-1];
+
+        return Response::json($line);
     }
 
 }
