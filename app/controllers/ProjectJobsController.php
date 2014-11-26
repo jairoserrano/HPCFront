@@ -78,7 +78,7 @@ class ProjectJobsController extends \BaseController
         $manager->save();
         $manager->createJobFolder('results');
         $manager->createJobFolder('entries');
-
+        $manager->createJobFolder('logs');
         return Redirect::route('projects.show', array($project_id));
 
     }
