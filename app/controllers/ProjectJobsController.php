@@ -192,8 +192,8 @@ class ProjectJobsController extends \BaseController
                 array(
                     "cd $jobDirectory",
                     $command,
-                    "chown hpcfront:apache $log_file && chown hpcfront:apache $error_file",
-                    "chmod 764 $log_file && chmod 764 $error_file"
+                    "chown hpcfront:apache $log_file | chown hpcfront:apache $error_file",
+                    "chmod 764 $log_file | chmod 764 $error_file"
                 ), function ($line) {
                     $this->ssh_output = $line . PHP_EOL;
                 }

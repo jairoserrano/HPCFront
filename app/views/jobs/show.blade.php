@@ -125,7 +125,9 @@
 
                         $form.find(':input[type="submit"].submit').on('click', function(e){
                             e.preventDefault();
-                            console.log('enviando');
+                            $('#show-output').empty();
+                            $modal.modal('hide');
+                            $('<p>Procesando tarea...</p>').appendTo('#show-output');
                             $.ajax({
                                 type : $form.prop('method'),
                                 url : $form.prop('action'),
@@ -133,7 +135,7 @@
                             }).done(
                                 function(data){
                                     console.log(data);
-                                    $('#modal').modal('hide');
+                                    $('<p>'+data.output+'</p>').appendTo('#show-output');
                                     setInterval(function() {
                                         $.get(location.origin + '/jobs/'+data.log+'/show', function(data){
                                             $('<p>'+data+'</p>').appendTo('#show-output');
