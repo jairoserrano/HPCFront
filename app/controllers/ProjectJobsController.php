@@ -38,7 +38,7 @@ class ProjectJobsController extends \BaseController
         $files = $this->file->allFiles($path);
 
         foreach ($files as $result) {
-            $this->files_to_donwload[$type] = array(
+            $this->files_to_donwload[$type][] = array(
                 'name' => $result->getFilename(),
                 'size' => round($result->getSize() / 1048576, 2),
                 'created_date' => Carbon::createFromTimeStamp($result->getMTime())->format('l jS \d\e F Y h:i:s A'),
