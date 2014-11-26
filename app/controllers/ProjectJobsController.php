@@ -185,6 +185,15 @@ class ProjectJobsController extends \BaseController
             if ($job->executable->type == 'java') {
                 $command = "java -jar $executable $entry_path $results &> $log_file &2> $error_file &";
             }
+
+            @chmod($log_file, 0764);
+            SSH::run(
+            array(
+            '',
+            ''
+            )
+            );
+            @chmod($error_file, 0764);
             //dd($command);
             SSH::run(
                 array(
@@ -212,9 +221,11 @@ class ProjectJobsController extends \BaseController
     }
 
     public function showOutputs($log_file){
-
+	//dd($log_file);
         $file = \Crypt::decrypt($log_file);
+        //dd($file);
         $data = file($file);
+        dd($data);
         $line = $data[count($data)-1];
 
         return Response::json($line);
